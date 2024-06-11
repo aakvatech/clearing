@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-03 23:04:07.717815",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "shipment_number",
+  "tra_clearance_tab",
+  "column_break_pxrf",
+  "document_list",
+  "port_clearance_tab",
+  "documentlist",
+  "payment_details",
+  "inspection_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "label": "Customer"
+  },
+  {
+   "fieldname": "shipment_number",
+   "fieldtype": "Data",
+   "label": "Shipment Number"
+  },
+  {
+   "fieldname": "tra_clearance_tab",
+   "fieldtype": "Tab Break",
+   "label": "TRA Clearance"
+  },
+  {
+   "fieldname": "column_break_pxrf",
+   "fieldtype": "Column Break",
+   "options": "Item"
+  },
+  {
+   "fieldname": "document_list",
+   "fieldtype": "Table",
+   "label": "Document List",
+   "options": "Item Attribute Value"
+  },
+  {
+   "fieldname": "port_clearance_tab",
+   "fieldtype": "Tab Break",
+   "label": "Port Clearance"
+  },
+  {
+   "fieldname": "documentlist",
+   "fieldtype": "Table",
+   "label": "Document List",
+   "options": "Item Attribute Value"
+  },
+  {
+   "fieldname": "payment_details",
+   "fieldtype": "Table",
+   "label": "Payment Details",
+   "options": "Item Attribute Value"
+  },
+  {
+   "fieldname": "inspection_details",
+   "fieldtype": "Table",
+   "label": "Inspection Details",
+   "options": "Item Attribute Value"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-03 23:42:05.260228",
+ "modified_by": "Administrator",
+ "module": "Av Freight",
+ "name": "Clearance",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
