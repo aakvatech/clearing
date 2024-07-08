@@ -1,0 +1,208 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-08 12:20:04.064087",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_details_section",
+  "customer",
+  "column_break_ghnb",
+  "customer_contact",
+  "section_break_bpgi",
+  "shipment",
+  "shipment_vessel",
+  "shipment_mode",
+  "column_break_gdfv",
+  "shipment_reference_number",
+  "shipment_status",
+  "arrival_date",
+  "cargo_details_section",
+  "cargo_id",
+  "cargo",
+  "cargo_type",
+  "number_of_packages",
+  "column_break_njrf",
+  "cargo_weight",
+  "bill_of_landing_section",
+  "document_details",
+  "clearance_details_tab",
+  "tra_details_section",
+  "tra_status",
+  "tra_document_attachment",
+  "port_details_section",
+  "port_status",
+  "port_document_attachment"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "section_break_bpgi",
+   "fieldtype": "Section Break",
+   "label": "Shipment Details"
+  },
+  {
+   "fieldname": "shipment",
+   "fieldtype": "Link",
+   "label": "Shipper",
+   "options": "Shipper"
+  },
+  {
+   "fieldname": "cargo_details_section",
+   "fieldtype": "Section Break",
+   "label": "Cargo Details"
+  },
+  {
+   "fieldname": "cargo",
+   "fieldtype": "Data",
+   "label": "Cargo Description"
+  },
+  {
+   "fieldname": "clearance_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Clearance Details"
+  },
+  {
+   "fieldname": "tra_details_section",
+   "fieldtype": "Section Break",
+   "label": "TRA Details"
+  },
+  {
+   "fieldname": "tra_status",
+   "fieldtype": "Data",
+   "label": "TRA Clearance Status"
+  },
+  {
+   "fieldname": "port_details_section",
+   "fieldtype": "Section Break",
+   "label": "Port Details"
+  },
+  {
+   "fieldname": "port_status",
+   "fieldtype": "Data",
+   "label": "Port Clearance Status"
+  },
+  {
+   "fieldname": "bill_of_landing_section",
+   "fieldtype": "Section Break",
+   "label": "Document Section"
+  },
+  {
+   "fieldname": "column_break_ghnb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_contact",
+   "fieldtype": "Data",
+   "label": "Customer Contact"
+  },
+  {
+   "fieldname": "shipment_mode",
+   "fieldtype": "Select",
+   "label": "Shipment Mode",
+   "options": "Sea\nAir\nLand"
+  },
+  {
+   "fieldname": "column_break_gdfv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipment_reference_number",
+   "fieldtype": "Data",
+   "label": "Shipment Reference Number"
+  },
+  {
+   "fieldname": "shipment_status",
+   "fieldtype": "Select",
+   "label": "Shipment Status",
+   "options": "Pending\nIn Transit\nArrived"
+  },
+  {
+   "fieldname": "arrival_date",
+   "fieldtype": "Date",
+   "label": "Arrival Date"
+  },
+  {
+   "fieldname": "shipment_vessel",
+   "fieldtype": "Link",
+   "label": "Shipment Vessel",
+   "options": "Shipment Vessel"
+  },
+  {
+   "fieldname": "cargo_type",
+   "fieldtype": "Data",
+   "label": "Cargo Type"
+  },
+  {
+   "fieldname": "number_of_packages",
+   "fieldtype": "Int",
+   "label": "Number of Packages"
+  },
+  {
+   "fieldname": "column_break_njrf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cargo_weight",
+   "fieldtype": "Float",
+   "label": "Cargo Weight"
+  },
+  {
+   "fieldname": "cargo_id",
+   "fieldtype": "Data",
+   "label": "Cargo ID"
+  },
+  {
+   "fieldname": "tra_document_attachment",
+   "fieldtype": "Table",
+   "label": "TRA Document Attachment",
+   "options": "Document Attachments"
+  },
+  {
+   "fieldname": "port_document_attachment",
+   "fieldtype": "Table",
+   "label": "Port Document Attachment ",
+   "options": "Document Attachments"
+  },
+  {
+   "fieldname": "document_details",
+   "fieldtype": "Table",
+   "label": "Document Details",
+   "options": "Document Attachments"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-08 16:53:19.105827",
+ "modified_by": "Administrator",
+ "module": "Av Freight",
+ "name": "Clearing File",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

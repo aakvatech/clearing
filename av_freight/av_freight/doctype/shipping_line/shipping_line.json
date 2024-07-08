@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: {shipping_line}",
+ "creation": "2024-07-04 15:05:37.744889",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "shipping_line_details_section",
+  "shipping_line",
+  "shipping_line_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "shipping_line_details_section",
+   "fieldtype": "Section Break",
+   "label": "Shipping Line Details"
+  },
+  {
+   "fieldname": "shipping_line_type",
+   "fieldtype": "Data",
+   "label": "Shipping Line Type"
+  },
+  {
+   "fieldname": "shipping_line",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shipping Line "
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-04 15:19:36.930638",
+ "modified_by": "Administrator",
+ "module": "Av Freight",
+ "name": "Shipping Line",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

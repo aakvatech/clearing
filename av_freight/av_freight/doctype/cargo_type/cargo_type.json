@@ -1,31 +1,33 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-06-03 23:04:07.717815",
+ "autoname": "format:{cargo_type_name}",
+ "creation": "2024-07-04 15:32:40.634232",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "customer",
-  "shipment_number"
+  "cargo_type_section",
+  "cargo_type_name"
  ],
  "fields": [
   {
-   "fieldname": "customer",
-   "fieldtype": "Data",
-   "label": "Customer"
+   "fieldname": "cargo_type_section",
+   "fieldtype": "Section Break"
   },
   {
-   "fieldname": "shipment_number",
+   "allow_in_quick_entry": 1,
+   "fieldname": "cargo_type_name",
    "fieldtype": "Data",
-   "label": "Shipment Number"
+   "label": "Cargo Type Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-08 16:56:28.806304",
+ "modified": "2024-07-04 15:42:13.126769",
  "modified_by": "Administrator",
  "module": "Av Freight",
- "name": "Clearance",
+ "name": "Cargo Type",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

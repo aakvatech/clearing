@@ -1,31 +1,27 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-06-03 23:04:07.717815",
+ "autoname": "format:{name}",
+ "creation": "2024-07-08 15:22:44.610149",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "customer",
-  "shipment_number"
+  "name1"
  ],
  "fields": [
   {
-   "fieldname": "customer",
+   "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Customer"
-  },
-  {
-   "fieldname": "shipment_number",
-   "fieldtype": "Data",
-   "label": "Shipment Number"
+   "label": "Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-08 16:56:28.806304",
+ "modified": "2024-07-08 15:27:12.680269",
  "modified_by": "Administrator",
  "module": "Av Freight",
- "name": "Clearance",
+ "name": "Shipment Vessel",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

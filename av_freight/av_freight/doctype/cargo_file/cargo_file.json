@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-04 15:45:42.089665",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "details_section",
+  "customer",
+  "shipment_type",
+  "payment_received",
+  "advance_payment_received",
+  "column_break_djqo",
+  "company",
+  "date",
+  "cargo_details_tab",
+  "amended_from",
+  "expenses_tab"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "shipment_type",
+   "fieldtype": "Select",
+   "label": "Shipment Type ",
+   "options": "\nAir\nSea"
+  },
+  {
+   "fieldname": "payment_received",
+   "fieldtype": "Select",
+   "label": "Payment Received",
+   "options": "\nYES\nNO"
+  },
+  {
+   "fieldname": "advance_payment_received",
+   "fieldtype": "Select",
+   "label": "Advance Payment Received",
+   "options": "\nYES\nNO"
+  },
+  {
+   "fieldname": "column_break_djqo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "cargo_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Cargo Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Cargo File",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "expenses_tab",
+   "fieldtype": "Tab Break",
+   "label": "Expenses"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-07-04 17:49:23.792314",
+ "modified_by": "Administrator",
+ "module": "Av Freight",
+ "name": "Cargo File",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
