@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-11 16:29:25.171013",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "permit_name",
+  "permit_type",
+  "column_break_nwvr",
+  "mandatory",
+  "document"
+ ],
+ "fields": [
+  {
+   "fieldname": "permit_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Permit Name"
+  },
+  {
+   "fieldname": "permit_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Permit Type",
+   "options": "Permit Type"
+  },
+  {
+   "fieldname": "column_break_nwvr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "mandatory",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Mandatory"
+  },
+  {
+   "fieldname": "document",
+   "fieldtype": "Attach",
+   "label": "Document"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-11 17:37:12.863101",
+ "modified_by": "Administrator",
+ "module": "Av Freight",
+ "name": "Clearing Cargo Type Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

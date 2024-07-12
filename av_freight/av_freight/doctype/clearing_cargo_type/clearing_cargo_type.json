@@ -7,7 +7,9 @@
  "engine": "InnoDB",
  "field_order": [
   "cargo_type_section",
-  "cargo_type_name"
+  "cargo_type_name",
+  "required_permits_section",
+  "permits"
  ],
  "fields": [
   {
@@ -19,14 +21,25 @@
    "fieldname": "cargo_type_name",
    "fieldtype": "Data",
    "label": "Cargo Type Name"
+  },
+  {
+   "fieldname": "required_permits_section",
+   "fieldtype": "Section Break",
+   "label": "Required Permits"
+  },
+  {
+   "fieldname": "permits",
+   "fieldtype": "Table",
+   "label": "Permits",
+   "options": "Document Attachments"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-04 15:42:13.126769",
+ "modified": "2024-07-11 16:31:23.563334",
  "modified_by": "Administrator",
  "module": "Av Freight",
- "name": "Cargo Type",
+ "name": "Clearing Cargo Type",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

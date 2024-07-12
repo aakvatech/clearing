@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class CargoDocuments(Document):
+class ClearingCargoTypeDetails(Document):
 	pass

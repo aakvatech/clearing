@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Agent(Document):
+class PermitType(Document):
 	pass

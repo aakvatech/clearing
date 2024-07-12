@@ -5,24 +5,27 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "status",
   "customer_details_section",
   "customer",
   "column_break_ghnb",
   "customer_contact",
+  "customer_address",
   "section_break_bpgi",
+  "shipment_mode",
   "shipment",
   "shipment_vessel",
-  "shipment_mode",
   "column_break_gdfv",
-  "shipment_reference_number",
   "shipment_status",
+  "shipment_reference_number",
   "arrival_date",
   "cargo_details_section",
+  "bill_of_landing_id",
   "cargo_id",
   "cargo",
+  "column_break_njrf",
   "cargo_type",
   "number_of_packages",
-  "column_break_njrf",
   "cargo_weight",
   "bill_of_landing_section",
   "document_details",
@@ -32,7 +35,8 @@
   "tra_document_attachment",
   "port_details_section",
   "port_status",
-  "port_document_attachment"
+  "port_document_attachment",
+  "amended_from"
  ],
  "fields": [
   {
@@ -55,7 +59,7 @@
    "fieldname": "shipment",
    "fieldtype": "Link",
    "label": "Shipper",
-   "options": "Shipper"
+   "options": "Shipping Line"
   },
   {
    "fieldname": "cargo_details_section",
@@ -64,7 +68,7 @@
   },
   {
    "fieldname": "cargo",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Cargo Description"
   },
   {
@@ -179,11 +183,38 @@
    "fieldtype": "Table",
    "label": "Document Details",
    "options": "Document Attachments"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Clearing File",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Small Text",
+   "label": "Customer Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bill_of_landing_id",
+   "fieldtype": "Data",
+   "label": "Bill of Landing ID"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status"
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-07-08 16:53:19.105827",
+ "modified": "2024-07-11 16:16:50.900313",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing File",
