@@ -5,17 +5,18 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "details_section",
   "customer",
-  "shipment_type",
-  "payment_received",
-  "advance_payment_received",
-  "column_break_djqo",
-  "company",
+  "column_break_kkn4c",
   "date",
+  "company",
+  "details_section",
+  "shipment_type",
+  "shipline",
+  "airline",
+  "shipping_vessel",
   "cargo_details_tab",
-  "amended_from",
-  "expenses_tab"
+  "cargo_details",
+  "amended_from"
  ],
  "fields": [
   {
@@ -25,26 +26,13 @@
    "options": "Customer"
   },
   {
-   "fieldname": "shipment_type",
-   "fieldtype": "Select",
-   "label": "Shipment Type ",
-   "options": "\nAir\nSea"
-  },
-  {
-   "fieldname": "payment_received",
-   "fieldtype": "Select",
-   "label": "Payment Received",
-   "options": "\nYES\nNO"
-  },
-  {
-   "fieldname": "advance_payment_received",
-   "fieldtype": "Select",
-   "label": "Advance Payment Received",
-   "options": "\nYES\nNO"
-  },
-  {
-   "fieldname": "column_break_djqo",
+   "fieldname": "column_break_kkn4c",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
   },
   {
    "fieldname": "company",
@@ -53,18 +41,18 @@
    "options": "Company"
   },
   {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date"
+   "fieldname": "details_section",
+   "fieldtype": "Section Break"
   },
   {
-   "fieldname": "details_section",
-   "fieldtype": "Section Break",
-   "label": "Details"
+   "fieldname": "shipment_type",
+   "fieldtype": "Select",
+   "label": "Shipment Type",
+   "options": "\nAir\nSea\nLand"
   },
   {
    "fieldname": "cargo_details_tab",
-   "fieldtype": "Tab Break",
+   "fieldtype": "Section Break",
    "label": "Cargo Details"
   },
   {
@@ -72,21 +60,40 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Cargo File",
+   "options": "Clearing Cargo",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
   },
   {
-   "fieldname": "expenses_tab",
-   "fieldtype": "Tab Break",
-   "label": "Expenses"
+   "fieldname": "shipline",
+   "fieldtype": "Link",
+   "label": "Shipline",
+   "options": "Shipping Line"
+  },
+  {
+   "fieldname": "shipping_vessel",
+   "fieldtype": "Link",
+   "label": "Shipping Vessel",
+   "options": "Shipment Vessel"
+  },
+  {
+   "fieldname": "airline",
+   "fieldtype": "Link",
+   "label": "Airline",
+   "options": "Airline"
+  },
+  {
+   "fieldname": "cargo_details",
+   "fieldtype": "Table",
+   "label": "Cargo Details",
+   "options": "Clearing Cargo Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-04 17:49:23.792314",
+ "modified": "2024-07-15 14:07:38.885555",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing Cargo",

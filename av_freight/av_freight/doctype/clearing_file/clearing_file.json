@@ -1,41 +1,42 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:customer",
  "creation": "2024-07-08 12:20:04.064087",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "status",
+  "posting_date",
   "customer_details_section",
   "customer",
-  "column_break_ghnb",
-  "customer_contact",
+  "column_break_lunna",
   "customer_address",
-  "section_break_bpgi",
-  "shipment_mode",
-  "shipment",
-  "shipment_vessel",
-  "column_break_gdfv",
-  "shipment_status",
-  "shipment_reference_number",
+  "customer_contact",
+  "clearing_agent_section",
+  "clearing_agent",
+  "shipment_details_section",
+  "shipment_type",
+  "mode_of_transport",
   "arrival_date",
+  "departure_date",
+  "packing_list_number",
+  "column_break_b8in0",
+  "carrier_name",
+  "voyage_flight_number",
+  "bill_of_lading_number",
+  "commercial_invoice_number",
   "cargo_details_section",
-  "bill_of_landing_id",
-  "cargo_id",
-  "cargo",
-  "column_break_njrf",
-  "cargo_type",
-  "number_of_packages",
-  "cargo_weight",
-  "bill_of_landing_section",
-  "document_details",
-  "clearance_details_tab",
-  "tra_details_section",
-  "tra_status",
-  "tra_document_attachment",
-  "port_details_section",
-  "port_status",
-  "port_document_attachment",
+  "cargo_details",
+  "status_section",
+  "status",
+  "service_charges_section",
+  "service_charges",
+  "documents_section",
+  "documents",
+  "additional_information_section",
+  "notes",
+  "column_break_abtcq",
+  "special_instructions",
   "amended_from"
  ],
  "fields": [
@@ -47,63 +48,16 @@
   {
    "fieldname": "customer",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Customer",
-   "options": "Customer"
+   "options": "Customer",
+   "reqd": 1,
+   "unique": 1
   },
   {
-   "fieldname": "section_break_bpgi",
-   "fieldtype": "Section Break",
-   "label": "Shipment Details"
-  },
-  {
-   "fieldname": "shipment",
-   "fieldtype": "Link",
-   "label": "Shipper",
-   "options": "Shipping Line"
-  },
-  {
-   "fieldname": "cargo_details_section",
-   "fieldtype": "Section Break",
-   "label": "Cargo Details"
-  },
-  {
-   "fieldname": "cargo",
+   "fieldname": "customer_address",
    "fieldtype": "Small Text",
-   "label": "Cargo Description"
-  },
-  {
-   "fieldname": "clearance_details_tab",
-   "fieldtype": "Tab Break",
-   "label": "Clearance Details"
-  },
-  {
-   "fieldname": "tra_details_section",
-   "fieldtype": "Section Break",
-   "label": "TRA Details"
-  },
-  {
-   "fieldname": "tra_status",
-   "fieldtype": "Data",
-   "label": "TRA Clearance Status"
-  },
-  {
-   "fieldname": "port_details_section",
-   "fieldtype": "Section Break",
-   "label": "Port Details"
-  },
-  {
-   "fieldname": "port_status",
-   "fieldtype": "Data",
-   "label": "Port Clearance Status"
-  },
-  {
-   "fieldname": "bill_of_landing_section",
-   "fieldtype": "Section Break",
-   "label": "Document Section"
-  },
-  {
-   "fieldname": "column_break_ghnb",
-   "fieldtype": "Column Break"
+   "label": "Customer Address"
   },
   {
    "fieldname": "customer_contact",
@@ -111,25 +65,49 @@
    "label": "Customer Contact"
   },
   {
-   "fieldname": "shipment_mode",
-   "fieldtype": "Select",
-   "label": "Shipment Mode",
-   "options": "Sea\nAir\nLand"
+   "fieldname": "clearing_agent_section",
+   "fieldtype": "Section Break",
+   "label": "Clearing Agent"
   },
   {
-   "fieldname": "column_break_gdfv",
-   "fieldtype": "Column Break"
+   "fieldname": "clearing_agent",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Clearing Agent",
+   "options": "Clearing Agent",
+   "reqd": 1
   },
   {
-   "fieldname": "shipment_reference_number",
+   "fieldname": "shipment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Shipment Details"
+  },
+  {
+   "fieldname": "bill_of_lading_number",
    "fieldtype": "Data",
-   "label": "Shipment Reference Number"
+   "label": "Bill of Lading Number"
   },
   {
-   "fieldname": "shipment_status",
+   "fieldname": "commercial_invoice_number",
+   "fieldtype": "Data",
+   "label": "Commercial Invoice Number"
+  },
+  {
+   "fieldname": "packing_list_number",
+   "fieldtype": "Data",
+   "label": "Packing List Number"
+  },
+  {
+   "fieldname": "shipment_type",
    "fieldtype": "Select",
-   "label": "Shipment Status",
-   "options": "Pending\nIn Transit\nArrived"
+   "label": "Shipment Type",
+   "options": "Import\nExport"
+  },
+  {
+   "fieldname": "mode_of_transport",
+   "fieldtype": "Select",
+   "label": "Mode of Transport",
+   "options": "Sea\nAir\nLand"
   },
   {
    "fieldname": "arrival_date",
@@ -137,52 +115,80 @@
    "label": "Arrival Date"
   },
   {
-   "fieldname": "shipment_vessel",
-   "fieldtype": "Link",
-   "label": "Shipment Vessel",
-   "options": "Shipment Vessel"
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "label": "Departure Date"
   },
   {
-   "fieldname": "cargo_type",
+   "fieldname": "carrier_name",
    "fieldtype": "Data",
-   "label": "Cargo Type"
+   "label": "Carrier Name"
   },
   {
-   "fieldname": "number_of_packages",
-   "fieldtype": "Int",
-   "label": "Number of Packages"
-  },
-  {
-   "fieldname": "column_break_njrf",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "cargo_weight",
-   "fieldtype": "Float",
-   "label": "Cargo Weight"
-  },
-  {
-   "fieldname": "cargo_id",
+   "fieldname": "voyage_flight_number",
    "fieldtype": "Data",
-   "label": "Cargo ID"
+   "label": "Voyage/Flight Number"
   },
   {
-   "fieldname": "tra_document_attachment",
+   "fieldname": "cargo_details_section",
+   "fieldtype": "Section Break",
+   "label": "Cargo Details"
+  },
+  {
+   "fieldname": "cargo_details",
    "fieldtype": "Table",
-   "label": "TRA Document Attachment",
+   "label": "Cargo Details",
+   "options": "Cargo"
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Created\nLodged to TRA\nQualified\nLodged Complete\nPayment Pending\nPayment Completed\nCleared\nDelivered",
+   "reqd": 1
+  },
+  {
+   "fieldname": "service_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Service Charges"
+  },
+  {
+   "fieldname": "service_charges",
+   "fieldtype": "Table",
+   "label": "Service Charges",
+   "options": "Service Charges"
+  },
+  {
+   "fieldname": "documents_section",
+   "fieldtype": "Section Break",
+   "label": "Documents"
+  },
+  {
+   "fieldname": "documents",
+   "fieldtype": "Table",
+   "label": "Documents",
    "options": "Document Attachments"
   },
   {
-   "fieldname": "port_document_attachment",
-   "fieldtype": "Table",
-   "label": "Port Document Attachment ",
-   "options": "Document Attachments"
+   "fieldname": "additional_information_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Information"
   },
   {
-   "fieldname": "document_details",
-   "fieldtype": "Table",
-   "label": "Document Details",
-   "options": "Document Attachments"
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "special_instructions",
+   "fieldtype": "Text",
+   "label": "Special Instructions"
   },
   {
    "fieldname": "amended_from",
@@ -195,29 +201,32 @@
    "search_index": 1
   },
   {
-   "fieldname": "customer_address",
-   "fieldtype": "Small Text",
-   "label": "Customer Address",
-   "read_only": 1
+   "fieldname": "column_break_b8in0",
+   "fieldtype": "Column Break"
   },
   {
-   "fieldname": "bill_of_landing_id",
+   "fieldname": "column_break_lunna",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_abtcq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
    "fieldtype": "Data",
-   "label": "Bill of Landing ID"
-  },
-  {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status"
+   "label": "Posting Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-11 16:16:50.900313",
+ "modified": "2024-07-16 09:23:12.592407",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing File",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,13 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{name}",
- "creation": "2024-07-08 15:22:44.610149",
+ "creation": "2024-07-15 13:42:36.636469",
+ "default_view": "List",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "name1",
-  "shipping_line"
+  "airline"
  ],
  "fields": [
   {
@@ -16,19 +17,18 @@
    "label": "Name"
   },
   {
-   "fieldname": "shipping_line",
+   "fieldname": "airline",
    "fieldtype": "Link",
-   "label": "Shipping Line",
-   "options": "Shipping Line"
+   "label": "Airline",
+   "options": "Airline"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-15 13:43:45.062481",
+ "modified": "2024-07-15 13:42:36.636469",
  "modified_by": "Administrator",
  "module": "Av Freight",
- "name": "Shipment Vessel",
- "naming_rule": "Expression",
+ "name": "Airplane",
  "owner": "Administrator",
  "permissions": [
   {

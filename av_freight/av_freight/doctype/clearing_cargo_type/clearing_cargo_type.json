@@ -20,7 +20,7 @@
    "allow_in_quick_entry": 1,
    "fieldname": "cargo_type_name",
    "fieldtype": "Data",
-   "label": "Cargo Type Name"
+   "label": "Name"
   },
   {
    "fieldname": "required_permits_section",
@@ -36,7 +36,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-11 16:31:23.563334",
+ "modified": "2024-07-15 11:58:05.005736",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing Cargo Type",
