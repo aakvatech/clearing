@@ -21,14 +21,16 @@
   },
   {
    "fieldname": "charge_type",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Charge Type",
-   "options": "Clearing\nPort\nTRA\nShipping Line\nOther",
+   "options": "Service Type",
    "reqd": 1
   },
   {
    "fieldname": "amount",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Amount",
    "reqd": 1
   },
@@ -39,12 +41,14 @@
   {
    "fieldname": "invoice_number",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Invoice Number",
    "reqd": 1
   },
   {
    "fieldname": "payment_status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Payment Status",
    "options": "Unpaid\nPaid",
    "reqd": 1
@@ -53,7 +57,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-15 23:20:46.142648",
+ "modified": "2024-07-16 09:52:39.421309",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Service Charges",

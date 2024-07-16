@@ -1,34 +1,39 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:name1",
- "creation": "2024-06-03 23:00:58.947791",
+ "autoname": "format: {shipping_line}",
+ "creation": "2024-07-04 15:05:37.744889",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "name1",
-  "contact_information"
+  "shipping_line",
+  "column_break_mrd2c",
+  "shipping_line_type"
  ],
  "fields": [
   {
-   "fieldname": "name1",
+   "fieldname": "shipping_line_type",
    "fieldtype": "Data",
-   "label": "Name",
-   "unique": 1
+   "label": "Shipping Line Type"
   },
   {
-   "fieldname": "contact_information",
+   "fieldname": "shipping_line",
    "fieldtype": "Data",
-   "label": "Contact Information"
+   "in_list_view": 1,
+   "label": "Name"
+  },
+  {
+   "fieldname": "column_break_mrd2c",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-16 11:09:12.759540",
+ "modified": "2024-07-15 13:33:05.221299",
  "modified_by": "Administrator",
  "module": "Av Freight",
- "name": "Clearing Agent",
- "naming_rule": "By fieldname",
+ "name": "Shipline",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -44,7 +49,9 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }

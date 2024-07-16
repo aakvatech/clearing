@@ -1,0 +1,117 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"qjkf8U9csa\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Clearing &amp; Forwarding</span>\",\"col\":12}},{\"id\":\"ZIJAIUkM_7\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuration Documents\",\"col\":4}},{\"id\":\"WSCYUVEegx\",\"type\":\"card\",\"data\":{\"card_name\":\"Essential Documents\",\"col\":4}}]",
+ "creation": "2024-07-16 16:13:53.401495",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "file-large",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Clearing & Forwarding",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Configuration Documents",
+   "link_count": 6,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Clearing Agent",
+   "link_count": 0,
+   "link_to": "Clearing Agent",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Service Charges",
+   "link_count": 0,
+   "link_to": "Service Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shipline",
+   "link_count": 0,
+   "link_to": "Shipline",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airline",
+   "link_count": 0,
+   "link_to": "Airline",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airplane",
+   "link_count": 0,
+   "link_to": "Airplane",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shipment Vessel",
+   "link_count": 0,
+   "link_to": "Shipment Vessel",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Essential Documents",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Clearing File",
+   "link_count": 0,
+   "link_to": "Clearing File",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-07-16 16:24:47.438392",
+ "modified_by": "Administrator",
+ "module": "Av Freight",
+ "name": "Clearing & Forwarding",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [],
+ "title": "Clearing & Forwarding"
+}

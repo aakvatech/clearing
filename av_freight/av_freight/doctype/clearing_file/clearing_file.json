@@ -7,11 +7,13 @@
  "engine": "InnoDB",
  "field_order": [
   "posting_date",
+  "column_break_hcemj",
+  "status",
   "customer_details_section",
   "customer",
   "column_break_lunna",
+  "address_display",
   "customer_address",
-  "customer_contact",
   "clearing_agent_section",
   "clearing_agent",
   "shipment_details_section",
@@ -27,8 +29,6 @@
   "commercial_invoice_number",
   "cargo_details_section",
   "cargo_details",
-  "status_section",
-  "status",
   "service_charges_section",
   "service_charges",
   "documents_section",
@@ -56,13 +56,9 @@
   },
   {
    "fieldname": "customer_address",
-   "fieldtype": "Small Text",
-   "label": "Customer Address"
-  },
-  {
-   "fieldname": "customer_contact",
-   "fieldtype": "Data",
-   "label": "Customer Contact"
+   "fieldtype": "Link",
+   "label": "Customer Address",
+   "options": "Address"
   },
   {
    "fieldname": "clearing_agent_section",
@@ -121,13 +117,15 @@
   },
   {
    "fieldname": "carrier_name",
-   "fieldtype": "Data",
-   "label": "Carrier Name"
+   "fieldtype": "Link",
+   "label": "Carrier Name",
+   "options": "DocType"
   },
   {
    "fieldname": "voyage_flight_number",
-   "fieldtype": "Data",
-   "label": "Voyage/Flight Number"
+   "fieldtype": "Link",
+   "label": "Voyage/Flight Number",
+   "options": "DocType"
   },
   {
    "fieldname": "cargo_details_section",
@@ -135,15 +133,11 @@
    "label": "Cargo Details"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "cargo_details",
    "fieldtype": "Table",
    "label": "Cargo Details",
    "options": "Cargo"
-  },
-  {
-   "fieldname": "status_section",
-   "fieldtype": "Section Break",
-   "label": "Status"
   },
   {
    "fieldname": "status",
@@ -217,12 +211,22 @@
    "fieldname": "posting_date",
    "fieldtype": "Data",
    "label": "Posting Date"
+  },
+  {
+   "fieldname": "address_display",
+   "fieldtype": "Small Text",
+   "label": "Customer Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hcemj",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-16 09:23:12.592407",
+ "modified": "2024-07-16 16:11:40.378356",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing File",

@@ -1,34 +1,48 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{name}",
+ "autoname": "field:voyage_number",
  "creation": "2024-07-08 15:22:44.610149",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "name1",
-  "shipping_line"
+  "shipping_line",
+  "column_break_3cegg",
+  "voyage_number"
  ],
  "fields": [
   {
    "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Name"
+   "label": "Name",
+   "unique": 1
   },
   {
    "fieldname": "shipping_line",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Shipping Line",
-   "options": "Shipping Line"
+   "options": "Shipline"
+  },
+  {
+   "fieldname": "column_break_3cegg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "voyage_number",
+   "fieldtype": "Data",
+   "label": "Voyage Number",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-15 13:43:45.062481",
+ "modified": "2024-07-16 13:21:49.035351",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Shipment Vessel",
- "naming_rule": "Expression",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:name1",
  "creation": "2024-07-15 13:39:01.929414",
  "default_view": "List",
  "doctype": "DocType",
@@ -13,15 +14,17 @@
   {
    "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Name"
+   "label": "Name",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-15 13:39:01.929414",
+ "modified": "2024-07-16 13:18:08.345744",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Airline",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

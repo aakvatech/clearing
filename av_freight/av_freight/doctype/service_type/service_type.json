@@ -1,39 +1,38 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format: {shipping_line}",
- "creation": "2024-07-04 15:05:37.744889",
+ "autoname": "field:name1",
+ "creation": "2024-07-16 09:51:24.643727",
+ "default_view": "List",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "shipping_line",
-  "column_break_mrd2c",
-  "shipping_line_type"
+  "name1",
+  "amount"
  ],
  "fields": [
   {
-   "fieldname": "shipping_line_type",
-   "fieldtype": "Data",
-   "label": "Shipping Line Type"
-  },
-  {
-   "fieldname": "shipping_line",
+   "fieldname": "name1",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Name"
+   "label": "Name",
+   "reqd": 1,
+   "unique": 1
   },
   {
-   "fieldname": "column_break_mrd2c",
-   "fieldtype": "Column Break"
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-15 13:33:05.221299",
+ "modified": "2024-07-16 09:51:37.785609",
  "modified_by": "Administrator",
  "module": "Av Freight",
- "name": "Shipping Line",
- "naming_rule": "Expression",
+ "name": "Service Type",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -49,9 +48,7 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "track_changes": 1
+ "states": []
 }
