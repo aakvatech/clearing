@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Clearance(Document):
+class PhysicalVerificationBooking(Document):
 	pass

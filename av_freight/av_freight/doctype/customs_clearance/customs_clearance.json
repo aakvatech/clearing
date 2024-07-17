@@ -1,0 +1,303 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-03 23:04:07.717815",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "status",
+  "basic_details_section",
+  "clearing_file_number",
+  "column_break_yxf5j",
+  "customer",
+  "column_break_5kvgc",
+  "clearing_agent",
+  "tra_section",
+  "tra_submission_date",
+  "assessment_document_ref_no",
+  "control_number",
+  "payment_note_ref_no",
+  "payment_receipt_ref_no",
+  "tansad_reference_number",
+  "column_break_pejrn",
+  "tra_status",
+  "assessment_document",
+  "control_number_document",
+  "payment_note_document",
+  "payment_receipt",
+  "tansad",
+  "port_section",
+  "port_submission_date",
+  "column_break_hfsrb",
+  "port_status",
+  "port_invoices",
+  "port_payment_receipts",
+  "ship_clearance_section",
+  "ship_clearance_submission_date",
+  "column_break_7j38h",
+  "ship_clearance_status",
+  "ship_clearance_invoices",
+  "ship_clearance_payment_receipts",
+  "additional_expenses_section",
+  "additional_expense_type",
+  "additional_expense_amount",
+  "additional_expense_currency",
+  "column_break_ssajk",
+  "additional_expense_date",
+  "additional_expense_receipt",
+  "notes_section",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "clearing_file_number",
+   "fieldtype": "Link",
+   "label": "Clearing File Number",
+   "options": "Clearing File",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Payment Pending\nTRA Paid Not Port\nPort Paid Not TRA\nPayment Completed\nCleared",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tra_section",
+   "fieldtype": "Section Break",
+   "label": "TRA Clearance"
+  },
+  {
+   "fieldname": "tra_submission_date",
+   "fieldtype": "Date",
+   "label": "TRA Submission Date"
+  },
+  {
+   "fieldname": "assessment_document",
+   "fieldtype": "Attach",
+   "label": "Assessment Document"
+  },
+  {
+   "fieldname": "control_number_document",
+   "fieldtype": "Attach",
+   "label": "Control Number Document"
+  },
+  {
+   "fieldname": "payment_note_document",
+   "fieldtype": "Attach",
+   "label": "Payment Note Document"
+  },
+  {
+   "fieldname": "payment_receipt",
+   "fieldtype": "Attach",
+   "label": "Payment Receipt / Screenshot of payment message"
+  },
+  {
+   "fieldname": "tansad",
+   "fieldtype": "Attach",
+   "label": "Tanzania Single Administrative Document (TANSAD)"
+  },
+  {
+   "fieldname": "tra_status",
+   "fieldtype": "Select",
+   "label": "TRA Status",
+   "options": "Unpaid\nPaid"
+  },
+  {
+   "fieldname": "port_section",
+   "fieldtype": "Section Break",
+   "label": "Port Clearance"
+  },
+  {
+   "fieldname": "port_submission_date",
+   "fieldtype": "Date",
+   "label": "Port Submission Date"
+  },
+  {
+   "fieldname": "port_status",
+   "fieldtype": "Select",
+   "label": "Port Status",
+   "options": "Unpaid\nPaid"
+  },
+  {
+   "fieldname": "port_invoices",
+   "fieldtype": "Attach",
+   "label": "Port Invoices"
+  },
+  {
+   "fieldname": "port_payment_receipts",
+   "fieldtype": "Attach",
+   "label": "Port Payment Receipts"
+  },
+  {
+   "fieldname": "ship_clearance_section",
+   "fieldtype": "Section Break",
+   "label": "Ship Clearance"
+  },
+  {
+   "fieldname": "ship_clearance_submission_date",
+   "fieldtype": "Date",
+   "label": "Ship Clearance Submission Date"
+  },
+  {
+   "fieldname": "ship_clearance_status",
+   "fieldtype": "Select",
+   "label": "Ship Clearance Status",
+   "options": "Unpaid\nPaid"
+  },
+  {
+   "fieldname": "ship_clearance_invoices",
+   "fieldtype": "Attach",
+   "label": "Ship Clearance Invoices"
+  },
+  {
+   "fieldname": "ship_clearance_payment_receipts",
+   "fieldtype": "Attach",
+   "label": "Ship Clearance Payment Receipts"
+  },
+  {
+   "fieldname": "additional_expenses_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Expenses"
+  },
+  {
+   "fieldname": "additional_expense_type",
+   "fieldtype": "Data",
+   "label": "Additional Expense Type"
+  },
+  {
+   "fieldname": "additional_expense_amount",
+   "fieldtype": "Currency",
+   "label": "Additional Expense Amount"
+  },
+  {
+   "fieldname": "additional_expense_currency",
+   "fieldtype": "Data",
+   "label": "Additional Expense Currency"
+  },
+  {
+   "fieldname": "additional_expense_date",
+   "fieldtype": "Date",
+   "label": "Additional Expense Date"
+  },
+  {
+   "fieldname": "additional_expense_receipt",
+   "fieldtype": "Attach",
+   "label": "Additional Expense Receipt"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "column_break_pejrn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hfsrb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_7j38h",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ssajk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "column_break_yxf5j",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "clearing_agent",
+   "fieldtype": "Link",
+   "label": "Clearing Agent",
+   "options": "Clearing Agent"
+  },
+  {
+   "fieldname": "column_break_5kvgc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Customs Clearance",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "assessment_document_ref_no",
+   "fieldtype": "Data",
+   "label": "Assessment Document ref No"
+  },
+  {
+   "fieldname": "control_number",
+   "fieldtype": "Data",
+   "label": "Control Number"
+  },
+  {
+   "fieldname": "payment_receipt_ref_no",
+   "fieldtype": "Data",
+   "label": "Payment Receipt ref No"
+  },
+  {
+   "fieldname": "tansad_reference_number",
+   "fieldtype": "Data",
+   "label": "TANSAD reference No"
+  },
+  {
+   "fieldname": "payment_note_ref_no",
+   "fieldtype": "Data",
+   "label": "Payment Note ref No"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-07-17 13:45:59.983624",
+ "modified_by": "Administrator",
+ "module": "Av Freight",
+ "name": "Customs Clearance",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

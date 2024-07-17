@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestClearance(FrappeTestCase):
+class TestPortClearance(FrappeTestCase):
 	pass

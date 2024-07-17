@@ -1,0 +1,179 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-03 23:08:39.906886",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "clearing_file_number",
+  "column_break_d4yrg",
+  "cfs_charges_status",
+  "column_break_uyof8",
+  "verification_status",
+  "verification_section",
+  "booking_date",
+  "ticts_ref_no",
+  "ticts_invoice",
+  "column_break_ccdqe",
+  "inspection_date",
+  "release_documents_section",
+  "permission_to_import_ref_no",
+  "permission_to_import",
+  "column_break_5qq8e",
+  "certificate_of_origin_ref_no",
+  "certificate_of_origin",
+  "column_break_atgtw",
+  "release_order_ref_no",
+  "release_order",
+  "additional_notes_section",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "clearing_file_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Clearing File Number",
+   "options": "Clearing File",
+   "reqd": 1
+  },
+  {
+   "fieldname": "verification_section",
+   "fieldtype": "Section Break",
+   "label": "Verification Details"
+  },
+  {
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "label": "Booking Date"
+  },
+  {
+   "fieldname": "inspection_date",
+   "fieldtype": "Datetime",
+   "label": "Inspection Date"
+  },
+  {
+   "fieldname": "ticts_invoice",
+   "fieldtype": "Attach",
+   "label": "TICTS Invoice"
+  },
+  {
+   "fieldname": "cfs_charges_status",
+   "fieldtype": "Select",
+   "label": "CFS Charges Status",
+   "options": "Unpaid\nPaid"
+  },
+  {
+   "fieldname": "verification_status",
+   "fieldtype": "Select",
+   "label": "Verification Status",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "fieldname": "release_documents_section",
+   "fieldtype": "Section Break",
+   "label": "Release Documents"
+  },
+  {
+   "fieldname": "permission_to_import",
+   "fieldtype": "Attach",
+   "label": "Permission to Import (if applicable)"
+  },
+  {
+   "fieldname": "certificate_of_origin",
+   "fieldtype": "Attach",
+   "label": "Certificate of Origin (if applicable)"
+  },
+  {
+   "fieldname": "additional_notes_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "column_break_ccdqe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_d4yrg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uyof8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ticts_ref_no",
+   "fieldtype": "Data",
+   "label": "TICTS ref no"
+  },
+  {
+   "fieldname": "column_break_5qq8e",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_atgtw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "release_order_ref_no",
+   "fieldtype": "Data",
+   "label": "Release Order ref No"
+  },
+  {
+   "fieldname": "release_order",
+   "fieldtype": "Attach",
+   "label": "Release Order"
+  },
+  {
+   "fieldname": "permission_to_import_ref_no",
+   "fieldtype": "Data",
+   "label": "Permission to Import ref No"
+  },
+  {
+   "fieldname": "certificate_of_origin_ref_no",
+   "fieldtype": "Data",
+   "label": "Certificate of Origin ref No"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Physical Verification Booking",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-07-17 15:14:06.219198",
+ "modified_by": "Administrator",
+ "module": "Av Freight",
+ "name": "Physical Verification Booking",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -15,11 +15,70 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Configuration Documents",
-   "link_count": 6,
+   "label": "Essential Documents",
+   "link_count": 4,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Clearing File",
+   "link_count": 0,
+   "link_to": "Clearing File",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customs Clearance",
+   "link_count": 0,
+   "link_to": "Customs Clearance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Physical Verification Booking",
+   "link_count": 0,
+   "link_to": "Physical Verification Booking",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Port Clearance",
+   "link_count": 0,
+   "link_to": "Port Clearance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Configuration Documents",
+   "link_count": 7,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer",
+   "link_count": 0,
+   "link_to": "Customer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   },
   {
    "hidden": 0,
@@ -34,7 +93,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Service Charges",
+   "label": "Service Type",
    "link_count": 0,
    "link_to": "Service Type",
    "link_type": "DocType",
@@ -80,28 +139,9 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Essential Documents",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Clearing File",
-   "link_count": 0,
-   "link_to": "Clearing File",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
   }
  ],
- "modified": "2024-07-16 16:24:47.438392",
+ "modified": "2024-07-17 15:30:17.303825",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing & Forwarding",

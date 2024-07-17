@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestPermitType(FrappeTestCase):
+class TestPhysicalVerificationBooking(FrappeTestCase):
 	pass

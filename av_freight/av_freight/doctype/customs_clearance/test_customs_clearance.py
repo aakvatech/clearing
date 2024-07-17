@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestBookingVerification(FrappeTestCase):
+class TestCustomsClearance(FrappeTestCase):
 	pass
