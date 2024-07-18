@@ -11,9 +11,12 @@
   "status",
   "customer_details_section",
   "customer",
-  "column_break_lunna",
   "address_display",
   "customer_address",
+  "column_break_lunna",
+  "shipper",
+  "shipper_address",
+  "shipper_address_display",
   "clearing_agent_section",
   "clearing_agent",
   "shipment_details_section",
@@ -21,12 +24,12 @@
   "mode_of_transport",
   "arrival_date",
   "departure_date",
-  "packing_list_number",
   "column_break_b8in0",
   "carrier_name",
   "voyage_flight_number",
   "bill_of_lading_number",
   "commercial_invoice_number",
+  "packing_list_number",
   "cargo_details_section",
   "cargo_details",
   "service_charges_section",
@@ -43,13 +46,13 @@
   {
    "fieldname": "customer_details_section",
    "fieldtype": "Section Break",
-   "label": "Customer Details"
+   "label": "Details"
   },
   {
    "fieldname": "customer",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Customer",
+   "label": "Consignee",
    "options": "Customer",
    "reqd": 1,
    "unique": 1
@@ -57,7 +60,7 @@
   {
    "fieldname": "customer_address",
    "fieldtype": "Link",
-   "label": "Customer Address",
+   "label": "Consignee Address",
    "options": "Address"
   },
   {
@@ -118,13 +121,13 @@
   {
    "fieldname": "carrier_name",
    "fieldtype": "Link",
-   "label": "Carrier Name",
+   "label": "Shipping line/Airline",
    "options": "DocType"
   },
   {
    "fieldname": "voyage_flight_number",
    "fieldtype": "Link",
-   "label": "Voyage/Flight Number",
+   "label": "Vessel & Voyage No/Airplane ",
    "options": "DocType"
   },
   {
@@ -215,18 +218,36 @@
   {
    "fieldname": "address_display",
    "fieldtype": "Small Text",
-   "label": "Customer Address",
+   "label": "Consignee Address",
    "read_only": 1
   },
   {
    "fieldname": "column_break_hcemj",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipper",
+   "fieldtype": "Link",
+   "label": "Shipper",
+   "options": "Shipper"
+  },
+  {
+   "fieldname": "shipper_address",
+   "fieldtype": "Text",
+   "label": "Shipper Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipper_address_display",
+   "fieldtype": "Link",
+   "label": "Shipper Address",
+   "options": "Address"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-16 16:11:40.378356",
+ "modified": "2024-07-18 16:19:58.356510",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing File",

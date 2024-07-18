@@ -6,11 +6,38 @@ frappe.ui.form.on('Clearing File', {
         frm.trigger('mode_of_transport');
     },
     refresh: function(frm) {
-        frm.fields_dict.cargo_details.grid.wrapper.on('grid-row-added', function(e, grid_row) {
-            if (grid_row.doc.doctype === 'Cargo') {
-                grid_row.toggle_view(true);
-            }
-        });
+        if (!frm.custom_buttons['Create Customs Clearence']) {
+            frm.add_custom_button(__('Create Customs Clearence'), function() {
+                // Code to create Customs Clearance
+                frappe.call({
+                    method: "frappe.client.insert",
+                    args: {
+                        doc: {
+                            doctype: "Customs Clearance",
+                            clearing_file_number: frm.doc.name,
+                            customer: frm.doc.customer,
+                            clearing_agent: frm.doc.clearing_agent,
+                            status: "Payment Pending"
+                        }
+                    },
+                    callback: function(r) {
+                        if (!r.exc) {
+                            frappe.msgprint(__('Customs Clearance created successfully'));
+                            // Optionally, redirect to the new document
+                            frappe.set_route('Form', 'Customs Clearance', r.message.name);
+                        }
+                    }
+                });
+            }, 'Create');
+        }
+        
+        if (!frm.custom_buttons['Create Sales Order']) {
+            frm.add_custom_button(__('Create Sales Order'), function() {
+                // Code to create Sales Order
+                frappe.msgprint('Creating Sales Order...');
+                // Add your custom logic here for creating Sales Order
+            }, 'Create');
+        }
     },
     customer: function(frm) {
         if (frm.doc.customer) {
@@ -67,7 +94,7 @@ frappe.ui.form.on('Clearing File', {
     },
     toggle_fields_based_on_transport: function(frm) {
         if (frm.doc.mode_of_transport == 'Sea') {
-            frm.set_df_property('carrier_name', 'options', 'Shipline');
+            frm.set_df_property('carrier_name', 'options', 'Shipping line');
             frm.set_df_property('voyage_flight_number', 'options', 'Shipment Vessel');
             
             frm.toggle_display('carrier_name', true);

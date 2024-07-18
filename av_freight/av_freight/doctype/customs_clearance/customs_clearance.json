@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:customer",
  "creation": "2024-06-03 23:04:07.717815",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -14,37 +15,34 @@
   "clearing_agent",
   "tra_section",
   "tra_submission_date",
+  "column_break_perrk",
+  "tra_status",
+  "section_break_juygi",
   "assessment_document_ref_no",
   "control_number",
   "payment_note_ref_no",
-  "payment_receipt_ref_no",
   "tansad_reference_number",
+  "payment_receipt_ref_no",
+  "column_break_dg8ma",
+  "assessment_document_date",
+  "control_number_date",
+  "payment_note_date",
+  "tansad_date",
+  "payment_receipt_date",
   "column_break_pejrn",
-  "tra_status",
   "assessment_document",
   "control_number_document",
   "payment_note_document",
   "payment_receipt",
   "tansad",
-  "port_section",
-  "port_submission_date",
-  "column_break_hfsrb",
-  "port_status",
-  "port_invoices",
-  "port_payment_receipts",
   "ship_clearance_section",
   "ship_clearance_submission_date",
-  "column_break_7j38h",
-  "ship_clearance_status",
   "ship_clearance_invoices",
   "ship_clearance_payment_receipts",
+  "column_break_7j38h",
+  "ship_clearance_status",
   "additional_expenses_section",
-  "additional_expense_type",
-  "additional_expense_amount",
-  "additional_expense_currency",
-  "column_break_ssajk",
-  "additional_expense_date",
-  "additional_expense_receipt",
+  "additional_expense",
   "notes_section",
   "notes",
   "amended_from"
@@ -62,7 +60,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Payment Pending\nTRA Paid Not Port\nPort Paid Not TRA\nPayment Completed\nCleared",
+   "options": "Payment Pending\nLevy Paid Not Ship\nPayment Completed",
    "reqd": 1
   },
   {
@@ -107,32 +105,6 @@
    "options": "Unpaid\nPaid"
   },
   {
-   "fieldname": "port_section",
-   "fieldtype": "Section Break",
-   "label": "Port Clearance"
-  },
-  {
-   "fieldname": "port_submission_date",
-   "fieldtype": "Date",
-   "label": "Port Submission Date"
-  },
-  {
-   "fieldname": "port_status",
-   "fieldtype": "Select",
-   "label": "Port Status",
-   "options": "Unpaid\nPaid"
-  },
-  {
-   "fieldname": "port_invoices",
-   "fieldtype": "Attach",
-   "label": "Port Invoices"
-  },
-  {
-   "fieldname": "port_payment_receipts",
-   "fieldtype": "Attach",
-   "label": "Port Payment Receipts"
-  },
-  {
    "fieldname": "ship_clearance_section",
    "fieldtype": "Section Break",
    "label": "Ship Clearance"
@@ -151,42 +123,17 @@
   {
    "fieldname": "ship_clearance_invoices",
    "fieldtype": "Attach",
-   "label": "Ship Clearance Invoices"
+   "label": "Ship Clearance Invoice"
   },
   {
    "fieldname": "ship_clearance_payment_receipts",
    "fieldtype": "Attach",
-   "label": "Ship Clearance Payment Receipts"
+   "label": "Ship Clearance Payment Receipt"
   },
   {
    "fieldname": "additional_expenses_section",
    "fieldtype": "Section Break",
    "label": "Additional Expenses"
-  },
-  {
-   "fieldname": "additional_expense_type",
-   "fieldtype": "Data",
-   "label": "Additional Expense Type"
-  },
-  {
-   "fieldname": "additional_expense_amount",
-   "fieldtype": "Currency",
-   "label": "Additional Expense Amount"
-  },
-  {
-   "fieldname": "additional_expense_currency",
-   "fieldtype": "Data",
-   "label": "Additional Expense Currency"
-  },
-  {
-   "fieldname": "additional_expense_date",
-   "fieldtype": "Date",
-   "label": "Additional Expense Date"
-  },
-  {
-   "fieldname": "additional_expense_receipt",
-   "fieldtype": "Attach",
-   "label": "Additional Expense Receipt"
   },
   {
    "fieldname": "notes_section",
@@ -203,15 +150,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_hfsrb",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "column_break_7j38h",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_ssajk",
    "fieldtype": "Column Break"
   },
   {
@@ -224,16 +163,21 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "clearing_file_number.customer",
    "fieldname": "customer",
    "fieldtype": "Link",
-   "label": "Customer",
-   "options": "Customer"
+   "label": "Consignee",
+   "options": "Customer",
+   "read_only": 1,
+   "unique": 1
   },
   {
+   "fetch_from": "clearing_file_number.clearing_agent",
    "fieldname": "clearing_agent",
    "fieldtype": "Link",
    "label": "Clearing Agent",
-   "options": "Clearing Agent"
+   "options": "Clearing Agent",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_5kvgc",
@@ -273,15 +217,59 @@
    "fieldname": "payment_note_ref_no",
    "fieldtype": "Data",
    "label": "Payment Note ref No"
+  },
+  {
+   "fieldname": "column_break_dg8ma",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assessment_document_date",
+   "fieldtype": "Date",
+   "label": "Assessment Document Date"
+  },
+  {
+   "fieldname": "control_number_date",
+   "fieldtype": "Date",
+   "label": "Control Number Date"
+  },
+  {
+   "fieldname": "payment_note_date",
+   "fieldtype": "Date",
+   "label": "Payment Note Date"
+  },
+  {
+   "fieldname": "tansad_date",
+   "fieldtype": "Date",
+   "label": "TANSAD Date"
+  },
+  {
+   "fieldname": "payment_receipt_date",
+   "fieldtype": "Data",
+   "label": "Payment Receipt Date"
+  },
+  {
+   "fieldname": "column_break_perrk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_juygi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "additional_expense",
+   "fieldtype": "Table",
+   "label": "Additional Expense",
+   "options": "Additional Expense"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-17 13:45:59.983624",
+ "modified": "2024-07-18 17:32:30.042017",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Customs Clearance",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

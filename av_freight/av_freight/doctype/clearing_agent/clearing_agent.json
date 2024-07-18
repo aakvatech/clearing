@@ -7,7 +7,12 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
-  "contact_information"
+  "column_break_fsitw",
+  "employee_id",
+  "contact_information",
+  "license_id",
+  "license",
+  "passport_size"
  ],
  "fields": [
   {
@@ -20,11 +25,38 @@
    "fieldname": "contact_information",
    "fieldtype": "Data",
    "label": "Contact Information"
+  },
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "label": "Employee ID",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "license_id",
+   "fieldtype": "Data",
+   "label": "License ID"
+  },
+  {
+   "fieldname": "license",
+   "fieldtype": "Attach",
+   "label": "License"
+  },
+  {
+   "fieldname": "column_break_fsitw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "passport_size",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Passport Size"
   }
  ],
+ "image_field": "passport_size",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-16 11:09:12.759540",
+ "modified": "2024-07-18 11:48:55.622409",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing Agent",

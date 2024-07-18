@@ -11,6 +11,7 @@
   "container_number",
   "column_break_1",
   "cargo_description",
+  "number_of_packages",
   "seal_number",
   "column_break_2",
   "weight",
@@ -85,12 +86,17 @@
    "fieldname": "seal_number",
    "fieldtype": "Data",
    "label": "Seal Number"
+  },
+  {
+   "fieldname": "number_of_packages",
+   "fieldtype": "Int",
+   "label": "Number of packages"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-17 09:36:13.340602",
+ "modified": "2024-07-18 12:38:27.485914",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Cargo",
