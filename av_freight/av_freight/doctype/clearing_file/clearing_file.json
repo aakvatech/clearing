@@ -26,10 +26,12 @@
   "departure_date",
   "column_break_b8in0",
   "carrier_name",
+  "air_waybill",
+  "airline",
   "voyage_flight_number",
+  "airplane",
   "bill_of_lading_number",
   "commercial_invoice_number",
-  "packing_list_number",
   "cargo_details_section",
   "cargo_details",
   "service_charges_section",
@@ -92,11 +94,6 @@
    "label": "Commercial Invoice Number"
   },
   {
-   "fieldname": "packing_list_number",
-   "fieldtype": "Data",
-   "label": "Packing List Number"
-  },
-  {
    "fieldname": "shipment_type",
    "fieldtype": "Select",
    "label": "Shipment Type",
@@ -111,24 +108,26 @@
   {
    "fieldname": "arrival_date",
    "fieldtype": "Date",
-   "label": "Arrival Date"
+   "label": "Arrival Date",
+   "reqd": 1
   },
   {
    "fieldname": "departure_date",
    "fieldtype": "Date",
-   "label": "Departure Date"
+   "label": "Departure Date",
+   "reqd": 1
   },
   {
    "fieldname": "carrier_name",
    "fieldtype": "Link",
-   "label": "Shipping line/Airline",
-   "options": "DocType"
+   "label": "Shipping line",
+   "options": "Shipping line"
   },
   {
    "fieldname": "voyage_flight_number",
    "fieldtype": "Link",
-   "label": "Vessel & Voyage No/Airplane ",
-   "options": "DocType"
+   "label": "Ship Vessel ",
+   "options": "Shipment Vessel"
   },
   {
    "fieldname": "cargo_details_section",
@@ -233,7 +232,7 @@
   },
   {
    "fieldname": "shipper_address",
-   "fieldtype": "Text",
+   "fieldtype": "Small Text",
    "label": "Shipper Address",
    "read_only": 1
   },
@@ -242,12 +241,29 @@
    "fieldtype": "Link",
    "label": "Shipper Address",
    "options": "Address"
+  },
+  {
+   "fieldname": "airline",
+   "fieldtype": "Link",
+   "label": "Airline",
+   "options": "Airline"
+  },
+  {
+   "fieldname": "airplane",
+   "fieldtype": "Link",
+   "label": "Airplane",
+   "options": "Airplane"
+  },
+  {
+   "fieldname": "air_waybill",
+   "fieldtype": "Data",
+   "label": " Air Waybill"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-18 16:19:58.356510",
+ "modified": "2024-07-22 11:38:51.522490",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing File",

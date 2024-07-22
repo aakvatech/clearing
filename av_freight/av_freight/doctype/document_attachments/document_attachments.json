@@ -17,8 +17,9 @@
  "fields": [
   {
    "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "Name"
+   "fieldtype": "Link",
+   "label": "Name",
+   "options": "Document Type"
   },
   {
    "fieldname": "description",
@@ -53,7 +54,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-08 16:46:03.862755",
+ "modified": "2024-07-22 11:16:05.861853",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Document Attachments",
