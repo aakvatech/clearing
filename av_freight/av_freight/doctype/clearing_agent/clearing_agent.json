@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:name1",
+ "autoname": "format:AGENT-{####}",
  "creation": "2024-06-03 23:00:58.947791",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -56,11 +56,11 @@
  "image_field": "passport_size",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-18 11:48:55.622409",
+ "modified": "2024-07-23 11:19:02.026389",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing Agent",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

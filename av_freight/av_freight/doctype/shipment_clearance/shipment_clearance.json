@@ -1,0 +1,165 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SC-{YYYY}-{####}",
+ "creation": "2024-07-22 16:45:32.899636",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "clearing_file",
+  "customs_clearance",
+  "consignee",
+  "column_break_a2owv",
+  "posting_date",
+  "column_break_5bbno",
+  "status",
+  "section_break_keyml",
+  "release_order_ref_no",
+  "clearance_invoice_ref_no",
+  "payment_receipt_ref_no",
+  "column_break_e8hqb",
+  "release_order_date",
+  "clearance_invoice_date",
+  "payment_receipt_date",
+  "column_break_wnhsy",
+  "release_order",
+  "clearance_invoice",
+  "clearance_payment_receipt",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "clearing_file",
+   "fieldtype": "Link",
+   "label": "Clearing File",
+   "options": "Clearing File"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Shipment Clearance",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "release_order_ref_no",
+   "fieldtype": "Data",
+   "label": "Release order ref No"
+  },
+  {
+   "fieldname": "release_order",
+   "fieldtype": "Attach",
+   "label": "Release order"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Unpaid\nPaid"
+  },
+  {
+   "fieldname": "clearance_invoice_ref_no",
+   "fieldtype": "Data",
+   "label": "Clearance Invoice ref No"
+  },
+  {
+   "fieldname": "clearance_invoice",
+   "fieldtype": "Attach",
+   "label": "Clearance Invoice"
+  },
+  {
+   "fieldname": "payment_receipt_ref_no",
+   "fieldtype": "Data",
+   "label": "Payment Receipt ref No"
+  },
+  {
+   "fieldname": "clearance_payment_receipt",
+   "fieldtype": "Attach",
+   "label": "Clearance Payment Receipt"
+  },
+  {
+   "fieldname": "customs_clearance",
+   "fieldtype": "Link",
+   "label": "Customs Clearance",
+   "options": "Customs Clearance"
+  },
+  {
+   "fieldname": "column_break_5bbno",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_keyml",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_e8hqb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_wnhsy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "release_order_date",
+   "fieldtype": "Date",
+   "label": "Release order Date"
+  },
+  {
+   "fieldname": "clearance_invoice_date",
+   "fieldtype": "Date",
+   "label": "Clearance Invoice Date"
+  },
+  {
+   "fieldname": "payment_receipt_date",
+   "fieldtype": "Date",
+   "label": "Payment Receipt Date"
+  },
+  {
+   "fieldname": "column_break_a2owv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fetch_from": "clearing_file.customer",
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "label": "consignee",
+   "options": "Customer"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-07-23 15:53:29.325909",
+ "modified_by": "Administrator",
+ "module": "Av Freight",
+ "name": "Shipment Clearance",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

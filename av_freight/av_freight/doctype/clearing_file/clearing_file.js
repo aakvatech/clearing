@@ -62,40 +62,6 @@ customer: function(frm) {
         frm.set_value('customer_address', '');
     }
 },
-shipper: function(frm){
-    if (frm.doc.shipper){
-        frappe.call({
-            method: "av_freight.av_freight.doctype.clearing_file.clearing_file.get_address_display_from_link",
-            args: {
-                "doctype": "Shipper",
-                "name": frm.doc.shipper
-            },
-            callback: function(r) {
-                if (r.message) {
-                    frm.set_value('shipper_address', r.message.address_display);
-                    frm.set_value('shipper_address_display', r.message.customer_address);
-                } else {
-                    frm.set_value('shipper_address_display', '');
-                    frm.set_value('shipper_address', '');
-                }
-            }
-
-        })
-    }
-},
-// customer_address: function(frm) {
-//     if (frm.doc.address_display) {
-//         // Assuming that address_display is manually filled in, set customer_address to address_display
-//         frm.set_value('address_display', frm.doc.address_display);
-//     }
-// },
-
-// shipper_address_display: function(frm) {
-//     if (frm.doc.shipper_address_display) {
-//         // Assuming that shipper_address_display is manually filled in, set shipper_address to shipper_address_display
-//         frm.set_value('shipper_address', frm.doc.shipper_address_display);
-//     }
-// },
 mode_of_transport: function(frm) {
         frm.trigger('toggle_fields_based_on_transport');
     },

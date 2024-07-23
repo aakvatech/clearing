@@ -16,7 +16,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Essential Documents",
-   "link_count": 4,
+   "link_count": 5,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -54,6 +54,16 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Shipment Clearance",
+   "link_count": 0,
+   "link_to": "Shipment Clearance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Port Clearance",
    "link_count": 0,
    "link_to": "Port Clearance",
@@ -65,7 +75,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Configuration Documents",
-   "link_count": 7,
+   "link_count": 6,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -93,19 +103,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Service Type",
+   "label": "Shipping Line",
    "link_count": 0,
-   "link_to": "Service Type",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Shipline",
-   "link_count": 0,
-   "link_to": "Shipping line",
+   "link_to": "Shipping Line",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -141,7 +141,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-07-19 15:43:31.123114",
+ "modified": "2024-07-23 16:38:46.442319",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing & Forwarding",

@@ -1,25 +1,24 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:customer",
+ "autoname": "format:CF-{YYYY}-{####}",
  "creation": "2024-07-08 12:20:04.064087",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "connections_tab",
   "posting_date",
   "column_break_hcemj",
   "status",
   "customer_details_section",
   "customer",
+  "column_break_lunna",
   "address_display",
   "customer_address",
-  "column_break_lunna",
-  "shipper",
-  "shipper_address",
-  "shipper_address_display",
   "clearing_agent_section",
   "clearing_agent",
   "shipment_details_section",
+  "shipper",
   "shipment_type",
   "mode_of_transport",
   "arrival_date",
@@ -32,12 +31,12 @@
   "airplane",
   "bill_of_lading_number",
   "commercial_invoice_number",
+  "documents_section",
+  "documents",
   "cargo_details_section",
   "cargo_details",
   "service_charges_section",
   "service_charges",
-  "documents_section",
-  "documents",
   "additional_information_section",
   "notes",
   "column_break_abtcq",
@@ -121,7 +120,7 @@
    "fieldname": "carrier_name",
    "fieldtype": "Link",
    "label": "Shipping line",
-   "options": "Shipping line"
+   "options": "Shipping Line"
   },
   {
    "fieldname": "voyage_flight_number",
@@ -146,7 +145,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Created\nLodged to TRA\nQualified\nLodged Complete\nPayment Pending\nPayment Completed\nCleared\nDelivered",
+   "options": "Lodged to TRA\nPayment Pending\nPayment Completed\nCleared\nDelivered",
    "reqd": 1
   },
   {
@@ -225,24 +224,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "shipper",
-   "fieldtype": "Link",
-   "label": "Shipper",
-   "options": "Shipper"
-  },
-  {
-   "fieldname": "shipper_address",
-   "fieldtype": "Small Text",
-   "label": "Shipper Address",
-   "read_only": 1
-  },
-  {
-   "fieldname": "shipper_address_display",
-   "fieldtype": "Link",
-   "label": "Shipper Address",
-   "options": "Address"
-  },
-  {
    "fieldname": "airline",
    "fieldtype": "Link",
    "label": "Airline",
@@ -258,16 +239,26 @@
    "fieldname": "air_waybill",
    "fieldtype": "Data",
    "label": " Air Waybill"
+  },
+  {
+   "fieldname": "shipper",
+   "fieldtype": "Data",
+   "label": "Shipper"
+  },
+  {
+   "fieldname": "connections_tab",
+   "fieldtype": "Tab Break",
+   "label": "Connections"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-22 11:38:51.522490",
+ "modified": "2024-07-23 16:09:10.554343",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing File",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

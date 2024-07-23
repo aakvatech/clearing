@@ -19,8 +19,8 @@ class ClearingFile(Document):
         # Mapping of field names to the document type they correspond to
         field_to_doc_type = {
             'air_waybill': 'Air Waybill',
-            'bill_of_lading_number': 'Bill of Lading Number',
-            'commercial_invoice_number': 'Commercial Invoice Number'
+            'bill_of_lading_number': 'Bill of Lading',
+            'commercial_invoice_number': 'Commercial Invoice'
         }
 
         for field in mandatory_fields:
@@ -47,14 +47,3 @@ def get_address_display_from_link(doctype, name):
     address_display = get_address_display(address.as_dict())
     
     return {"address_display": address_display, "customer_address": addresses[0].name}
-
-
-@frappe.whitelist()
-def get_dynamic_link_doctype(doctype, txt, searchfield, start, page_len, filters):
-    filters = frappe.parse_json(filters)
-    if filters.get('doctype') == 'Shipline':
-        return frappe.db.sql("""SELECT name FROM `tabShipline` WHERE name LIKE %(txt)s""", {'txt': '%%%s%%' % txt})
-    elif filters.get('doctype') == 'Airline':
-        return frappe.db.sql("""SELECT name FROM `tabAirline` WHERE name LIKE %(txt)s""", {'txt': '%%%s%%' % txt})
-    else:
-        return []

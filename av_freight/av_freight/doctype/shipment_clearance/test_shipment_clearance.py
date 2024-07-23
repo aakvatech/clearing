@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestServiceType(FrappeTestCase):
+class TestShipmentClearance(FrappeTestCase):
 	pass

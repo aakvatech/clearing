@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:customer",
+ "autoname": "format:CC-{YY}-{####}",
  "creation": "2024-06-03 23:04:07.717815",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -21,31 +21,24 @@
   "assessment_document_ref_no",
   "control_number",
   "payment_note_ref_no",
-  "tansad_reference_number",
   "payment_receipt_ref_no",
+  "tansad_reference_number",
   "column_break_dg8ma",
   "assessment_document_date",
   "control_number_date",
   "payment_note_date",
-  "tansad_date",
   "payment_receipt_date",
+  "tansad_date",
   "column_break_pejrn",
   "assessment_document",
   "control_number_document",
   "payment_note_document",
   "payment_receipt",
   "tansad",
-  "ship_clearance_section",
-  "ship_clearance_submission_date",
-  "ship_clearance_invoices",
-  "ship_clearance_payment_receipts",
-  "column_break_7j38h",
-  "ship_clearance_status",
-  "additional_expenses_section",
-  "additional_expense",
   "notes_section",
   "notes",
-  "amended_from"
+  "amended_from",
+  "clearing_file_reference"
  ],
  "fields": [
   {
@@ -60,7 +53,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Payment Pending\nLevy Paid Not Ship\nPayment Completed",
+   "options": "Payment Pending\nPayment Completed",
    "reqd": 1
   },
   {
@@ -71,27 +64,32 @@
   {
    "fieldname": "tra_submission_date",
    "fieldtype": "Date",
-   "label": "TRA Submission Date"
+   "label": "TRA Submission Date",
+   "reqd": 1
   },
   {
    "fieldname": "assessment_document",
    "fieldtype": "Attach",
-   "label": "Assessment Document"
+   "label": "Assessment Document",
+   "reqd": 1
   },
   {
    "fieldname": "control_number_document",
    "fieldtype": "Attach",
-   "label": "Control Number Document"
+   "label": "Control Number Document",
+   "reqd": 1
   },
   {
    "fieldname": "payment_note_document",
    "fieldtype": "Attach",
-   "label": "Payment Note Document"
+   "label": "Payment Note Document",
+   "reqd": 1
   },
   {
    "fieldname": "payment_receipt",
    "fieldtype": "Attach",
-   "label": "Payment Receipt / Screenshot of payment message"
+   "label": "Payment Receipt / Screenshot of payment message",
+   "reqd": 1
   },
   {
    "fieldname": "tansad",
@@ -105,37 +103,6 @@
    "options": "Unpaid\nPaid"
   },
   {
-   "fieldname": "ship_clearance_section",
-   "fieldtype": "Section Break",
-   "label": "Ship Clearance"
-  },
-  {
-   "fieldname": "ship_clearance_submission_date",
-   "fieldtype": "Date",
-   "label": "Ship Clearance Submission Date"
-  },
-  {
-   "fieldname": "ship_clearance_status",
-   "fieldtype": "Select",
-   "label": "Ship Clearance Status",
-   "options": "Unpaid\nPaid"
-  },
-  {
-   "fieldname": "ship_clearance_invoices",
-   "fieldtype": "Attach",
-   "label": "Ship Clearance Invoice"
-  },
-  {
-   "fieldname": "ship_clearance_payment_receipts",
-   "fieldtype": "Attach",
-   "label": "Ship Clearance Payment Receipt"
-  },
-  {
-   "fieldname": "additional_expenses_section",
-   "fieldtype": "Section Break",
-   "label": "Additional Expenses"
-  },
-  {
    "fieldname": "notes_section",
    "fieldtype": "Section Break",
    "label": "Notes"
@@ -147,10 +114,6 @@
   },
   {
    "fieldname": "column_break_pejrn",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_7j38h",
    "fieldtype": "Column Break"
   },
   {
@@ -196,17 +159,20 @@
   {
    "fieldname": "assessment_document_ref_no",
    "fieldtype": "Data",
-   "label": "Assessment Document ref No"
+   "label": "Assessment Document ref No",
+   "reqd": 1
   },
   {
    "fieldname": "control_number",
    "fieldtype": "Data",
-   "label": "Control Number"
+   "label": "Control Number",
+   "reqd": 1
   },
   {
    "fieldname": "payment_receipt_ref_no",
    "fieldtype": "Data",
-   "label": "Payment Receipt ref No"
+   "label": "Payment Receipt ref No",
+   "reqd": 1
   },
   {
    "fieldname": "tansad_reference_number",
@@ -216,7 +182,8 @@
   {
    "fieldname": "payment_note_ref_no",
    "fieldtype": "Data",
-   "label": "Payment Note ref No"
+   "label": "Payment Note ref No",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_dg8ma",
@@ -225,17 +192,20 @@
   {
    "fieldname": "assessment_document_date",
    "fieldtype": "Date",
-   "label": "Assessment Document Date"
+   "label": "Assessment Document Date",
+   "reqd": 1
   },
   {
    "fieldname": "control_number_date",
    "fieldtype": "Date",
-   "label": "Control Number Date"
+   "label": "Control Number Date",
+   "reqd": 1
   },
   {
    "fieldname": "payment_note_date",
    "fieldtype": "Date",
-   "label": "Payment Note Date"
+   "label": "Payment Note Date",
+   "reqd": 1
   },
   {
    "fieldname": "tansad_date",
@@ -244,8 +214,9 @@
   },
   {
    "fieldname": "payment_receipt_date",
-   "fieldtype": "Data",
-   "label": "Payment Receipt Date"
+   "fieldtype": "Date",
+   "label": "Payment Receipt Date",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_perrk",
@@ -256,20 +227,21 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "additional_expense",
-   "fieldtype": "Table",
-   "label": "Additional Expense",
-   "options": "Additional Expense"
+   "fieldname": "clearing_file_reference",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Clearing file reference",
+   "options": "Clearing File"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-18 17:32:30.042017",
+ "modified": "2024-07-23 15:23:42.095663",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Customs Clearance",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -287,5 +259,14 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Red",
+   "title": "Payment Pending"
+  },
+  {
+   "color": "Green",
+   "title": "Payment Complete"
+  }
+ ]
 }

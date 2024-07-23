@@ -23,7 +23,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Shipping Line",
-   "options": "Shipping line"
+   "options": "Shipping Line"
   },
   {
    "fieldname": "column_break_3cegg",
@@ -38,7 +38,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-18 12:09:41.100901",
+ "modified": "2024-07-23 16:09:10.128711",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Shipment Vessel",

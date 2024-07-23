@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:VB-{YYYY}-{####}",
  "creation": "2024-06-03 23:08:39.906886",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -34,7 +35,7 @@
    "fieldname": "clearing_file_number",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Clearing File Number",
+   "label": "Clearing File",
    "options": "Clearing File",
    "reqd": 1
   },
@@ -154,10 +155,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-17 15:14:06.219198",
+ "modified": "2024-07-23 11:46:52.561025",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Physical Verification Booking",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
