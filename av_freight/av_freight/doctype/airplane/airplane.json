@@ -9,9 +9,13 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
+  "airline",
+  "aircraft_type",
   "column_break_vd9i9",
   "flight_number",
-  "airline"
+  "capacity",
+  "registration_number",
+  "year_built"
  ],
  "fields": [
   {
@@ -36,11 +40,32 @@
    "fieldtype": "Data",
    "label": "Flight Number",
    "unique": 1
+  },
+  {
+   "fieldname": "aircraft_type",
+   "fieldtype": "Select",
+   "label": "Aircraft Type",
+   "options": "Passenger\nCargo\nPrivate"
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Data",
+   "label": "Capacity (Seats/Cargo)"
+  },
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "Registration Number"
+  },
+  {
+   "fieldname": "year_built",
+   "fieldtype": "Int",
+   "label": "Year Built"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-16 13:21:17.547669",
+ "modified": "2024-07-23 17:32:54.538604",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Airplane",

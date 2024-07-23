@@ -9,7 +9,11 @@
   "name1",
   "shipping_line",
   "column_break_3cegg",
-  "voyage_number"
+  "voyage_number",
+  "vessel_type",
+  "capacity",
+  "flag",
+  "year_built"
  ],
  "fields": [
   {
@@ -34,6 +38,27 @@
    "fieldtype": "Data",
    "label": "Voyage Number",
    "unique": 1
+  },
+  {
+   "fieldname": "vessel_type",
+   "fieldtype": "Select",
+   "label": "Vessel Type",
+   "options": "Container\nBulk Carrier\nTanker\nRoRo\nGeneral Cargo"
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Data",
+   "label": "Capacity (TEU/DWT)"
+  },
+  {
+   "fieldname": "flag",
+   "fieldtype": "Data",
+   "label": "Flag"
+  },
+  {
+   "fieldname": "year_built",
+   "fieldtype": "Int",
+   "label": "Year Built"
   }
  ],
  "index_web_pages_for_search": 1,

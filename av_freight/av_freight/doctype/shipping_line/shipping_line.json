@@ -7,15 +7,14 @@
  "engine": "InnoDB",
  "field_order": [
   "shipping_line",
+  "shipping_line_type",
+  "shipping_line_code",
   "column_break_mrd2c",
-  "shipping_line_type"
+  "contact_number",
+  "email_address",
+  "address"
  ],
  "fields": [
-  {
-   "fieldname": "shipping_line_type",
-   "fieldtype": "Data",
-   "label": "Shipping Line Type"
-  },
   {
    "fieldname": "shipping_line",
    "fieldtype": "Data",
@@ -25,11 +24,37 @@
   {
    "fieldname": "column_break_mrd2c",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipping_line_type",
+   "fieldtype": "Select",
+   "label": "Shipping Line Type",
+   "options": "Container Shipping Line\nBulk Carrier\nTanker\nRoRo (Roll-on/Roll-off)\nGeneral Cargo"
+  },
+  {
+   "fieldname": "shipping_line_code",
+   "fieldtype": "Data",
+   "label": "Shipping Line Code"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Address"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-15 13:33:05.221299",
+ "modified": "2024-07-23 17:31:46.999356",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Shipping Line",

@@ -8,7 +8,12 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "name1"
+  "name1",
+  "airline_code",
+  "airline_type",
+  "contact_number",
+  "email_address",
+  "address"
  ],
  "fields": [
   {
@@ -16,6 +21,32 @@
    "fieldtype": "Data",
    "label": "Name",
    "unique": 1
+  },
+  {
+   "fieldname": "airline_code",
+   "fieldtype": "Data",
+   "label": "Airline Code"
+  },
+  {
+   "fieldname": "airline_type",
+   "fieldtype": "Select",
+   "label": "Airline Type",
+   "options": "Passenger\nCargo\nCharter"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Address"
   }
  ],
  "index_web_pages_for_search": 1,
