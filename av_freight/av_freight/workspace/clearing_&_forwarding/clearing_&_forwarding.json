@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"qjkf8U9csa\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Clearing &amp; Forwarding</span>\",\"col\":12}},{\"id\":\"ZIJAIUkM_7\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuration Documents\",\"col\":4}},{\"id\":\"WSCYUVEegx\",\"type\":\"card\",\"data\":{\"card_name\":\"Essential Documents\",\"col\":4}}]",
+ "content": "[{\"id\":\"qjkf8U9csa\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Clearing &amp; Forwarding</span>\",\"col\":12}},{\"id\":\"ZIJAIUkM_7\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuration Documents\",\"col\":4}},{\"id\":\"WSCYUVEegx\",\"type\":\"card\",\"data\":{\"card_name\":\"Main Documents\",\"col\":4}},{\"id\":\"y4vEvvBHtQ\",\"type\":\"card\",\"data\":{\"card_name\":\"Clearance Documents\",\"col\":4}}]",
  "creation": "2024-07-16 16:13:53.401495",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,65 +12,6 @@
  "is_hidden": 0,
  "label": "Clearing & Forwarding",
  "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Essential Documents",
-   "link_count": 5,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Clearing File",
-   "link_count": 0,
-   "link_to": "Clearing File",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Customs Clearance",
-   "link_count": 0,
-   "link_to": "Customs Clearance",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Physical Verification Booking",
-   "link_count": 0,
-   "link_to": "Physical Verification Booking",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Shipment Clearance",
-   "link_count": 0,
-   "link_to": "Shipment Clearance",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Port Clearance",
-   "link_count": 0,
-   "link_to": "Port Clearance",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -139,9 +80,67 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Clearance Documents",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customs Clearance",
+   "link_count": 0,
+   "link_to": "Customs Clearance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shipment Clearance",
+   "link_count": 0,
+   "link_to": "Shipment Clearance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Port Clearance",
+   "link_count": 0,
+   "link_to": "Port Clearance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Main Documents",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Clearing File",
+   "link_count": 0,
+   "link_to": "Clearing File",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-07-23 16:38:46.442319",
+ "modified": "2024-07-28 13:18:13.724798",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing & Forwarding",

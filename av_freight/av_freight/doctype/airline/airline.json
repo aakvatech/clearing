@@ -11,6 +11,7 @@
   "name1",
   "airline_code",
   "airline_type",
+  "column_break_q5l1w",
   "contact_number",
   "email_address",
   "address"
@@ -47,11 +48,15 @@
    "fieldname": "address",
    "fieldtype": "Text",
    "label": "Address"
+  },
+  {
+   "fieldname": "column_break_q5l1w",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-16 13:18:08.345744",
+ "modified": "2024-07-28 13:19:55.030251",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Airline",

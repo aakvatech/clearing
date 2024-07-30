@@ -6,34 +6,35 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "status",
   "basic_details_section",
   "clearing_file_number",
-  "column_break_yxf5j",
   "customer",
-  "column_break_5kvgc",
+  "column_break_yxf5j",
+  "status",
   "clearing_agent",
   "tra_section",
   "tra_submission_date",
   "column_break_perrk",
-  "tra_status",
   "section_break_juygi",
   "assessment_document_ref_no",
   "control_number",
   "payment_note_ref_no",
   "payment_receipt_ref_no",
-  "tansad_reference_number",
   "column_break_dg8ma",
   "assessment_document_date",
   "control_number_date",
   "payment_note_date",
   "payment_receipt_date",
-  "tansad_date",
   "column_break_pejrn",
   "assessment_document",
   "control_number_document",
   "payment_note_document",
   "payment_receipt",
+  "confirmed_file_section",
+  "tansad_reference_number",
+  "column_break_yqe49",
+  "tansad_date",
+  "column_break_5puwb",
   "tansad",
   "notes_section",
   "notes",
@@ -68,6 +69,7 @@
    "reqd": 1
   },
   {
+   "bold": 1,
    "fieldname": "assessment_document",
    "fieldtype": "Attach",
    "label": "Assessment Document",
@@ -92,15 +94,10 @@
    "reqd": 1
   },
   {
+   "bold": 1,
    "fieldname": "tansad",
    "fieldtype": "Attach",
    "label": "Tanzania Single Administrative Document (TANSAD)"
-  },
-  {
-   "fieldname": "tra_status",
-   "fieldtype": "Select",
-   "label": "TRA Status",
-   "options": "Unpaid\nPaid"
   },
   {
    "fieldname": "notes_section",
@@ -141,10 +138,6 @@
    "label": "Clearing Agent",
    "options": "Clearing Agent",
    "read_only": 1
-  },
-  {
-   "fieldname": "column_break_5kvgc",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "amended_from",
@@ -232,12 +225,25 @@
    "hidden": 1,
    "label": "Clearing file reference",
    "options": "Clearing File"
+  },
+  {
+   "fieldname": "confirmed_file_section",
+   "fieldtype": "Section Break",
+   "label": "TANSAD"
+  },
+  {
+   "fieldname": "column_break_yqe49",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_5puwb",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-23 15:23:42.095663",
+ "modified": "2024-07-28 13:54:45.107457",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Customs Clearance",

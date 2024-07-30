@@ -6,7 +6,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "connections_tab",
+  "details_tab",
   "posting_date",
   "column_break_hcemj",
   "status",
@@ -41,7 +41,10 @@
   "notes",
   "column_break_abtcq",
   "special_instructions",
-  "amended_from"
+  "connections_tab",
+  "amended_from",
+  "cargo_tracking_tab",
+  "location"
  ],
  "fields": [
   {
@@ -249,12 +252,27 @@
    "fieldname": "connections_tab",
    "fieldtype": "Tab Break",
    "label": "Connections"
+  },
+  {
+   "fieldname": "cargo_tracking_tab",
+   "fieldtype": "Tab Break",
+   "label": "Cargo Tracking"
+  },
+  {
+   "fieldname": "details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Geolocation",
+   "label": "Location"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-23 16:09:10.554343",
+ "modified": "2024-07-25 11:34:56.679719",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing File",
