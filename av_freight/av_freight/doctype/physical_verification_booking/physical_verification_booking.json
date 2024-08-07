@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "clearing_file_number",
+  "customs_clearance",
   "column_break_d4yrg",
   "cfs_charges_status",
   "column_break_uyof8",
@@ -150,12 +151,18 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "customs_clearance",
+   "fieldtype": "Link",
+   "label": "Customs Clearance ",
+   "options": "Customs Clearance"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-23 11:46:52.561025",
+ "modified": "2024-08-01 12:20:34.930565",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Physical Verification Booking",

@@ -16,7 +16,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Configuration Documents",
-   "link_count": 6,
+   "link_count": 7,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -84,8 +84,18 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Document Type",
+   "link_count": 0,
+   "link_to": "Document Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Clearance Documents",
-   "link_count": 3,
+   "link_count": 4,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -113,6 +123,16 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Physical Verification Booking",
+   "link_count": 0,
+   "link_to": "Physical Verification Booking",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Port Clearance",
    "link_count": 0,
    "link_to": "Port Clearance",
@@ -132,7 +152,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Clearing File",
+   "label": "File Registration",
    "link_count": 0,
    "link_to": "Clearing File",
    "link_type": "DocType",
@@ -140,7 +160,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-07-28 13:18:13.724798",
+ "modified": "2024-08-02 09:59:29.577264",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing & Forwarding",

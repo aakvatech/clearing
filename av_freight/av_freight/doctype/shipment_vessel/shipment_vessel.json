@@ -19,7 +19,7 @@
   {
    "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Name",
+   "label": "Vessel",
    "unique": 1
   },
   {
@@ -63,7 +63,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-23 16:09:10.128711",
+ "modified": "2024-07-31 08:57:16.048677",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Shipment Vessel",
