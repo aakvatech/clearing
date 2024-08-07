@@ -7,58 +7,44 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
+  "clearing_company",
+  "license_id",
+  "address",
   "column_break_fsitw",
   "employee_id",
   "contact_information",
-  "license_id",
+  "date_of_issue",
+  "expiry_date",
   "license",
   "passport_size"
  ],
- "fields": [
+  "fields": [
   {
-   "fieldname": "name1",
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "date_of_issue",
+   "fieldtype": "Date",
+   "label": "Date of Issue"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "fieldname": "clearing_company",
    "fieldtype": "Data",
-   "label": "Name",
-   "unique": 1
-  },
-  {
-   "fieldname": "contact_information",
-   "fieldtype": "Data",
-   "label": "Contact Information"
-  },
-  {
-   "fieldname": "employee_id",
-   "fieldtype": "Link",
-   "label": "Employee ID",
-   "options": "Employee"
-  },
-  {
-   "fieldname": "license_id",
-   "fieldtype": "Data",
-   "label": "License ID"
-  },
-  {
-   "fieldname": "license",
-   "fieldtype": "Attach",
-   "label": "License"
-  },
-  {
-   "fieldname": "column_break_fsitw",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "passport_size",
-   "fieldtype": "Attach Image",
-   "hidden": 1,
-   "label": "Passport Size"
+   "label": "Clearing Company"
   }
  ],
- "image_field": "passport_size",
  "index_web_pages_for_search": 1,
  "links": [],
  "modified": "2024-07-23 11:19:02.026389",
  "modified_by": "Administrator",
- "module": "Av Freight",
+ "module": "Clearing",
  "name": "Clearing Agent",
  "naming_rule": "Expression",
  "owner": "Administrator",

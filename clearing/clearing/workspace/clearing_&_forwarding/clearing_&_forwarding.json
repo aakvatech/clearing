@@ -16,7 +16,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Configuration Documents",
-   "link_count": 6,
+   "link_count": 7,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -81,11 +81,21 @@
    "onboard": 0,
    "type": "Link"
   },
+    {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Document Type",
+   "link_count": 0,
+   "link_to": "Document Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
   {
    "hidden": 0,
    "is_query_report": 0,
    "label": "Clearance Documents",
-   "link_count": 3,
+   "link_count": 4,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -106,6 +116,16 @@
    "label": "Shipment Clearance",
    "link_count": 0,
    "link_to": "Shipment Clearance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+    {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Physical Verification Booking",
+   "link_count": 0,
+   "link_to": "Physical Verification Booking",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -142,7 +162,7 @@
  ],
  "modified": "2024-07-28 13:18:13.724798",
  "modified_by": "Administrator",
- "module": "Av Freight",
+ "module": "Clearing",
  "name": "Clearing & Forwarding",
  "number_cards": [],
  "owner": "Administrator",

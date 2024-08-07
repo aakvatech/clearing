@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "clearing_file_number",
+  "customs_clearance",
   "column_break_d4yrg",
   "cfs_charges_status",
   "column_break_uyof8",
@@ -141,6 +142,12 @@
    "fieldtype": "Data",
    "label": "Certificate of Origin ref No"
   },
+    {
+    "fieldname": "customs_clearance",
+    "fieldtype": "Link",
+    "label": "Customs Clearance ",
+    "options": "Customs Clearance"
+    },
   {
    "fieldname": "amended_from",
    "fieldtype": "Link",
@@ -157,7 +164,7 @@
  "links": [],
  "modified": "2024-07-23 11:46:52.561025",
  "modified_by": "Administrator",
- "module": "Av Freight",
+ "module": "Clearing",
  "name": "Physical Verification Booking",
  "naming_rule": "Expression",
  "owner": "Administrator",

@@ -17,20 +17,31 @@
   "customer_address",
   "clearing_agent_section",
   "clearing_agent",
+  "delivery_agent",
+  "column_break_4v7kz",
+  "clearing_company",
+  "forwarder",
   "shipment_details_section",
-  "shipper",
+  "shipper_address",
   "shipment_type",
   "mode_of_transport",
   "arrival_date",
   "departure_date",
+  "port_of_loading",
+  "port_of_discharge",
+  "place_of_delivery",
   "column_break_b8in0",
   "carrier_name",
+  "air_waybill",
   "airline",
   "voyage_flight_number",
   "airplane",
+  "shipment_ref_no",
   "bill_of_lading_number",
-  "air_waybill",
+  "bill_of_lading_place_of_issue",
+  "bill_of_lading_date_of_issue",
   "commercial_invoice_number",
+  "commercial_invoice_date",
   "documents_section",
   "documents",
   "cargo_details_section",
@@ -58,19 +69,19 @@
    "in_list_view": 1,
    "label": "Consignee",
    "options": "Customer",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "customer_address",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Consignee Address",
    "options": "Address"
   },
   {
    "fieldname": "clearing_agent_section",
    "fieldtype": "Section Break",
-   "label": "Clearing Agent"
+   "label": "Agent Parties"
   },
   {
    "fieldname": "clearing_agent",
@@ -89,7 +100,7 @@
    "depends_on": "eval:(doc.mode_of_transport == 'Sea')",
    "fieldname": "bill_of_lading_number",
    "fieldtype": "Data",
-   "label": "Bill of Lading Number"
+   "label": " BL/ MTD No "
   },
   {
    "fieldname": "commercial_invoice_number",
@@ -111,14 +122,12 @@
   {
    "fieldname": "arrival_date",
    "fieldtype": "Date",
-   "label": "Arrival Date",
-   "reqd": 1
+   "label": "Arrival Date"
   },
   {
    "fieldname": "departure_date",
    "fieldtype": "Date",
-   "label": "Departure Date",
-   "reqd": 1
+   "label": "Departure Date"
   },
   {
    "depends_on": "eval:(doc.mode_of_transport == 'Sea')",
@@ -273,6 +282,67 @@
    "fieldname": "map",
    "fieldtype": "Geolocation",
    "label": "Map"
+  },
+    {
+   "fieldname": "shipper_address",
+   "fieldtype": "Small Text",
+   "label": "Shipper "
+  },
+  {
+   "fieldname": "bill_of_lading_place_of_issue",
+   "fieldtype": "Data",
+   "label": "Bill of Lading Place of Issue "
+  },
+  {
+   "fieldname": "bill_of_lading_date_of_issue",
+   "fieldtype": "Date",
+   "label": "Bill of Lading Date of Issue"
+  },
+  {
+   "fieldname": "shipment_ref_no",
+   "fieldtype": "Data",
+   "label": "Shipment Ref No "
+  },
+  {
+   "fieldname": "port_of_loading",
+   "fieldtype": "Data",
+   "label": "Port of Loading"
+  },
+  {
+   "fieldname": "port_of_discharge",
+   "fieldtype": "Data",
+   "label": "Port of Discharge"
+  },
+  {
+   "fieldname": "place_of_delivery",
+   "fieldtype": "Data",
+   "label": "Place of delivery"
+  },
+  {
+   "fieldname": "forwarder",
+   "fieldtype": "Small Text",
+   "label": "Forwarder"
+  },
+  {
+   "fieldname": "delivery_agent",
+   "fieldtype": "Small Text",
+   "label": "Delivery Agent"
+  },
+  {
+   "fieldname": "commercial_invoice_date",
+   "fieldtype": "Date",
+   "label": "Commercial Invoice Date"
+  },
+  {
+   "fieldname": "column_break_4v7kz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "clearing_agent.clearing_company",
+   "fieldname": "clearing_company",
+   "fieldtype": "Data",
+   "label": "Clearing Company",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -280,7 +350,7 @@
  "links": [],
  "modified": "2024-08-02 10:06:30.324446",
  "modified_by": "Administrator",
- "module": "Av Freight",
+ "module": "Clearing",
  "name": "Clearing File",
  "naming_rule": "Expression",
  "owner": "Administrator",
