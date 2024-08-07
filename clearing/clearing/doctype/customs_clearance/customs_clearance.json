@@ -65,7 +65,7 @@
   {
    "fieldname": "tra_submission_date",
    "fieldtype": "Date",
-   "label": "TRA Submission Date",
+   "label": "Submission Date",
    "reqd": 1
   },
   {
@@ -128,8 +128,7 @@
    "fieldtype": "Link",
    "label": "Consignee",
    "options": "Customer",
-   "read_only": 1,
-   "unique": 1
+   "read_only": 1
   },
   {
    "fetch_from": "clearing_file_number.clearing_agent",
@@ -243,7 +242,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-28 13:54:45.107457",
+ "modified": "2024-08-02 10:21:09.327567",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Customs Clearance",

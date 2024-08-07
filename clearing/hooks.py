@@ -1,24 +1,23 @@
-app_name = "av_freight"
-app_title = "Av Freight"
+app_name = "clearing"
+app_title = "Clearing"
 app_publisher = "Nelson Mpanju"
-app_description = "Clearing and Forwarding "
+app_description = "Clearing and Forwarding"
 app_email = "nelsonnorbert87@gmail.com"
-app_license = "mit"
-# required_apps = []
+app_license = "MIT"
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/av_freight/css/av_freight.css"
-# app_include_js = "/assets/av_freight/js/av_freight.js"
+# app_include_css = "/assets/clearing/css/clearing.css"
+# app_include_js = "/assets/clearing/js/clearing.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/av_freight/css/av_freight.css"
-# web_include_js = "/assets/av_freight/js/av_freight.js"
+# web_include_css = "/assets/clearing/css/clearing.css"
+# web_include_js = "/assets/clearing/js/clearing.js"
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "av_freight/public/scss/website"
+# website_theme_scss = "clearing/public/scss/website"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -32,11 +31,6 @@ app_license = "mit"
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
-
-# Svg Icons
-# ------------------
-# include app icons in desk
-# app_include_icons = "av_freight/public/icons.svg"
 
 # Home Pages
 # ----------
@@ -60,43 +54,43 @@ app_license = "mit"
 
 # add methods and filters to jinja environment
 # jinja = {
-# 	"methods": "av_freight.utils.jinja_methods",
-# 	"filters": "av_freight.utils.jinja_filters"
+# 	"methods": "clearing.utils.jinja_methods",
+# 	"filters": "clearing.utils.jinja_filters"
 # }
 
 # Installation
 # ------------
 
-# before_install = "av_freight.install.before_install"
-# after_install = "av_freight.install.after_install"
+# before_install = "clearing.install.before_install"
+# after_install = "clearing.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "av_freight.uninstall.before_uninstall"
-# after_uninstall = "av_freight.uninstall.after_uninstall"
+# before_uninstall = "clearing.uninstall.before_uninstall"
+# after_uninstall = "clearing.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------
 # To set up dependencies/integrations with other apps
 # Name of the app being installed is passed as an argument
 
-# before_app_install = "av_freight.utils.before_app_install"
-# after_app_install = "av_freight.utils.after_app_install"
+# before_app_install = "clearing.utils.before_app_install"
+# after_app_install = "clearing.utils.after_app_install"
 
 # Integration Cleanup
 # -------------------
 # To clean up dependencies/integrations with other apps
 # Name of the app being uninstalled is passed as an argument
 
-# before_app_uninstall = "av_freight.utils.before_app_uninstall"
-# after_app_uninstall = "av_freight.utils.after_app_uninstall"
+# before_app_uninstall = "clearing.utils.before_app_uninstall"
+# after_app_uninstall = "clearing.utils.after_app_uninstall"
 
 # Desk Notifications
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "av_freight.notifications.get_notification_config"
+# notification_config = "clearing.notifications.get_notification_config"
 
 # Permissions
 # -----------
@@ -135,39 +129,39 @@ app_license = "mit"
 
 # scheduler_events = {
 # 	"all": [
-# 		"av_freight.tasks.all"
+# 		"clearing.tasks.all"
 # 	],
 # 	"daily": [
-# 		"av_freight.tasks.daily"
+# 		"clearing.tasks.daily"
 # 	],
 # 	"hourly": [
-# 		"av_freight.tasks.hourly"
+# 		"clearing.tasks.hourly"
 # 	],
 # 	"weekly": [
-# 		"av_freight.tasks.weekly"
+# 		"clearing.tasks.weekly"
 # 	],
 # 	"monthly": [
-# 		"av_freight.tasks.monthly"
+# 		"clearing.tasks.monthly"
 # 	],
 # }
 
 # Testing
 # -------
 
-# before_tests = "av_freight.install.before_tests"
+# before_tests = "clearing.install.before_tests"
 
 # Overriding Methods
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "av_freight.event.get_events"
+# 	"frappe.desk.doctype.event.event.get_events": "clearing.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-# 	"Task": "av_freight.task.get_dashboard_data"
+# 	"Task": "clearing.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -181,13 +175,13 @@ app_license = "mit"
 
 # Request Events
 # ----------------
-# before_request = ["av_freight.utils.before_request"]
-# after_request = ["av_freight.utils.after_request"]
+# before_request = ["clearing.utils.before_request"]
+# after_request = ["clearing.utils.after_request"]
 
 # Job Events
 # ----------
-# before_job = ["av_freight.utils.before_job"]
-# after_job = ["av_freight.utils.after_job"]
+# before_job = ["clearing.utils.before_job"]
+# after_job = ["clearing.utils.after_job"]
 
 # User Data Protection
 # --------------------
@@ -217,13 +211,5 @@ app_license = "mit"
 # --------------------------------
 
 # auth_hooks = [
-# 	"av_freight.auth.validate"
+# 	"clearing.auth.validate"
 # ]
-
-# Automatically update python controller files with type annotations for this app.
-# export_python_type_annotations = True
-
-# default_log_clearing_doctypes = {
-# 	"Logging DocType Name": 30  # days to retain logs
-# }
-

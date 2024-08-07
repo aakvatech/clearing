@@ -1,38 +1,5 @@
-// import { io } from "socket.io-client";
-
-function initialize_realtime_listener(frm) {
-    // Log to verify that this function is being called
-    console.log("Initializing real-time listener");
-
-    frappe.realtime.on('ship_position_update', (data) => {
-        const { ship_id, latitude, longitude } = data;
-        console.log("Received ship position update:", data);
-
-        const geolocation = {
-            type: "FeatureCollection",
-            features: [
-                {
-                    type: "Feature",
-                    geometry: {
-                        type: "Point",
-                        coordinates: [longitude, latitude]
-                    },
-                    properties: {
-                        icon: "vehicle"
-                    }
-                }
-            ]
-        };
-
-        frm.set_value('location', JSON.stringify(geolocation));
-    });
-}
 
 frappe.ui.form.on('Clearing File', {
-    onload: function(frm) {
-        frm.trigger('mode_of_transport');
-        initialize_realtime_listener(frm);  // Initialize the real-time event listener on load
-    },
     refresh: function(frm) {
         if (!frm.custom_buttons['Create Customs Clearance']) {
             frm.add_custom_button(__('Create Customs Clearance'), function() {
@@ -90,40 +57,6 @@ frappe.ui.form.on('Clearing File', {
             frm.set_value('customer_address', '');
         }
     },
-    mode_of_transport: function(frm) {
-        frm.trigger('toggle_fields_based_on_transport');
-    },
-    toggle_fields_based_on_transport: function(frm) {
-        if (frm.doc.mode_of_transport == 'Sea') {
-            frm.toggle_display('carrier_name', true);
-            frm.toggle_display('voyage_flight_number', true);
-            frm.toggle_display('bill_of_lading_number', true);
-
-            // Hide fields related to Air transport
-            frm.toggle_display('airline', false);
-            frm.toggle_display('airplane', false);
-            frm.toggle_display("air_waybill", false);
-        } else if (frm.doc.mode_of_transport == 'Air') {
-            frm.toggle_display('carrier_name', false);
-            frm.toggle_display('voyage_flight_number', false);
-            frm.toggle_display('bill_of_lading_number', false);
-
-            // Show fields related to Air transport
-            frm.toggle_display('airline', true);
-            frm.toggle_display('airplane', true);
-            frm.toggle_display("air_waybill", true);
-        } else if (frm.doc.mode_of_transport == 'Land') {
-            // Hide all fields if mode of transport is not selected
-            frm.toggle_display('carrier_name', false);
-            frm.toggle_display('voyage_flight_number', false);
-            frm.toggle_display('bill_of_lading_number', false);
-            frm.toggle_display('airline', false);
-            frm.toggle_display('airplane', false);
-            frm.toggle_display("air_waybill", false);
-        }
-        frm.set_value('carrier_name', '');
-        frm.set_value('voyage_flight_number', '');
-    }
 });
 
 frappe.ui.form.on('Cargo', {
@@ -149,7 +82,3 @@ frappe.ui.form.on('Cargo', {
     }
 });
 
-// Initialize Frappe SocketIO
-$(document).ready(function () {
-    frappe.socketio.init();
-});

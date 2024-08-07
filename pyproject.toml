@@ -1,9 +1,9 @@
 [project]
-name = "av_freight"
+name = "clearing"
 authors = [
     { name = "Nelson Mpanju", email = "nelsonnorbert87@gmail.com"}
 ]
-description = "Clearing and Forwarding "
+description = "Clearing and Forwarding"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

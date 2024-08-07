@@ -25,11 +25,11 @@
   "departure_date",
   "column_break_b8in0",
   "carrier_name",
-  "air_waybill",
   "airline",
   "voyage_flight_number",
   "airplane",
   "bill_of_lading_number",
+  "air_waybill",
   "commercial_invoice_number",
   "documents_section",
   "documents",
@@ -44,7 +44,7 @@
   "connections_tab",
   "amended_from",
   "cargo_tracking_tab",
-  "location"
+  "map"
  ],
  "fields": [
   {
@@ -86,6 +86,7 @@
    "label": "Shipment Details"
   },
   {
+   "depends_on": "eval:(doc.mode_of_transport == 'Sea')",
    "fieldname": "bill_of_lading_number",
    "fieldtype": "Data",
    "label": "Bill of Lading Number"
@@ -120,12 +121,14 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval:(doc.mode_of_transport == 'Sea')",
    "fieldname": "carrier_name",
    "fieldtype": "Link",
    "label": "Shipping line",
    "options": "Shipping Line"
   },
   {
+   "depends_on": "eval:(doc.mode_of_transport == 'Sea')",
    "fieldname": "voyage_flight_number",
    "fieldtype": "Link",
    "label": "Ship Vessel ",
@@ -148,7 +151,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Lodged to TRA\nPayment Pending\nPayment Completed\nCleared\nDelivered",
+   "options": "Pre-Lodged\nPayment Pending\nPayment Completed\nCleared\nDelivered",
    "reqd": 1
   },
   {
@@ -227,18 +230,21 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:(doc.mode_of_transport == 'Air')",
    "fieldname": "airline",
    "fieldtype": "Link",
    "label": "Airline",
    "options": "Airline"
   },
   {
+   "depends_on": "eval:(doc.mode_of_transport == 'Air')",
    "fieldname": "airplane",
    "fieldtype": "Link",
    "label": "Airplane",
    "options": "Airplane"
   },
   {
+   "depends_on": "eval:(doc.mode_of_transport == 'Air')",
    "fieldname": "air_waybill",
    "fieldtype": "Data",
    "label": " Air Waybill"
@@ -264,15 +270,15 @@
    "label": "Details"
   },
   {
-   "fieldname": "location",
+   "fieldname": "map",
    "fieldtype": "Geolocation",
-   "label": "Location"
+   "label": "Map"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-25 11:34:56.679719",
+ "modified": "2024-08-02 10:06:30.324446",
  "modified_by": "Administrator",
  "module": "Av Freight",
  "name": "Clearing File",

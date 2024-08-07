@@ -3,5 +3,5 @@
 *.egg-info
 *.swp
 tags
-node_modules
-__pycache__
+clearing/docs/current
+node_modules/
