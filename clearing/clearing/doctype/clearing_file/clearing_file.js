@@ -25,19 +25,11 @@ frappe.ui.form.on('Clearing File', {
                 });
             }, 'Create');
         }
-
-        if (!frm.custom_buttons['Create Sales Order']) {
-            frm.add_custom_button(__('Create Sales Order'), function() {
-                // Code to create Sales Order
-                frappe.msgprint('Creating Sales Order...');
-                // Add your custom logic here for creating Sales Order
-            }, 'Create');
-        }
     },
     customer: function(frm) {
         if (frm.doc.customer) {
             frappe.call({
-                method: "av_freight.av_freight.doctype.clearing_file.clearing_file.get_address_display_from_link",
+                method: "clearing.clearing.doctype.clearing_file.clearing_file.get_address_display_from_link",
                 args: {
                     "doctype": "Customer",
                     "name": frm.doc.customer

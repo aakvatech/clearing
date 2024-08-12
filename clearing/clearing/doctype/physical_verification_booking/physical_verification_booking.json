@@ -142,12 +142,12 @@
    "fieldtype": "Data",
    "label": "Certificate of Origin ref No"
   },
-    {
-    "fieldname": "customs_clearance",
-    "fieldtype": "Link",
-    "label": "Customs Clearance ",
-    "options": "Customs Clearance"
-    },
+  {
+   "fieldname": "customs_clearance",
+   "fieldtype": "Link",
+   "label": "Customs Clearance ",
+   "options": "TRA Clearance"
+  },
   {
    "fieldname": "amended_from",
    "fieldtype": "Link",
@@ -162,7 +162,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-23 11:46:52.561025",
+ "modified": "2024-08-12 12:34:12.285057",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Physical Verification Booking",

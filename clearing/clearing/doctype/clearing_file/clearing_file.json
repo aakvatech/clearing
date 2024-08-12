@@ -16,46 +16,31 @@
   "address_display",
   "customer_address",
   "clearing_agent_section",
-  "clearing_agent",
-  "delivery_agent",
+  "employee_id",
+  "column_break_i0bse",
+  "employee_name",
   "column_break_4v7kz",
   "clearing_company",
-  "forwarder",
   "shipment_details_section",
   "shipper_address",
   "shipment_type",
   "mode_of_transport",
-  "arrival_date",
-  "departure_date",
-  "port_of_loading",
-  "port_of_discharge",
-  "place_of_delivery",
   "column_break_b8in0",
   "carrier_name",
-  "air_waybill",
   "airline",
   "voyage_flight_number",
   "airplane",
-  "shipment_ref_no",
-  "bill_of_lading_number",
-  "bill_of_lading_place_of_issue",
-  "bill_of_lading_date_of_issue",
-  "commercial_invoice_number",
-  "commercial_invoice_date",
+  "departure_date",
+  "arrival_date",
   "documents_section",
-  "documents",
   "cargo_details_section",
   "cargo_details",
-  "service_charges_section",
-  "service_charges",
   "additional_information_section",
   "notes",
   "column_break_abtcq",
   "special_instructions",
   "connections_tab",
-  "amended_from",
-  "cargo_tracking_tab",
-  "map"
+  "amended_from"
  ],
  "fields": [
   {
@@ -84,28 +69,9 @@
    "label": "Agent Parties"
   },
   {
-   "fieldname": "clearing_agent",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Clearing Agent",
-   "options": "Clearing Agent",
-   "reqd": 1
-  },
-  {
    "fieldname": "shipment_details_section",
    "fieldtype": "Section Break",
    "label": "Shipment Details"
-  },
-  {
-   "depends_on": "eval:(doc.mode_of_transport == 'Sea')",
-   "fieldname": "bill_of_lading_number",
-   "fieldtype": "Data",
-   "label": " BL/ MTD No "
-  },
-  {
-   "fieldname": "commercial_invoice_number",
-   "fieldtype": "Data",
-   "label": "Commercial Invoice Number"
   },
   {
    "fieldname": "shipment_type",
@@ -140,7 +106,7 @@
    "depends_on": "eval:(doc.mode_of_transport == 'Sea')",
    "fieldname": "voyage_flight_number",
    "fieldtype": "Link",
-   "label": "Ship Vessel ",
+   "label": "Shipping Vessel Number ",
    "options": "Shipment Vessel"
   },
   {
@@ -164,26 +130,9 @@
    "reqd": 1
   },
   {
-   "fieldname": "service_charges_section",
-   "fieldtype": "Section Break",
-   "label": "Service Charges"
-  },
-  {
-   "fieldname": "service_charges",
-   "fieldtype": "Table",
-   "label": "Service Charges",
-   "options": "Service Charges"
-  },
-  {
    "fieldname": "documents_section",
    "fieldtype": "Section Break",
    "label": "Documents"
-  },
-  {
-   "fieldname": "documents",
-   "fieldtype": "Table",
-   "label": "Documents",
-   "options": "Document Attachments"
   },
   {
    "fieldname": "additional_information_section",
@@ -248,20 +197,9 @@
   {
    "depends_on": "eval:(doc.mode_of_transport == 'Air')",
    "fieldname": "airplane",
-   "fieldtype": "Link",
-   "label": "Airplane",
+   "fieldtype": "Data",
+   "label": "Airplane Number",
    "options": "Airplane"
-  },
-  {
-   "depends_on": "eval:(doc.mode_of_transport == 'Air')",
-   "fieldname": "air_waybill",
-   "fieldtype": "Data",
-   "label": " Air Waybill"
-  },
-  {
-   "fieldname": "shipper",
-   "fieldtype": "Data",
-   "label": "Shipper"
   },
   {
    "fieldname": "connections_tab",
@@ -269,69 +207,15 @@
    "label": "Connections"
   },
   {
-   "fieldname": "cargo_tracking_tab",
-   "fieldtype": "Tab Break",
-   "label": "Cargo Tracking"
-  },
-  {
    "fieldname": "details_tab",
    "fieldtype": "Tab Break",
    "label": "Details"
   },
   {
-   "fieldname": "map",
-   "fieldtype": "Geolocation",
-   "label": "Map"
-  },
-    {
    "fieldname": "shipper_address",
-   "fieldtype": "Small Text",
-   "label": "Shipper "
-  },
-  {
-   "fieldname": "bill_of_lading_place_of_issue",
-   "fieldtype": "Data",
-   "label": "Bill of Lading Place of Issue "
-  },
-  {
-   "fieldname": "bill_of_lading_date_of_issue",
-   "fieldtype": "Date",
-   "label": "Bill of Lading Date of Issue"
-  },
-  {
-   "fieldname": "shipment_ref_no",
-   "fieldtype": "Data",
-   "label": "Shipment Ref No "
-  },
-  {
-   "fieldname": "port_of_loading",
-   "fieldtype": "Data",
-   "label": "Port of Loading"
-  },
-  {
-   "fieldname": "port_of_discharge",
-   "fieldtype": "Data",
-   "label": "Port of Discharge"
-  },
-  {
-   "fieldname": "place_of_delivery",
-   "fieldtype": "Data",
-   "label": "Place of delivery"
-  },
-  {
-   "fieldname": "forwarder",
-   "fieldtype": "Small Text",
-   "label": "Forwarder"
-  },
-  {
-   "fieldname": "delivery_agent",
-   "fieldtype": "Small Text",
-   "label": "Delivery Agent"
-  },
-  {
-   "fieldname": "commercial_invoice_date",
-   "fieldtype": "Date",
-   "label": "Commercial Invoice Date"
+   "fieldtype": "Link",
+   "label": "Shipper ",
+   "options": "Shipper"
   },
   {
    "fieldname": "column_break_4v7kz",
@@ -343,12 +227,31 @@
    "fieldtype": "Data",
    "label": "Clearing Company",
    "read_only": 1
+  },
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee_id.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee's Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_i0bse",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-02 10:06:30.324446",
+ "modified": "2024-08-12 16:17:42.744068",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing File",

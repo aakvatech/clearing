@@ -86,7 +86,7 @@
    "fieldname": "customs_clearance",
    "fieldtype": "Link",
    "label": "Customs Clearance",
-   "options": "Customs Clearance"
+   "options": "TRA Clearance"
   },
   {
    "fieldname": "column_break_5bbno",
@@ -139,7 +139,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-23 15:53:29.325909",
+ "modified": "2024-08-12 12:34:12.925867",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Shipment Clearance",

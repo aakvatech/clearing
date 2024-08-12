@@ -4,7 +4,7 @@
 # import frappe
 from frappe.model.document import Document
 
-class CustomsClearance(Document):
+class TRAClearance(Document):
     def before_save(self):
         if self.tansad and self.tansad_date and self.tansad_reference_number:
             self.status = "Payment Completed"

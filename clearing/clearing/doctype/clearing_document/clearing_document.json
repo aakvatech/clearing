@@ -7,8 +7,9 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "company",
   "clearing_file",
+  "column_break_rge6c",
+  "company",
   "section_break_4uwiw",
   "document_type",
   "document_reference_number",
@@ -101,11 +102,15 @@
   {
    "fieldname": "section_break_4uwiw",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_rge6c",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-09 15:10:55.336508",
+ "modified": "2024-08-12 16:25:21.622384",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing Document",
