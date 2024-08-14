@@ -12,9 +12,8 @@
   "column_break_yxf5j",
   "status",
   "clearing_agent",
-  "tra_section",
-  "tra_submission_date",
-  "column_break_perrk",
+  "document_section_section",
+  "document",
   "notes_section",
   "notes",
   "amended_from",
@@ -34,17 +33,6 @@
    "in_list_view": 1,
    "label": "Status",
    "options": "Payment Pending\nPayment Completed",
-   "reqd": 1
-  },
-  {
-   "fieldname": "tra_section",
-   "fieldtype": "Section Break",
-   "label": "TRA Clearance"
-  },
-  {
-   "fieldname": "tra_submission_date",
-   "fieldtype": "Date",
-   "label": "Submission Date",
    "reqd": 1
   },
   {
@@ -93,21 +81,28 @@
    "search_index": 1
   },
   {
-   "fieldname": "column_break_perrk",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "clearing_file_reference",
    "fieldtype": "Link",
    "hidden": 1,
    "label": "Clearing file reference",
    "options": "Clearing File"
+  },
+  {
+   "fieldname": "document_section_section",
+   "fieldtype": "Section Break",
+   "label": "Document section"
+  },
+  {
+   "fieldname": "document",
+   "fieldtype": "Table",
+   "label": "Document",
+   "options": "TRA Document"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-12 12:35:05.452165",
+ "modified": "2024-08-14 11:31:28.819072",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "TRA Clearance",

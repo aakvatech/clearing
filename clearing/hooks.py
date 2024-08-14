@@ -213,3 +213,23 @@ app_license = "MIT"
 # auth_hooks = [
 # 	"clearing.auth.validate"
 # ]
+fixtures = [
+    {
+        "dt": "Clearing Document Type",
+        "filters": [
+            [
+                "name", "in", [
+                    "COMMERCIAL INVOICE",
+                    "ASSESSMENT DOCUMENT",
+                    "PAYMENT NOTE",
+                    "TISS - TZDL",
+                    "TANZANIA BUREAU OF STANDARDS-DEBIT ADVICE",
+                    "PRE-EXPORT VERIFICATION OF CONFORMITY (PVoC)",
+                    "DELIVERY ORDER",
+                    "EXPRESS B/L",
+                    "Bill of Lading"
+                ]
+            ]
+        ]
+    }
+]

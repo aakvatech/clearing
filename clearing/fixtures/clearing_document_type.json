@@ -1,0 +1,454 @@
+[
+ {
+  "clearing_document_attribute": [
+   {
+    "document_attribute": "Reference Number",
+    "document_attribute_value": null,
+    "parent": "Bill of Lading",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Reference Date",
+    "document_attribute_value": null,
+    "parent": "Bill of Lading",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Clearing Document Type",
+  "document_type": "Bill of Lading",
+  "modified": "2024-08-14 09:55:48.628585",
+  "name": "Bill of Lading"
+ },
+ {
+  "clearing_document_attribute": [
+   {
+    "document_attribute": "MTD NO ",
+    "document_attribute_value": null,
+    "parent": "EXPRESS B/L",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Shipment Ref No",
+    "document_attribute_value": null,
+    "parent": "EXPRESS B/L",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Place of Acceptance",
+    "document_attribute_value": null,
+    "parent": "EXPRESS B/L",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Port of Loading",
+    "document_attribute_value": null,
+    "parent": "EXPRESS B/L",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Port of Discharge",
+    "document_attribute_value": null,
+    "parent": "EXPRESS B/L",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Clearing Document Type",
+  "document_type": "EXPRESS B/L",
+  "modified": "2024-08-14 12:09:41.891994",
+  "name": "EXPRESS B/L"
+ },
+ {
+  "clearing_document_attribute": [
+   {
+    "document_attribute": "Reference No.",
+    "document_attribute_value": null,
+    "parent": "PRE-EXPORT VERIFICATION OF CONFORMITY (PVoC)",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "CoC No. ",
+    "document_attribute_value": null,
+    "parent": "PRE-EXPORT VERIFICATION OF CONFORMITY (PVoC)",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Issuance Date ",
+    "document_attribute_value": null,
+    "parent": "PRE-EXPORT VERIFICATION OF CONFORMITY (PVoC)",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Clearing Document Type",
+  "document_type": "PRE-EXPORT VERIFICATION OF CONFORMITY (PVoC)",
+  "modified": "2024-08-14 12:36:48.153187",
+  "name": "PRE-EXPORT VERIFICATION OF CONFORMITY (PVoC)"
+ },
+ {
+  "clearing_document_attribute": [
+   {
+    "document_attribute": "Delivery Order No",
+    "document_attribute_value": null,
+    "parent": "DELIVERY ORDER",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Delivery Order Date",
+    "document_attribute_value": null,
+    "parent": "DELIVERY ORDER",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Clearing Document Type",
+  "document_type": "DELIVERY ORDER",
+  "modified": "2024-08-14 12:34:10.969497",
+  "name": "DELIVERY ORDER"
+ },
+ {
+  "clearing_document_attribute": [
+   {
+    "document_attribute": "Control Number",
+    "document_attribute_value": null,
+    "parent": "TANZANIA BUREAU OF STANDARDS-DEBIT ADVICE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Currency",
+    "document_attribute_value": null,
+    "parent": "TANZANIA BUREAU OF STANDARDS-DEBIT ADVICE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Debit No",
+    "document_attribute_value": null,
+    "parent": "TANZANIA BUREAU OF STANDARDS-DEBIT ADVICE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Generated Date",
+    "document_attribute_value": null,
+    "parent": "TANZANIA BUREAU OF STANDARDS-DEBIT ADVICE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Expiry Date",
+    "document_attribute_value": null,
+    "parent": "TANZANIA BUREAU OF STANDARDS-DEBIT ADVICE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Service Fee ",
+    "document_attribute_value": null,
+    "parent": "TANZANIA BUREAU OF STANDARDS-DEBIT ADVICE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Physical Verification Fee",
+    "document_attribute_value": null,
+    "parent": "TANZANIA BUREAU OF STANDARDS-DEBIT ADVICE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Total",
+    "document_attribute_value": null,
+    "parent": "TANZANIA BUREAU OF STANDARDS-DEBIT ADVICE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Clearing Document Type",
+  "document_type": "TANZANIA BUREAU OF STANDARDS-DEBIT ADVICE",
+  "modified": "2024-08-14 12:39:14.172417",
+  "name": "TANZANIA BUREAU OF STANDARDS-DEBIT ADVICE"
+ },
+ {
+  "clearing_document_attribute": [
+   {
+    "document_attribute": "Payment Control Number",
+    "document_attribute_value": null,
+    "parent": "TISS - TZDL",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Amount",
+    "document_attribute_value": null,
+    "parent": "TISS - TZDL",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Currency",
+    "document_attribute_value": null,
+    "parent": "TISS - TZDL",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Value Date",
+    "document_attribute_value": null,
+    "parent": "TISS - TZDL",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Clearing Document Type",
+  "document_type": "TISS - TZDL",
+  "modified": "2024-08-14 12:49:20.490669",
+  "name": "TISS - TZDL"
+ },
+ {
+  "clearing_document_attribute": [
+   {
+    "document_attribute": "Notice Bill No",
+    "document_attribute_value": null,
+    "parent": "PAYMENT NOTE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Notice Date",
+    "document_attribute_value": null,
+    "parent": "PAYMENT NOTE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Notice Bill Type",
+    "document_attribute_value": null,
+    "parent": "PAYMENT NOTE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Bill Tax Amount",
+    "document_attribute_value": null,
+    "parent": "PAYMENT NOTE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Clearing Document Type",
+  "document_type": "PAYMENT NOTE",
+  "modified": "2024-08-14 12:54:10.936943",
+  "name": "PAYMENT NOTE"
+ },
+ {
+  "clearing_document_attribute": [
+   {
+    "document_attribute": "Exporter Declaration Type",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Processing/Clearing office",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "TANSAD Number & Date",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": " CL. Plan",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Consignee Freight Charges",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Currency",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Total Invoice Value ",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Invoice No. & Date",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Insurance",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "No Pckgs",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Gross Weight",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "AWB/BL/RCN/Shipping Order",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Clearing Agent Ref. No & Date",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "H.S. Code",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Item (s) Description",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "IMP",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "CPF",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "RDL",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "VAT",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Total Taxes for Item (s)",
+    "document_attribute_value": null,
+    "parent": "ASSESSMENT DOCUMENT",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Clearing Document Type",
+  "document_type": "ASSESSMENT DOCUMENT",
+  "modified": "2024-08-14 13:08:35.862469",
+  "name": "ASSESSMENT DOCUMENT"
+ },
+ {
+  "clearing_document_attribute": [
+   {
+    "document_attribute": "Number of Commercial Invoices ",
+    "document_attribute_value": null,
+    "parent": "COMMERCIAL INVOICE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Commercial Reference No. (s)",
+    "document_attribute_value": null,
+    "parent": "COMMERCIAL INVOICE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Commercial Reference Date (s)",
+    "document_attribute_value": null,
+    "parent": "COMMERCIAL INVOICE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "HSN (s)",
+    "document_attribute_value": null,
+    "parent": "COMMERCIAL INVOICE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   },
+   {
+    "document_attribute": "Grand Total ",
+    "document_attribute_value": null,
+    "parent": "COMMERCIAL INVOICE",
+    "parentfield": "clearing_document_attribute",
+    "parenttype": "Clearing Document Type"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Clearing Document Type",
+  "document_type": "COMMERCIAL INVOICE",
+  "modified": "2024-08-14 13:15:00.867212",
+  "name": "COMMERCIAL INVOICE"
+ }
+]

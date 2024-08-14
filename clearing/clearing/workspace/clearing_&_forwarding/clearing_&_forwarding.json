@@ -15,25 +15,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Main Documents",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Clearing File",
-   "link_count": 0,
-   "link_to": "Clearing File",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Finance",
    "link_count": 1,
    "link_type": "DocType",
@@ -161,6 +142,35 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Clearing Document Type",
+   "link_count": 0,
+   "link_to": "Clearing Document Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Main Documents",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Clearing File",
+   "link_count": 0,
+   "link_to": "Clearing File",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Clearing Document",
    "link_count": 0,
    "link_to": "Clearing Document",
@@ -169,7 +179,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-08-12 16:20:14.315983",
+ "modified": "2024-08-14 11:19:23.374519",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing & Forwarding",

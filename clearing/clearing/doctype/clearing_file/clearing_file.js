@@ -1,3 +1,5 @@
+// Copyright (c) 2024, Nelson Mpanju and contributors
+// For license information, please see license.txt
 
 frappe.ui.form.on('Clearing File', {
     refresh: function(frm) {
@@ -49,6 +51,30 @@ frappe.ui.form.on('Clearing File', {
             frm.set_value('customer_address', '');
         }
     },
+    // Function to update cargo_description field on parent doctype
+    update_cargo_description: function(frm) {
+        let descriptions = [];
+        frm.doc.cargo_details.forEach(function (row) {
+            if (row.cargo_description) {
+                descriptions.push(row.cargo_description);
+            }
+        });
+        frm.set_value('cargo_description', descriptions.join('\n'));
+    }
+});
+
+// Trigger update when the form is loaded
+frappe.ui.form.on('Clearing File', {
+    refreshafter_save: function(frm) {
+        frm.trigger('update_cargo_description');
+    }
+});
+
+// Trigger update when a row in the child table is added or edited
+frappe.ui.form.on('Cargo Details', {
+    cargo_description: function(frm) {
+        frm.trigger('update_cargo_description');
+    }
 });
 
 frappe.ui.form.on('Cargo', {

@@ -25,6 +25,7 @@
   "shipper_address",
   "shipment_type",
   "mode_of_transport",
+  "bl_type",
   "column_break_b8in0",
   "carrier_name",
   "airline",
@@ -35,11 +36,18 @@
   "documents_section",
   "cargo_details_section",
   "cargo_details",
+  "section_break_xl9ew",
+  "cargo_description",
+  "column_break_nqelm",
+  "column_break_z7sfz",
+  "document_section_section",
+  "document",
   "additional_information_section",
   "notes",
   "column_break_abtcq",
   "special_instructions",
   "connections_tab",
+  "tab_break_efaed",
   "amended_from"
  ],
  "fields": [
@@ -76,19 +84,22 @@
   {
    "fieldname": "shipment_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Shipment Type",
    "options": "Import\nExport"
   },
   {
    "fieldname": "mode_of_transport",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Mode of Transport",
    "options": "Sea\nAir\nLand"
   },
   {
    "fieldname": "arrival_date",
    "fieldtype": "Date",
-   "label": "Arrival Date"
+   "in_list_view": 1,
+   "label": "Arrival Date (ETA)"
   },
   {
    "fieldname": "departure_date",
@@ -175,6 +186,7 @@
    "default": "Today",
    "fieldname": "posting_date",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Posting Date"
   },
   {
@@ -246,12 +258,54 @@
   {
    "fieldname": "column_break_i0bse",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_section_section",
+   "fieldtype": "Section Break",
+   "label": "Document Section"
+  },
+  {
+   "fieldname": "document",
+   "fieldtype": "Table",
+   "label": "Document",
+   "options": "Clearing File Document"
+  },
+  {
+   "fieldname": "cargo_description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Cargo Description",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_xl9ew",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_nqelm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_z7sfz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tab_break_efaed",
+   "fieldtype": "Tab Break",
+   "label": "Issue & Claim "
+  },
+  {
+   "fieldname": "bl_type",
+   "fieldtype": "Select",
+   "label": "B/L Type",
+   "options": "\nOriginal B/L\nSeaway Bill\nTelex B/L",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-12 16:17:42.744068",
+ "modified": "2024-08-14 14:01:51.261406",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing File",
