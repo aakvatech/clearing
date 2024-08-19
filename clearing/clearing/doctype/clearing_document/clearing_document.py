@@ -54,8 +54,7 @@ def populate_document_in_parent(doc):
             value = row.document_attribute_value
             if attribute and value:
                 document_attributes += f"{attribute}: {value}\n"
-        frappe.msgprint(document_attributes)
-
+        
         document_entry = {
             "document_name": doc.document_type,
             "document_received": doc.get("document_received", 1),  # Default to received
