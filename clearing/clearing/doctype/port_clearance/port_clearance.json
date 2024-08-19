@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:PC-{YY}-{####}",
+ "autoname": "format:Port-{YY}-{####}",
  "creation": "2024-07-17 15:23:46.971435",
  "default_view": "List",
  "doctype": "DocType",
@@ -10,28 +10,35 @@
  "field_order": [
   "clearing_file",
   "column_break_dfl0o",
-  "tpa_payment_note_ref_no",
-  "tpa_payment_note",
+  "consignee",
+  "consignee_address",
   "truck_announcement_details_section",
+  "exporter_type",
+  "sub_contact_company",
   "truck_number",
   "column_break_zycbo",
   "driver_name",
   "drivers_licence_number",
-  "gate_pass_section",
-  "gate_in_ticket_ref_no",
-  "get_in_ticket",
-  "column_break_ebycg",
-  "gate_pass_a_ref_no",
-  "gate_pass_a",
-  "column_break_rcs4j",
+  "document_section_section",
+  "document",
+  "interchange_section_section",
+  "return_date",
+  "container_number",
+  "container_size",
+  "column_break_pcgzx",
+  "staff_id",
   "amended_from"
  ],
  "fields": [
   {
    "fieldname": "clearing_file",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Clearing File",
-   "options": "Clearing File"
+   "no_copy": 1,
+   "options": "Clearing File",
+   "unique": 1
   },
   {
    "fieldname": "amended_from",
@@ -42,16 +49,6 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
-  },
-  {
-   "fieldname": "tpa_payment_note_ref_no",
-   "fieldtype": "Data",
-   "label": "TPA Payment Note ref No"
-  },
-  {
-   "fieldname": "tpa_payment_note",
-   "fieldtype": "Attach",
-   "label": "TPA Payment Note "
   },
   {
    "fieldname": "truck_announcement_details_section",
@@ -70,6 +67,8 @@
   {
    "fieldname": "driver_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Driver name"
   },
   {
@@ -78,47 +77,84 @@
    "label": "Driver's Licence Number"
   },
   {
-   "fieldname": "gate_pass_section",
-   "fieldtype": "Section Break",
-   "label": "Gate Pass"
-  },
-  {
-   "fieldname": "gate_in_ticket_ref_no",
-   "fieldtype": "Data",
-   "label": "Gate IN ticket ref No"
-  },
-  {
-   "fieldname": "get_in_ticket",
-   "fieldtype": "Attach",
-   "label": "Get IN ticket"
-  },
-  {
-   "fieldname": "column_break_ebycg",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "gate_pass_a_ref_no",
-   "fieldtype": "Data",
-   "label": "Gate Pass A ref No"
-  },
-  {
-   "fieldname": "gate_pass_a",
-   "fieldtype": "Attach",
-   "label": "Gate Pass A"
-  },
-  {
-   "fieldname": "column_break_rcs4j",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "column_break_dfl0o",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_section_section",
+   "fieldtype": "Section Break",
+   "label": "Document Section"
+  },
+  {
+   "fieldname": "document",
+   "fieldtype": "Table",
+   "label": "Document",
+   "options": "Port clearance Document"
+  },
+  {
+   "fieldname": "exporter_type",
+   "fieldtype": "Select",
+   "label": "Exporter Type",
+   "options": "In House\nSub-Contract"
+  },
+  {
+   "fetch_from": "clearing_file.customer",
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Consignee",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "clearing_file.address_display",
+   "fieldname": "consignee_address",
+   "fieldtype": "Small Text",
+   "label": "Consignee Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sub_contact_company",
+   "fieldtype": "Data",
+   "label": "Sub-contact Company "
+  },
+  {
+   "fieldname": "interchange_section_section",
+   "fieldtype": "Section Break",
+   "label": "Interchange Section"
+  },
+  {
+   "fieldname": "return_date",
+   "fieldtype": "Date",
+   "label": "Return Date"
+  },
+  {
+   "fieldname": "container_number",
+   "fieldtype": "Data",
+   "label": "Container Number"
+  },
+  {
+   "fieldname": "container_size",
+   "fieldtype": "Select",
+   "label": "Container Size",
+   "options": "40ft\n20ft"
+  },
+  {
+   "fieldname": "column_break_pcgzx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "staff_id",
+   "fieldtype": "Link",
+   "label": "Staff ID",
+   "options": "Employee"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-23 11:20:47.645800",
+ "modified": "2024-08-19 10:40:50.358871",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Port Clearance",

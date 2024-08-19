@@ -9,6 +9,7 @@
   "details_tab",
   "posting_date",
   "column_break_hcemj",
+  "company",
   "status",
   "customer_details_section",
   "customer",
@@ -19,7 +20,6 @@
   "employee_id",
   "column_break_i0bse",
   "employee_name",
-  "column_break_4v7kz",
   "clearing_company",
   "shipment_details_section",
   "shipper_address",
@@ -47,7 +47,6 @@
   "column_break_abtcq",
   "special_instructions",
   "connections_tab",
-  "tab_break_efaed",
   "amended_from"
  ],
  "fields": [
@@ -116,9 +115,8 @@
   {
    "depends_on": "eval:(doc.mode_of_transport == 'Sea')",
    "fieldname": "voyage_flight_number",
-   "fieldtype": "Link",
-   "label": "Shipping Vessel Number ",
-   "options": "Shipment Vessel"
+   "fieldtype": "Data",
+   "label": "Shipping Vessel Number "
   },
   {
    "fieldname": "cargo_details_section",
@@ -135,7 +133,9 @@
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_filter": 1,
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
    "options": "Pre-Lodged\nPayment Pending\nPayment Completed\nCleared\nDelivered",
    "reqd": 1
@@ -230,10 +230,6 @@
    "options": "Shipper"
   },
   {
-   "fieldname": "column_break_4v7kz",
-   "fieldtype": "Column Break"
-  },
-  {
    "fetch_from": "clearing_agent.clearing_company",
    "fieldname": "clearing_company",
    "fieldtype": "Data",
@@ -268,13 +264,14 @@
    "fieldname": "document",
    "fieldtype": "Table",
    "label": "Document",
-   "options": "Clearing File Document"
+   "options": "Clearing File Document",
+   "read_only": 1
   },
   {
    "fieldname": "cargo_description",
    "fieldtype": "Small Text",
    "in_list_view": 1,
-   "label": "Cargo Description",
+   "label": "Cargo Description Summary",
    "read_only": 1
   },
   {
@@ -290,22 +287,24 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "tab_break_efaed",
-   "fieldtype": "Tab Break",
-   "label": "Issue & Claim "
-  },
-  {
    "fieldname": "bl_type",
    "fieldtype": "Select",
-   "label": "B/L Type",
+   "label": "B/L Status",
    "options": "\nOriginal B/L\nSeaway Bill\nTelex B/L",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
    "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-14 14:01:51.261406",
+ "modified": "2024-08-19 10:25:05.327093",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing File",

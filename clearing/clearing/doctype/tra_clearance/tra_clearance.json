@@ -1,13 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:CC-{YY}-{####}",
+ "autoname": "format:TRA-{YY}-{####}",
  "creation": "2024-06-03 23:04:07.717815",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "basic_details_section",
-  "clearing_file_number",
+  "clearing_file",
   "customer",
   "column_break_yxf5j",
   "status",
@@ -20,13 +20,6 @@
   "clearing_file_reference"
  ],
  "fields": [
-  {
-   "fieldname": "clearing_file_number",
-   "fieldtype": "Link",
-   "label": "Clearing File Number",
-   "options": "Clearing File",
-   "reqd": 1
-  },
   {
    "fieldname": "status",
    "fieldtype": "Select",
@@ -63,7 +56,6 @@
    "read_only": 1
   },
   {
-   "fetch_from": "clearing_file_number.clearing_agent",
    "fieldname": "clearing_agent",
    "fieldtype": "Link",
    "label": "Clearing Agent",
@@ -97,12 +89,21 @@
    "fieldtype": "Table",
    "label": "Document",
    "options": "TRA Document"
+  },
+  {
+   "fieldname": "clearing_file",
+   "fieldtype": "Link",
+   "label": "Clearing File ",
+   "no_copy": 1,
+   "options": "Clearing File",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-14 11:31:28.819072",
+ "modified": "2024-08-18 10:26:54.730352",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "TRA Clearance",

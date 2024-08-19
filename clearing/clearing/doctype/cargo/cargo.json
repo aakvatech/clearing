@@ -16,9 +16,12 @@
   "column_break_2",
   "weight",
   "volume",
+  "country_of_origin",
   "column_break_3",
   "value",
-  "country_of_origin"
+  "currency",
+  "trading_country",
+  "country_last_consignment"
  ],
  "fields": [
   {
@@ -55,7 +58,7 @@
   {
    "fieldname": "country_of_origin",
    "fieldtype": "Link",
-   "label": "Country of Origin",
+   "label": "Cargo's country of Origin",
    "options": "Country",
    "reqd": 1
   },
@@ -91,12 +94,30 @@
    "fieldname": "number_of_packages",
    "fieldtype": "Int",
    "label": "Number of packages"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "trading_country",
+   "fieldtype": "Link",
+   "label": "Trading Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "country_last_consignment",
+   "fieldtype": "Link",
+   "label": "Country Last Consignment",
+   "options": "Country"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-18 12:38:27.485914",
+ "modified": "2024-08-16 09:44:26.850736",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Cargo",

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:consigee",
  "creation": "2024-07-15 23:20:46.142648",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -60,7 +61,8 @@
    "in_list_view": 1,
    "label": "Consigee",
    "options": "Customer",
-   "read_only": 1
+   "read_only": 1,
+   "unique": 1
   },
   {
    "fieldname": "charges",
@@ -89,10 +91,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-12 12:05:36.029251",
+ "modified": "2024-08-18 14:04:58.719008",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing Charges",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

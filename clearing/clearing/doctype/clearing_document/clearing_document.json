@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:document_type",
  "creation": "2024-08-09 15:00:59.378959",
  "default_view": "List",
  "doctype": "DocType",
@@ -8,18 +9,15 @@
  "engine": "InnoDB",
  "field_order": [
   "clearing_file",
+  "consignee",
+  "linked_file",
   "column_break_rge6c",
+  "posting_date",
   "company",
   "section_break_4uwiw",
   "document_type",
-  "document_reference_number",
-  "document_date",
-  "expiry_date",
   "column_break_1q3mq",
   "document_attachment",
-  "document_note",
-  "payment_status",
-  "receipt_status",
   "document_attributes_section",
   "clearing_document_attributes"
  ],
@@ -27,49 +25,15 @@
   {
    "fieldname": "document_type",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Document Type",
    "options": "Clearing Document Type",
-   "reqd": 1
-  },
-  {
-   "fieldname": "document_reference_number",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Document Reference Number"
-  },
-  {
-   "fieldname": "document_date",
-   "fieldtype": "Date",
-   "label": "Document Date",
-   "options": " "
-  },
-  {
-   "fieldname": "expiry_date",
-   "fieldtype": "Date",
-   "label": "Expiry Date"
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "document_attachment",
    "fieldtype": "Attach",
    "label": "Document Attachment"
-  },
-  {
-   "fieldname": "document_note",
-   "fieldtype": "Data",
-   "label": "Document Note"
-  },
-  {
-   "fieldname": "payment_status",
-   "fieldtype": "Select",
-   "label": "Payment Status",
-   "options": "Not Paid\nPaid\nNot Applicable"
-  },
-  {
-   "fieldname": "receipt_status",
-   "fieldtype": "Select",
-   "label": "Receipt Status",
-   "options": "Not Received\nReceived"
   },
   {
    "fieldname": "document_attributes_section",
@@ -95,6 +59,9 @@
   {
    "fieldname": "clearing_file",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Clearing File",
    "options": "Clearing File",
    "reqd": 1
@@ -106,14 +73,42 @@
   {
    "fieldname": "column_break_rge6c",
    "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "linked_file",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Linked Document",
+   "options": "Clearing File\nTRA Clearance\nPort Clearance\nShipment Clearance",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "clearing_file.customer",
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Consignee",
+   "options": "Customer",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-12 16:25:21.622384",
+ "modified": "2024-08-18 14:27:58.120281",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing Document",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

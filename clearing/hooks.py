@@ -219,15 +219,25 @@ fixtures = [
         "filters": [
             [
                 "name", "in", [
-                    "COMMERCIAL INVOICE",
-                    "ASSESSMENT DOCUMENT",
-                    "PAYMENT NOTE",
-                    "TISS - TZDL",
-                    "TANZANIA BUREAU OF STANDARDS-DEBIT ADVICE",
-                    "PRE-EXPORT VERIFICATION OF CONFORMITY (PVoC)",
-                    "DELIVERY ORDER",
-                    "EXPRESS B/L",
-                    "Bill of Lading"
+                    "Import Duty Payment Receipt",
+                    "Import Declaration",
+                    "Inspection Certificate",
+                    "Health Certificate",
+                    "Phytosanitary Certificate",
+                    "Letter of Credit (LC)",
+                    "Import License",
+                    "Packing List",
+                    "Bill of Lading B/L",
+                    "Air Waybill (AWB)",
+                    "Delivery Order",
+                    "Insurance Certificate",
+                    "Certificate of Origin",
+                    "Payment Note",
+                    "Bank Document",
+                    "Commercial Invoice",
+                    "Assessment Document",
+                    "Tanzania Bureau Of Standards - Debit Advice",
+                    "Pre-Export Verification of Conformity (PVoC)"
                 ]
             ]
         ]

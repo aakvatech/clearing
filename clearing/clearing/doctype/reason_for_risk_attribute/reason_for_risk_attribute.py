@@ -4,5 +4,5 @@
 # import frappe
 from frappe.model.document import Document
 
-class TRAClearance(Document):
-    pass
+class ReasonforRiskAttribute(Document):
+	pass

@@ -6,8 +6,8 @@ from frappe.model.document import Document
 from frappe.contacts.doctype.address.address import get_address_display
 
 class ClearingFile(Document):
-    def validate(self):
-        self.check_mandatory_fields_and_attachments()
+    pass
+
 
 
 @frappe.whitelist()

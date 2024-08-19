@@ -1,0 +1,169 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PV-{YYYY}-{####}",
+ "creation": "2024-06-03 23:08:39.906886",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "clearing_file",
+  "column_break_uyof8",
+  "verification_status",
+  "verification_section",
+  "consignee",
+  "consignee_address",
+  "address_display",
+  "column_break_ccdqe",
+  "inspection_date",
+  "verification_location",
+  "field_department_section",
+  "staff_id",
+  "column_break_cma1x",
+  "staff_name",
+  "additional_notes_section",
+  "notes",
+  "column_break_c45ta",
+  "site_images",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "verification_section",
+   "fieldtype": "Section Break",
+   "label": "Verification Details"
+  },
+  {
+   "fieldname": "inspection_date",
+   "fieldtype": "Datetime",
+   "label": "Inspection Date"
+  },
+  {
+   "fieldname": "verification_status",
+   "fieldtype": "Select",
+   "label": "Verification Status",
+   "options": "Pending\nCompleted"
+  },
+  {
+   "fieldname": "additional_notes_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "column_break_ccdqe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uyof8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Physical Verification",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "clearing_file_number.customer",
+   "fieldname": "consignee",
+   "fieldtype": "Link",
+   "label": "Consignee",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "consignee_address",
+   "fieldtype": "Link",
+   "label": "Consignee Address",
+   "options": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "field_department_section",
+   "fieldtype": "Section Break",
+   "label": "Field Department"
+  },
+  {
+   "fieldname": "staff_id",
+   "fieldtype": "Link",
+   "label": "Staff ID",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_cma1x",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "staff_id.employee_name",
+   "fieldname": "staff_name",
+   "fieldtype": "Data",
+   "label": "Staff Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "verification_location",
+   "fieldtype": "Data",
+   "label": "Verification Location"
+  },
+  {
+   "fieldname": "column_break_c45ta",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "site_images",
+   "fieldtype": "Table",
+   "label": "Site Images",
+   "options": "Physical Verification Image"
+  },
+  {
+   "fieldname": "clearing_file",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Clearing File",
+   "no_copy": 1,
+   "options": "Clearing File",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "clearing_file.address_display",
+   "fieldname": "address_display",
+   "fieldtype": "Small Text",
+   "label": "Address & Contact",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-19 09:13:07.424847",
+ "modified_by": "Administrator",
+ "module": "Clearing",
+ "name": "Physical Verification",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
