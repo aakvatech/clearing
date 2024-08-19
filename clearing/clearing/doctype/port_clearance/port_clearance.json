@@ -27,6 +27,7 @@
   "container_size",
   "column_break_pcgzx",
   "staff_id",
+  "staff_name",
   "amended_from"
  ],
  "fields": [
@@ -149,12 +150,19 @@
    "fieldtype": "Link",
    "label": "Staff ID",
    "options": "Employee"
+  },
+  {
+   "fetch_from": "staff_id.employee_name",
+   "fieldname": "staff_name",
+   "fieldtype": "Data",
+   "label": "Staff Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-19 10:40:50.358871",
+ "modified": "2024-08-19 11:00:04.622507",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Port Clearance",
