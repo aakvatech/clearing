@@ -57,13 +57,10 @@ def populate_document_in_parent(doc):
         
         document_entry = {
             "document_name": doc.document_type,
-            "document_received": doc.get("document_received", 1),  # Default to received
+            "document_received": doc.get("document_received", 1), 
             "submission_date": doc.get("submission_date", frappe.utils.now_datetime()),
-            "document_attributes": document_attributes.strip()
+            "document_attributes": document_attributes
         }
-        
-
-
        
         parent_doc.append(parent_config['child_table'], document_entry)
 
@@ -72,3 +69,4 @@ def populate_document_in_parent(doc):
 
        
         frappe.msgprint(f"Document {doc.document_type} appended to {parent_config['doctype']}")
+

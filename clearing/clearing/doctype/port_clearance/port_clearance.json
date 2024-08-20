@@ -11,6 +11,8 @@
   "clearing_file",
   "column_break_dfl0o",
   "consignee",
+  "status",
+  "paid_by_clearing_agent",
   "consignee_address",
   "truck_announcement_details_section",
   "exporter_type",
@@ -157,12 +159,24 @@
    "fieldtype": "Data",
    "label": "Staff Name",
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "paid_by_clearing_agent",
+   "fieldtype": "Check",
+   "label": "Paid By Clearing Agent"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Unpaid\nPaid"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-19 11:00:04.622507",
+ "modified": "2024-08-20 18:32:02.715846",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Port Clearance",

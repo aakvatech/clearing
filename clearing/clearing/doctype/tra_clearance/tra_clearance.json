@@ -11,6 +11,7 @@
   "customer",
   "column_break_yxf5j",
   "status",
+  "paid_by_clearing_agent",
   "clearing_agent",
   "document_section_section",
   "document",
@@ -98,12 +99,18 @@
    "options": "Clearing File",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "paid_by_clearing_agent",
+   "fieldtype": "Check",
+   "label": "Paid By Clearing Agent"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-18 10:26:54.730352",
+ "modified": "2024-08-20 18:07:01.230987",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "TRA Clearance",

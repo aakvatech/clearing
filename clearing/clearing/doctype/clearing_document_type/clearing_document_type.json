@@ -9,6 +9,9 @@
  "engine": "InnoDB",
  "field_order": [
   "document_type",
+  "column_break_clekm",
+  "linked_document",
+  "section_break_kfmgo",
   "clearing_document_attribute"
  ],
  "fields": [
@@ -23,11 +26,25 @@
    "fieldtype": "Table",
    "label": "Clearing Document Attribute",
    "options": "Clearing Document Attribute"
+  },
+  {
+   "fieldname": "column_break_clekm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "linked_document",
+   "fieldtype": "Select",
+   "label": "Linked Document",
+   "options": "\nClearing File\nTRA Clearance\nShipment Clearance\nPort Clearance"
+  },
+  {
+   "fieldname": "section_break_kfmgo",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-09 15:08:07.289075",
+ "modified": "2024-08-20 17:04:36.459876",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing Document Type",
