@@ -45,8 +45,8 @@ frappe.ui.form.on('Clearing File', {
         handle_clearance_creation(
             'TRA Clearance', 
             'TRA Clearance', 
-            { clearing_file_number: frm.doc.name }, 
-            { doctype: 'TRA Clearance', clearing_file_number: frm.doc.name, customer: frm.doc.customer, status: 'Payment Pending' },
+            { clearing_file: frm.doc.name }, 
+            { doctype: 'TRA Clearance', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Payment Pending' },
             'TRA Clearance created successfully'
         );
 

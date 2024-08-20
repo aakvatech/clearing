@@ -4,18 +4,17 @@ def get_data():
     return {
         "fieldname": "name",  # Primary field for linking
         "non_standard_fieldnames": {
-            "Customs Clearance": "clearing_file_number",
-            "Physical Verification Booking": "clearing_file_number",
+            "TRA Clearance": "clearing_file",
+            "Physical Verification": "clearing_file",
             "Shipment Clearance": "clearing_file",
             "Port Clearance": "clearing_file",
+            "Clearing Document": "clearing_file"
         },
         "internal_links": {
             "Customer": "customer",
-            "Clearing Agent": "clearing_agent",
             "Shipping Line": "carrier_name",
-            "Airline": "airline",
             "Airplane": "airplane",
-            "Shipment Vessel": "voyage_flight_number",
+        
         },
         # "internal_and_external_links": {
         #     "Customs Clearance": ["customs_clearance", "clearing_file"],
@@ -27,7 +26,7 @@ def get_data():
             {
                 "label": _("Clearance Processes"),
                 "items": [
-                    "Customs Clearance",
+                    "TRA Clearance",
                     "Physical Verification Booking",
                     "Shipment Clearance",
                     "Port Clearance",
@@ -37,7 +36,12 @@ def get_data():
                 "label": _("Stakeholders"),
                 "items": [
                     "Customer",
-                    "Clearing Agent",
+                ],
+            },
+            {
+                "label": _("Attached Documents"),
+                "items": [
+                    "Clearing Document",
                 ],
             },
             {
@@ -45,8 +49,6 @@ def get_data():
                 "items": [
                     "Shipping Line",
                     "Airline",
-                    "Airplane",
-                    "Shipment Vessel",
                 ],
             },
         ],

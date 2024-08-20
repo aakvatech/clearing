@@ -83,7 +83,6 @@
   {
    "fieldname": "shipment_type",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "label": "Shipment Type",
    "options": "Import\nExport"
   },
@@ -304,7 +303,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-19 10:25:05.327093",
+ "modified": "2024-08-20 14:09:19.452911",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing File",

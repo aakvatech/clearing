@@ -18,7 +18,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Document Name",
-   "options": "Clearing Document"
+   "options": "Clearing Document Type"
   },
   {
    "default": "0",
@@ -41,7 +41,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-08-19 09:32:33.404401",
+ "modified": "2024-08-20 13:52:23.342333",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Port clearance Document",
