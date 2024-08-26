@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:name1",
  "creation": "2024-08-12 13:00:01.426486",
  "default_view": "List",
  "doctype": "DocType",
@@ -10,13 +11,14 @@
   "name1",
   "column_break_omxjk",
   "address",
-  "address_display"
+  "address_html"
  ],
  "fields": [
   {
    "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Name"
+   "label": "Name",
+   "unique": 1
   },
   {
    "fieldname": "column_break_omxjk",
@@ -29,17 +31,19 @@
    "options": "Address"
   },
   {
-   "fieldname": "address_display",
+   "fetch_from": "address.email_id",
+   "fieldname": "address_html",
    "fieldtype": "HTML",
    "label": "Address"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-12 13:00:01.426486",
+ "modified": "2024-08-25 20:48:06.351143",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Shipper",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

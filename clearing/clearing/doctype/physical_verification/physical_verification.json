@@ -35,11 +35,14 @@
   {
    "fieldname": "inspection_date",
    "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Inspection Date"
   },
   {
    "fieldname": "verification_status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Verification Status",
    "options": "Pending\nCompleted"
   },
@@ -75,6 +78,7 @@
    "fetch_from": "clearing_file.customer",
    "fieldname": "consignee",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Consignee",
    "options": "Customer"
   },
@@ -111,6 +115,7 @@
   {
    "fieldname": "verification_location",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Verification Location"
   },
   {
@@ -144,7 +149,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-20 14:01:50.544260",
+ "modified": "2024-08-26 14:49:06.448567",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Physical Verification",

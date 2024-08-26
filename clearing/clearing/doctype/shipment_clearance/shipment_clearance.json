@@ -14,7 +14,13 @@
   "posting_date",
   "status",
   "paid_by_clearing_agent",
+  "staff_id",
+  "staff_name",
   "section_break_keyml",
+  "column_break_u9iyv",
+  "column_break_zhir1",
+  "attach_documents",
+  "section_break_uevyo",
   "document",
   "amended_from"
  ],
@@ -75,12 +81,43 @@
    "fieldname": "paid_by_clearing_agent",
    "fieldtype": "Check",
    "label": "Paid By Clearing Agent"
+  },
+  {
+   "fieldname": "column_break_u9iyv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zhir1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attach_documents",
+   "fieldtype": "Button",
+   "label": "Attach Documents"
+  },
+  {
+   "fieldname": "section_break_uevyo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "staff_id",
+   "fieldtype": "Link",
+   "label": "Staff ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "staff_id.employee_name",
+   "fieldname": "staff_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Staff Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-20 18:06:33.178509",
+ "modified": "2024-08-26 14:44:40.580021",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Shipment Clearance",

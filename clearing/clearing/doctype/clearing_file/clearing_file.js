@@ -4,80 +4,215 @@
 frappe.ui.form.on('Clearing File', {
     refresh: function(frm) {
         // Function to handle the creation or redirection of documents
-        function handle_clearance_creation(doctype, label, filters, new_doc_data, success_message) {
-            if (!frm.custom_buttons[`Create ${label}`]) {
-                frm.add_custom_button(__(`Create ${label}`), function() {
-
-                    frappe.call({
-                        method: "frappe.client.get_list",
-                        args: {
-                            doctype: doctype,
-                            filters: filters,
-                            limit: 1
-                        },
-                        callback: function(r) {
-                            if (r.message && r.message.length > 0) {
-                                // If the document exists, redirect to the existing document
-                                frappe.msgprint(__(`${label} already exists.`));
-                                frappe.set_route('Form', doctype, r.message[0].name);
-                            } else {
-                                // If the document doesn't exist, create a new one
-                                frappe.call({
-                                    method: "frappe.client.insert",
-                                    args: {
-                                        doc: new_doc_data
-                                    },
-                                    callback: function(r) {
-                                        if (!r.exc) {
-                                            frappe.msgprint(__(`${success_message}`));
-                                            frappe.set_route('Form', doctype, r.message.name);
-                                        }
-                                    }
-                                });
-                            }
-                        }
-                    });
-                }, 'Create');
+            const container = document.querySelector('[data-fieldname="attach_documents"]');
+    
+            if (container) {
+                // Find the button element within the container
+                const button = container.querySelector('button');
+    
+                // Override the entire class of the button with the new class
+                if (button) {
+                    button.className = 'btn btn-xs btn-default bold btn-primary';
+                }
             }
+        
+        function handle_clearance_creation(doctype, label, filters, new_doc_data, success_message) {
+            frm.add_custom_button(__(`${label}`), function() {
+                frappe.call({
+                    method: "frappe.client.get_list",
+                    args: {
+                        doctype: doctype,
+                        filters: filters,
+                        limit: 1
+                    },
+                    callback: function(r) {
+                        if (r.message && r.message.length > 0) {
+                            // If the document exists, redirect to the existing document
+                            frappe.set_route('Form', doctype, r.message[0].name);
+                        } else {
+                            // If the document doesn't exist, create a new one
+                            frappe.call({
+                                method: "frappe.client.insert",
+                                args: {
+                                    doc: new_doc_data
+                                },
+                                callback: function(r) {
+                                    if (!r.exc) {
+                                        frappe.msgprint(__(`${success_message}`));
+                                        frappe.set_route('Form', doctype, r.message.name);
+                                    }
+                                }
+                            });
+                        }
+                    }
+                });
+            }, );
         }
-
+    
         // Create or redirect for TRA Clearance
         handle_clearance_creation(
             'TRA Clearance', 
             'TRA Clearance', 
             { clearing_file: frm.doc.name }, 
             { doctype: 'TRA Clearance', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Payment Pending' },
-            'TRA Clearance created successfully'
+            'TRA Clearance created successfully',
         );
-
+    
         // Create or redirect for Shipment Clearance
         handle_clearance_creation(
             'Shipment Clearance', 
             'Shipment Clearance', 
             { clearing_file: frm.doc.name }, 
             { doctype: 'Shipment Clearance', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Unpaid' },
-            'Shipment Clearance created successfully'
+            'Shipment Clearance created successfully',
         );
-
+    
         // Create or redirect for Physical Verification
         handle_clearance_creation(
             'Physical Verification', 
             'Physical Verification', 
             { clearing_file: frm.doc.name }, 
             { doctype: 'Physical Verification', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Pending' },
-            'Physical Verification created successfully'
+            'Physical Verification created successfully',
         );
-
+    
         // Create or redirect for Port Clearance
         handle_clearance_creation(
             'Port Clearance', 
             'Port Clearance', 
             { clearing_file: frm.doc.name }, 
             { doctype: 'Port Clearance', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Pending' },
-            'Port Clearance created successfully'
+            'Port Clearance created successfully',
         );
     },
 
+    attach_documents: function(frm) {
+        // Create the dialog for document attachment
+        let d = new frappe.ui.Dialog({
+            title: 'Enter details',
+            fields: [
+                {
+                    label: 'Document Type',
+                    fieldname: 'document_type',
+                    fieldtype: 'Link',
+                    options: 'Clearing Document Type',
+                    change: function() {
+                        let document_type = d.get_value('document_type');
+                        if (document_type) {
+                            frappe.call({
+                                method: 'frappe.client.get',
+                                args: {
+                                    doctype: 'Clearing Document Type',
+                                    name: document_type
+                                },
+                                callback: function(r) {
+                                    if (r.message && r.message.clearing_document_attribute) {;
+    
+                                        // Clear the existing rows in the table field
+                                        let attributes_table = d.get_field('document_attributes').grid;
+                                        attributes_table.df.data = []; // Clear existing data
+                                        attributes_table.refresh();
+        
+                                        // Populate the table with attributes
+                                        r.message.clearing_document_attribute.forEach((aattribute, idx) => {
+                                            d.fields_dict.document_attributes.df.data.push({
+                                                attribute: aattribute.document_attribute,
+                                                value: '' // Leave value blank for the user to fill in
+                                            });
+                                        });
+        
+                                        attributes_table.refresh();
+                                    } else {
+                                        console.error('No attributes found for the selected document type.');
+                                        frappe.msgprint(__('No attributes found for the selected document type.'));
+                                    }
+                                },
+                                error: function(err) {
+                                    console.error('Error fetching document type attributes:', err);
+                                    frappe.msgprint(__('Failed to retrieve document attributes. Please try again.'));
+                                }
+                            });
+                        }
+                    }
+                },
+                {
+                    fieldname: "attach_document",
+                    fieldtype: 'Column Break'
+                },
+                {
+                    label: 'Attach Document',
+                    fieldname: "attach_document",
+                    fieldtype: 'Attach'
+                },
+                {
+                    fieldname: "attach_document",
+                    fieldtype: 'Section Break'
+                },
+                {
+                    label: 'Document Attributes',
+                    fieldname: 'document_attributes',
+                    fieldtype: 'Table',
+                    options: 'Clearing Document Attribute',
+                    fields: [
+                        {
+                            fieldname: 'attribute',
+                            label: 'Attribute',
+                            fieldtype: 'Data',
+                            in_list_view: 1
+                        },
+                        {
+                            fieldname: 'value',
+                            label: 'Value',
+                            fieldtype: 'Data',
+                            in_list_view: 1
+                        }
+                    ]
+                }
+            ],
+            size: 'large',
+            primary_action_label: 'Submit',
+            primary_action(values) {
+    
+                // Prepare the child table data
+                let clearing_document_attributes = values.document_attributes.map(attr => ({
+                    document_attribute: attr.attribute,
+                    document_attribute_value: attr.value
+                }));
+    
+                // Use Frappe API to create the document
+                frappe.call({
+                    method: "frappe.client.insert",
+                    args: {
+                        doc: {
+                            doctype: "Clearing Document",
+                            clearing_file: frm.doc.name,
+                            document_attachment: values.attach_document,
+                            clearing_document_type: values.clearing_document_type,
+                            document_type: values.document_type,
+                            clearing_document_attributes: clearing_document_attributes // Handle child table
+                        }
+                    },
+                    callback: function(response) {
+                        if (response && response.message) {
+                            frappe.msgprint(__('Clearing Document created successfully.'));
+                            d.hide();
+                        } else {
+                            console.error('Failed to create Clearing Document.');
+                            frappe.msgprint(__('There was an issue creating the Clearing Document. Please try again.'));
+                        }
+                    },
+                    error: function(err) {
+                        console.error('Error during document creation:', err);
+                        frappe.msgprint(__('Failed to create Clearing Document. Please try again.'));
+                    }
+                });
+            }
+        });
+    
+        d.show();
+    },
+   
+    
     customer: function(frm) {
         if (frm.doc.customer) {
             frappe.call({

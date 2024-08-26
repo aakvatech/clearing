@@ -9,11 +9,16 @@
   "basic_details_section",
   "clearing_file",
   "customer",
+  "staff_id",
+  "staff_name",
   "column_break_yxf5j",
   "status",
   "paid_by_clearing_agent",
-  "clearing_agent",
   "document_section_section",
+  "column_break_3gv7k",
+  "column_break_dnwph",
+  "attach_documents",
+  "section_break_lps6b",
   "document",
   "notes_section",
   "notes",
@@ -25,9 +30,9 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
-   "options": "Payment Pending\nPayment Completed",
-   "reqd": 1
+   "options": "Payment Pending\nPayment Completed"
   },
   {
    "fieldname": "notes_section",
@@ -52,15 +57,10 @@
    "fetch_from": "clearing_file_number.customer",
    "fieldname": "customer",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Consignee",
    "options": "Customer",
-   "read_only": 1
-  },
-  {
-   "fieldname": "clearing_agent",
-   "fieldtype": "Link",
-   "label": "Clearing Agent",
-   "options": "Clearing Agent",
    "read_only": 1
   },
   {
@@ -89,7 +89,8 @@
    "fieldname": "document",
    "fieldtype": "Table",
    "label": "Document",
-   "options": "TRA Document"
+   "options": "TRA Document",
+   "read_only": 1
   },
   {
    "fieldname": "clearing_file",
@@ -105,12 +106,43 @@
    "fieldname": "paid_by_clearing_agent",
    "fieldtype": "Check",
    "label": "Paid By Clearing Agent"
+  },
+  {
+   "fieldname": "column_break_3gv7k",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_dnwph",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attach_documents",
+   "fieldtype": "Button",
+   "label": "Attach Documents"
+  },
+  {
+   "fieldname": "section_break_lps6b",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "staff_id",
+   "fieldtype": "Link",
+   "label": "Staff ID",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "staff_id.employee_name",
+   "fieldname": "staff_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Staff Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-20 18:07:01.230987",
+ "modified": "2024-08-26 17:05:06.388195",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "TRA Clearance",
@@ -132,14 +164,5 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [
-  {
-   "color": "Red",
-   "title": "Payment Pending"
-  },
-  {
-   "color": "Green",
-   "title": "Payment Complete"
-  }
- ]
+ "states": []
 }

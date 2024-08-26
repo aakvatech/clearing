@@ -22,7 +22,7 @@
   "employee_name",
   "clearing_company",
   "shipment_details_section",
-  "shipper_address",
+  "shipper",
   "shipment_type",
   "mode_of_transport",
   "bl_type",
@@ -33,7 +33,6 @@
   "airplane",
   "departure_date",
   "arrival_date",
-  "documents_section",
   "cargo_details_section",
   "cargo_details",
   "section_break_xl9ew",
@@ -41,13 +40,20 @@
   "column_break_nqelm",
   "column_break_z7sfz",
   "document_section_section",
+  "column_break_zhgme",
+  "column_break_xx83q",
+  "attach_documents",
+  "section_break_utsgq",
   "document",
   "additional_information_section",
   "notes",
   "column_break_abtcq",
   "special_instructions",
-  "connections_tab",
-  "amended_from"
+  "amended_from",
+  "dashboard_tab",
+  "reee",
+  "stats",
+  "connections_tab"
  ],
  "fields": [
   {
@@ -59,7 +65,7 @@
    "fieldname": "customer",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Consignee",
+   "label": "Consignee/ Customer",
    "options": "Customer",
    "reqd": 1
   },
@@ -134,15 +140,9 @@
    "fieldtype": "Select",
    "in_filter": 1,
    "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Status",
-   "options": "Pre-Lodged\nPayment Pending\nPayment Completed\nCleared\nDelivered",
-   "reqd": 1
-  },
-  {
-   "fieldname": "documents_section",
-   "fieldtype": "Section Break",
-   "label": "Documents"
+   "options": "Open\nPre-Lodged\nPayment Pending\nPayment Completed\nCleared\nDelivered",
+   "read_only": 1
   },
   {
    "fieldname": "additional_information_section",
@@ -223,12 +223,6 @@
    "label": "Details"
   },
   {
-   "fieldname": "shipper_address",
-   "fieldtype": "Link",
-   "label": "Shipper ",
-   "options": "Shipper"
-  },
-  {
    "fetch_from": "clearing_agent.clearing_company",
    "fieldname": "clearing_company",
    "fieldtype": "Data",
@@ -238,8 +232,7 @@
   {
    "fieldname": "employee_id",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Employee ID",
+   "label": "Staff ID",
    "options": "Employee",
    "reqd": 1
   },
@@ -247,7 +240,9 @@
    "fetch_from": "employee_id.employee_name",
    "fieldname": "employee_name",
    "fieldtype": "Data",
-   "label": "Employee's Name",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Staff's Name",
    "read_only": 1
   },
   {
@@ -298,12 +293,50 @@
    "label": "Company",
    "options": "Company",
    "reqd": 1
+  },
+  {
+   "fieldname": "dashboard_tab",
+   "fieldtype": "Tab Break",
+   "label": "Dashboard"
+  },
+  {
+   "fieldname": "reee",
+   "fieldtype": "Data",
+   "label": "reee"
+  },
+  {
+   "fieldname": "stats",
+   "fieldtype": "Section Break",
+   "label": "Stats"
+  },
+  {
+   "fieldname": "attach_documents",
+   "fieldtype": "Button",
+   "label": "Attach Documents"
+  },
+  {
+   "fieldname": "column_break_zhgme",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xx83q",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_utsgq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "shipper",
+   "fieldtype": "Link",
+   "label": "Shipper ",
+   "options": "Shipper"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-20 14:09:19.452911",
+ "modified": "2024-08-26 15:49:53.286562",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing File",
@@ -323,7 +356,17 @@
    "write": 1
   }
  ],
+ "search_fields": "customer,mode_of_transport,bl_type,shipper",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Open"
+  },
+  {
+   "color": "Green",
+   "title": "Pre-Lodged"
+  }
+ ]
 }

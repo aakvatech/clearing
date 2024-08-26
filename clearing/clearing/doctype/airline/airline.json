@@ -10,7 +10,6 @@
  "field_order": [
   "name1",
   "airline_code",
-  "airline_type",
   "column_break_q5l1w",
   "contact_number",
   "email_address",
@@ -27,12 +26,6 @@
    "fieldname": "airline_code",
    "fieldtype": "Data",
    "label": "Airline Code"
-  },
-  {
-   "fieldname": "airline_type",
-   "fieldtype": "Select",
-   "label": "Airline Type",
-   "options": "Passenger\nCargo\nCharter"
   },
   {
    "fieldname": "contact_number",
@@ -56,7 +49,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-28 13:19:55.030251",
+ "modified": "2024-08-23 15:27:18.966803",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Airline",

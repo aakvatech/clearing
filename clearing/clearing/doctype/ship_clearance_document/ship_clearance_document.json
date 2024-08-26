@@ -10,6 +10,7 @@
   "document_name",
   "document_received",
   "column_break_f7dd5",
+  "view_document",
   "document_attributes"
  ],
  "fields": [
@@ -30,18 +31,24 @@
   {
    "fieldname": "document_attributes",
    "fieldtype": "Small Text",
+   "in_list_view": 1,
    "label": "Document Attributes",
    "read_only": 1
   },
   {
    "fieldname": "column_break_f7dd5",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "view_document",
+   "fieldtype": "Attach",
+   "label": "View Document"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-08-20 13:52:12.311410",
+ "modified": "2024-08-26 12:09:13.335146",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Ship clearance Document",

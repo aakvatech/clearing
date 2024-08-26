@@ -14,6 +14,10 @@
   "status",
   "paid_by_clearing_agent",
   "consignee_address",
+  "staff_section",
+  "staff_id",
+  "column_break_kj4eh",
+  "staff_name",
   "truck_announcement_details_section",
   "exporter_type",
   "sub_contact_company",
@@ -22,14 +26,16 @@
   "driver_name",
   "drivers_licence_number",
   "document_section_section",
+  "column_break_hpllj",
+  "column_break_mmpbf",
+  "attach_documents",
+  "section_break_muabn",
   "document",
   "interchange_section_section",
   "return_date",
   "container_number",
   "container_size",
   "column_break_pcgzx",
-  "staff_id",
-  "staff_name",
   "amended_from"
  ],
  "fields": [
@@ -171,12 +177,38 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "Unpaid\nPaid"
+  },
+  {
+   "fieldname": "column_break_hpllj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_mmpbf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attach_documents",
+   "fieldtype": "Button",
+   "label": "Attach Documents"
+  },
+  {
+   "fieldname": "section_break_muabn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "staff_section",
+   "fieldtype": "Section Break",
+   "label": "Staff"
+  },
+  {
+   "fieldname": "column_break_kj4eh",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-20 18:32:02.715846",
+ "modified": "2024-08-26 14:48:05.723668",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Port Clearance",

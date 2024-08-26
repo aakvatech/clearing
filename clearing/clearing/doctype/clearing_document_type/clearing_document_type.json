@@ -11,7 +11,7 @@
   "document_type",
   "column_break_clekm",
   "linked_document",
-  "section_break_kfmgo",
+  "section_break_gi9ev",
   "clearing_document_attribute"
  ],
  "fields": [
@@ -25,7 +25,7 @@
    "fieldname": "clearing_document_attribute",
    "fieldtype": "Table",
    "label": "Clearing Document Attribute",
-   "options": "Clearing Document Attribute"
+   "options": "Clearing Document Type Attribute"
   },
   {
    "fieldname": "column_break_clekm",
@@ -38,13 +38,13 @@
    "options": "\nClearing File\nTRA Clearance\nShipment Clearance\nPort Clearance"
   },
   {
-   "fieldname": "section_break_kfmgo",
+   "fieldname": "section_break_gi9ev",
    "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-20 17:04:36.459876",
+ "modified": "2024-08-23 12:47:56.545522",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing Document Type",
