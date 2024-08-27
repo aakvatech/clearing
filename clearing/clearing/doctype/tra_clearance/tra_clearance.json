@@ -9,6 +9,7 @@
   "basic_details_section",
   "clearing_file",
   "customer",
+  "mode_of_transport",
   "staff_id",
   "staff_name",
   "column_break_yxf5j",
@@ -137,12 +138,19 @@
    "in_list_view": 1,
    "label": "Staff Name",
    "read_only": 1
+  },
+  {
+   "fetch_from": "clearing_file.mode_of_transport",
+   "fieldname": "mode_of_transport",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Mode of Transport"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-26 17:05:06.388195",
+ "modified": "2024-08-27 13:01:01.387397",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "TRA Clearance",
