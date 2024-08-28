@@ -43,7 +43,7 @@ def populate_document_in_parent(doc):
         if not parent_doc.meta.has_field(parent_config['child_table']):
             frappe.throw(f"The child table '{parent_config['child_table']}' does not exist in '{parent_config['doctype']}'.")
 
-        document_attributes = ""
+        document_attributes = "" 
         for row in doc.clearing_document_attributes:
             attribute = row.document_attribute
             value = row.document_attribute_value
@@ -52,16 +52,18 @@ def populate_document_in_parent(doc):
 
         existing_entry = None
         for entry in parent_doc.get(parent_config['child_table']):
-            if entry.document_name == doc.document_type:
+            # Check if both document_name and clearing_file match
+            if entry.document_name == doc.document_type and entry.parent == doc.clearing_file:
                 existing_entry = entry
                 break
 
         if existing_entry:
+            # frappe.msgprint(str(existing_entry.document_attachment))
             # Update the existing entry with the new attributes
             existing_entry.document_received = doc.get("document_received", 1)
             existing_entry.view_document = doc.document_attachment
             existing_entry.submission_date = doc.get("submission_date", frappe.utils.now_datetime())
-            existing_entry.document_attributes = document_attributes
+            existing_entry.document_attributes = doc.get('document_attributes',document_attributes)
             frappe.msgprint(f"Document {doc.document_type} in {parent_config['doctype']} updated successfully.")
         else:
             # Append a new document entry
@@ -70,10 +72,13 @@ def populate_document_in_parent(doc):
                 'view_document': doc.document_attachment,
                 "document_received": doc.get("document_received", 1), 
                 "submission_date": doc.get("submission_date", frappe.utils.now_datetime()),
-                "document_attributes": document_attributes
+                "document_attributes":doc.get('document_attributes',document_attributes),
+                "parent": doc.clearing_file  # Ensure this document is linked to the correct clearing file
             }
             parent_doc.append(parent_config['child_table'], document_entry)
             frappe.msgprint(f"Document {doc.document_type} appended to {parent_config['doctype']}.")
 
         parent_doc.save()
+    else:
+        frappe.throw(f"No valid parent document configuration found for '{doc.linked_file}'")
 

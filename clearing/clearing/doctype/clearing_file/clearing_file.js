@@ -178,6 +178,7 @@ frappe.ui.form.on('Clearing File', {
                     document_attribute: attr.attribute,
                     document_attribute_value: attr.value
                 }));
+                console.log(clearing_document_attributes)
     
                 // Use Frappe API to create the document
                 frappe.call({
@@ -189,7 +190,7 @@ frappe.ui.form.on('Clearing File', {
                             document_attachment: values.attach_document,
                             clearing_document_type: values.clearing_document_type,
                             document_type: values.document_type,
-                            clearing_document_attributes: clearing_document_attributes // Handle child table
+                            document_attributes: clearing_document_attributes // Handle child table
                         }
                     },
                     callback: function(response) {

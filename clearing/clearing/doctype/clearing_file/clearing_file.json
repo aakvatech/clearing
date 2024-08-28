@@ -51,7 +51,6 @@
   "special_instructions",
   "amended_from",
   "dashboard_tab",
-  "reee",
   "stats",
   "connections_tab"
  ],
@@ -295,16 +294,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "dashboard_tab",
-   "fieldtype": "Tab Break",
-   "label": "Dashboard"
-  },
-  {
-   "fieldname": "reee",
-   "fieldtype": "Data",
-   "label": "reee"
-  },
-  {
    "fieldname": "stats",
    "fieldtype": "Section Break",
    "label": "Stats"
@@ -331,12 +320,17 @@
    "fieldtype": "Link",
    "label": "Shipper ",
    "options": "Shipper"
+  },
+  {
+   "fieldname": "dashboard_tab",
+   "fieldtype": "Tab Break",
+   "label": "Dashboard"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-26 15:49:53.286562",
+ "modified": "2024-08-27 16:56:49.250017",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing File",
