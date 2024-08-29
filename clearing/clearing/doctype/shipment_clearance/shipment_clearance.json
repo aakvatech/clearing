@@ -10,6 +10,7 @@
  "field_order": [
   "clearing_file",
   "consignee",
+  "delivery_order_expire_date",
   "column_break_a2owv",
   "posting_date",
   "status",
@@ -28,6 +29,8 @@
   {
    "fieldname": "clearing_file",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Clearing File",
    "no_copy": 1,
    "options": "Clearing File",
@@ -67,6 +70,8 @@
    "fetch_from": "clearing_file.customer",
    "fieldname": "consignee",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "consignee",
    "options": "Customer"
   },
@@ -112,12 +117,20 @@
    "in_list_view": 1,
    "label": "Staff Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "delivery_order_expire_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Delivery Order Expire Date",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-26 14:44:40.580021",
+ "modified": "2024-08-29 12:34:00.386264",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Shipment Clearance",
