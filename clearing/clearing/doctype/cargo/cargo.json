@@ -44,7 +44,7 @@
   {
    "fieldname": "weight",
    "fieldtype": "Float",
-   "label": "Weight (kg)"
+   "label": "Weight (Kg)"
   },
   {
    "fieldname": "column_break_2",
@@ -53,7 +53,7 @@
   {
    "fieldname": "volume",
    "fieldtype": "Float",
-   "label": "Volume (cbm)"
+   "label": "Volume (CBM)"
   },
   {
    "fieldname": "country_of_origin",
@@ -117,7 +117,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-08-16 09:44:26.850736",
+ "modified": "2024-08-29 10:00:28.291396",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Cargo",

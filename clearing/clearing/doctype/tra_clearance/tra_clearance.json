@@ -10,11 +10,18 @@
   "clearing_file",
   "customer",
   "mode_of_transport",
-  "staff_id",
-  "staff_name",
   "column_break_yxf5j",
   "status",
   "paid_by_clearing_agent",
+  "staff_id",
+  "staff_name",
+  "tancis_section_section",
+  "tancis_lodging_date",
+  "resubmission_date",
+  "column_break_7tyvu",
+  "accepted",
+  "tancis_completion_date",
+  "tansad_reference_number",
   "document_section_section",
   "column_break_3gv7k",
   "column_break_dnwph",
@@ -145,12 +152,50 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Mode of Transport"
+  },
+  {
+   "fieldname": "tancis_section_section",
+   "fieldtype": "Section Break",
+   "label": "TANCIS Section"
+  },
+  {
+   "fieldname": "tancis_lodging_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "TANCIS Lodging Date"
+  },
+  {
+   "description": "if appealed",
+   "fieldname": "resubmission_date",
+   "fieldtype": "Date",
+   "label": " Resubmission Date"
+  },
+  {
+   "fieldname": "column_break_7tyvu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "accepted",
+   "fieldtype": "Check",
+   "label": "Accepted"
+  },
+  {
+   "fieldname": "tancis_completion_date",
+   "fieldtype": "Date",
+   "label": "TANCIS Completion Date"
+  },
+  {
+   "fieldname": "tansad_reference_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": " TANSAD reference number"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-27 13:01:01.387397",
+ "modified": "2024-08-28 14:19:59.086743",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "TRA Clearance",
