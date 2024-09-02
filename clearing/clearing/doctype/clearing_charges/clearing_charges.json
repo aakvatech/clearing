@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:consigee",
+ "autoname": "format:CC-{clearing_file}-{#####}",
  "creation": "2024-07-15 23:20:46.142648",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -14,6 +14,14 @@
   "consigee",
   "service_charge_details_section",
   "charges",
+  "section_break_0qrth",
+  "column_break_wv5mn",
+  "column_break_fp5jw",
+  "tra_clearance_total",
+  "port_clearance_total",
+  "shipment_clearance_total",
+  "physical_clearance_total",
+  "total_charges_sum",
   "column_break_1",
   "invoice_number",
   "column_break_hqjie",
@@ -35,7 +43,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Invoice",
-   "options": "Sales Invoice"
+   "options": "Sales Invoice",
+   "read_only": 1
   },
   {
    "fieldname": "consigee_details_section",
@@ -87,15 +96,54 @@
   {
    "fieldname": "column_break_hqjie",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tra_clearance_total",
+   "fieldtype": "Currency",
+   "label": "TRA Clearance Total"
+  },
+  {
+   "fieldname": "port_clearance_total",
+   "fieldtype": "Currency",
+   "label": "Port Clearance Total"
+  },
+  {
+   "fieldname": "shipment_clearance_total",
+   "fieldtype": "Currency",
+   "label": "Shipment Clearance Total"
+  },
+  {
+   "fieldname": "physical_clearance_total",
+   "fieldtype": "Currency",
+   "label": "Physical Verification Total"
+  },
+  {
+   "fieldname": "section_break_0qrth",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_wv5mn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_fp5jw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_charges_sum",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Total Charges"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-18 14:04:58.719008",
+ "modified": "2024-09-02 15:03:55.057766",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing Charges",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

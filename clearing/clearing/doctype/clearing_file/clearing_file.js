@@ -3,19 +3,16 @@
 
 frappe.ui.form.on('Clearing File', {
     refresh: function(frm) {
-        // Function to handle the creation or redirection of documents
-            const container = document.querySelector('[data-fieldname="attach_documents"]');
-    
-            if (container) {
-                // Find the button element within the container
-                const button = container.querySelector('button');
-    
-                // Override the entire class of the button with the new class
-                if (button) {
-                    button.className = 'btn btn-xs btn-default bold btn-primary';
-                }
+        // Update the "Attach Documents" button to be primary
+        const container = document.querySelector('[data-fieldname="attach_documents"]');
+        if (container) {
+            const button = container.querySelector('button');
+            if (button) {
+                button.className = 'btn btn-xs btn-default bold btn-primary';
             }
-        
+        }
+
+        // Function to handle the creation or redirection of documents
         function handle_clearance_creation(doctype, label, filters, new_doc_data, success_message) {
             frm.add_custom_button(__(`${label}`), function() {
                 frappe.call({
@@ -46,44 +43,52 @@ frappe.ui.form.on('Clearing File', {
                         }
                     }
                 });
-            }, );
+            }, null, 'primary'); // Make the button primary
+            
         }
-    
-        // Create or redirect for TRA Clearance
-        handle_clearance_creation(
-            'TRA Clearance', 
-            'TRA Clearance', 
-            { clearing_file: frm.doc.name }, 
-            { doctype: 'TRA Clearance', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Payment Pending' },
-            'TRA Clearance created successfully',
-        );
-    
-        // Create or redirect for Shipment Clearance
-        handle_clearance_creation(
-            'Shipment Clearance', 
-            'Shipment Clearance', 
-            { clearing_file: frm.doc.name }, 
-            { doctype: 'Shipment Clearance', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Unpaid' },
-            'Shipment Clearance created successfully',
-        );
-    
-        // Create or redirect for Physical Verification
-        handle_clearance_creation(
-            'Physical Verification', 
-            'Physical Verification', 
-            { clearing_file: frm.doc.name }, 
-            { doctype: 'Physical Verification', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Pending' },
-            'Physical Verification created successfully',
-        );
-    
-        // Create or redirect for Port Clearance
-        handle_clearance_creation(
-            'Port Clearance', 
-            'Port Clearance', 
-            { clearing_file: frm.doc.name }, 
-            { doctype: 'Port Clearance', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Pending' },
-            'Port Clearance created successfully',
-        );
+
+        // Show buttons only if the status is 'Pre-Lodged'
+        if (frm.doc.status === 'Pre-Lodged') {
+            // Create or redirect for TRA Clearance
+            handle_clearance_creation(
+                'TRA Clearance',
+                'TRA Clearance',
+                { clearing_file: frm.doc.name },
+                { doctype: 'TRA Clearance', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Payment Pending' },
+                'TRA Clearance created successfully'
+            );
+
+            // Create or redirect for Shipment Clearance
+            handle_clearance_creation(
+                'Shipment Clearance',
+                'Shipment Clearance',
+                { clearing_file: frm.doc.name },
+                { doctype: 'Shipment Clearance', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Unpaid' },
+                'Shipment Clearance created successfully'
+            );
+
+            // Create or redirect for Physical Verification
+            handle_clearance_creation(
+                'Physical Verification',
+                'Physical Verification',
+                { clearing_file: frm.doc.name },
+                { doctype: 'Physical Verification', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Pending' },
+                'Physical Verification created successfully'
+            );
+
+            // Create or redirect for Port Clearance
+            handle_clearance_creation(
+                'Port Clearance',
+                'Port Clearance',
+                { clearing_file: frm.doc.name },
+                { doctype: 'Port Clearance', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Unpaid' },
+                'Port Clearance created successfully'
+            );
+        }
+        frm.change_custom_button_type('TRA Clearance', null, 'primary');
+        frm.change_custom_button_type('Port Clearance', null, 'primary');
+        frm.change_custom_button_type('Physical Verification', null, 'primary');
+        frm.change_custom_button_type('Shipment Clearance', null, 'primary');
     },
 
     attach_documents: function(frm) {
@@ -106,13 +111,12 @@ frappe.ui.form.on('Clearing File', {
                                     name: document_type
                                 },
                                 callback: function(r) {
-                                    if (r.message && r.message.clearing_document_attribute) {;
-    
+                                    if (r.message && r.message.clearing_document_attribute) {
                                         // Clear the existing rows in the table field
                                         let attributes_table = d.get_field('document_attributes').grid;
                                         attributes_table.df.data = []; // Clear existing data
                                         attributes_table.refresh();
-        
+
                                         // Populate the table with attributes
                                         r.message.clearing_document_attribute.forEach((aattribute, idx) => {
                                             d.fields_dict.document_attributes.df.data.push({
@@ -120,7 +124,7 @@ frappe.ui.form.on('Clearing File', {
                                                 value: '' // Leave value blank for the user to fill in
                                             });
                                         });
-        
+
                                         attributes_table.refresh();
                                     } else {
                                         console.error('No attributes found for the selected document type.');
@@ -172,14 +176,16 @@ frappe.ui.form.on('Clearing File', {
             size: 'large',
             primary_action_label: 'Submit',
             primary_action(values) {
-    
+                console.log(values);
                 // Prepare the child table data
                 let clearing_document_attributes = values.document_attributes.map(attr => ({
                     document_attribute: attr.attribute,
                     document_attribute_value: attr.value
                 }));
-                console.log(clearing_document_attributes)
-    
+                
+                // Get the attachment URL
+                let attachment_url = values.attach_document;
+            
                 // Use Frappe API to create the document
                 frappe.call({
                     method: "frappe.client.insert",
@@ -187,10 +193,10 @@ frappe.ui.form.on('Clearing File', {
                         doc: {
                             doctype: "Clearing Document",
                             clearing_file: frm.doc.name,
-                            document_attachment: values.attach_document,
-                            clearing_document_type: values.clearing_document_type,
+                            document_attachment: attachment_url,  // Attach document here
+                            clearing_document_type: values.document_type,
                             document_type: values.document_type,
-                            document_attributes: clearing_document_attributes // Handle child table
+                            clearing_document_attributes: clearing_document_attributes // Handle child table
                         }
                     },
                     callback: function(response) {
@@ -209,11 +215,10 @@ frappe.ui.form.on('Clearing File', {
                 });
             }
         });
-    
+
         d.show();
     },
-   
-    
+
     customer: function(frm) {
         if (frm.doc.customer) {
             frappe.call({

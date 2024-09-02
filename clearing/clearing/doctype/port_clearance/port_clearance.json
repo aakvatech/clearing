@@ -18,6 +18,8 @@
   "staff_id",
   "column_break_kj4eh",
   "staff_name",
+  "total_charges_section",
+  "total_charges",
   "truck_announcement_details_section",
   "exporter_type",
   "sub_contact_company",
@@ -103,6 +105,7 @@
   {
    "fieldname": "exporter_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Exporter Type",
    "options": "In House\nSub-Contract"
   },
@@ -203,12 +206,22 @@
   {
    "fieldname": "column_break_kj4eh",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Total Charges"
+  },
+  {
+   "fieldname": "total_charges",
+   "fieldtype": "Currency",
+   "label": "Total Charges"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-26 14:48:05.723668",
+ "modified": "2024-09-02 11:17:52.044153",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Port Clearance",

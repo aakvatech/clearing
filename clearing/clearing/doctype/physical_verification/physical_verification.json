@@ -12,10 +12,13 @@
   "verification_section",
   "consignee",
   "consignee_address",
+  "paid_by_clearing_agent",
   "address_display",
   "column_break_ccdqe",
   "inspection_date",
   "verification_location",
+  "total_charges_section",
+  "total_charges",
   "field_department_section",
   "staff_id",
   "column_break_cma1x",
@@ -144,12 +147,28 @@
    "fieldtype": "Small Text",
    "label": "Address & Contact",
    "read_only": 1
+  },
+  {
+   "fieldname": "total_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Total Charges"
+  },
+  {
+   "fieldname": "total_charges",
+   "fieldtype": "Currency",
+   "label": "Total Charges"
+  },
+  {
+   "default": "0",
+   "fieldname": "paid_by_clearing_agent",
+   "fieldtype": "Check",
+   "label": "Paid By Clearing Agent"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-26 14:49:06.448567",
+ "modified": "2024-09-02 14:48:05.391173",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Physical Verification",

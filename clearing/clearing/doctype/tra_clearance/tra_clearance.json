@@ -15,6 +15,8 @@
   "paid_by_clearing_agent",
   "staff_id",
   "staff_name",
+  "total_charges_section",
+  "total_charges",
   "tancis_section_section",
   "tancis_lodging_date",
   "resubmission_date",
@@ -190,12 +192,23 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": " TANSAD reference number"
+  },
+  {
+   "fieldname": "total_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Total Charges"
+  },
+  {
+   "fieldname": "total_charges",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total charges"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-28 14:19:59.086743",
+ "modified": "2024-09-02 11:11:45.350198",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "TRA Clearance",
@@ -217,5 +230,10 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [
+  {
+   "color": "Orange",
+   "title": " Payment Pending"
+  }
+ ]
 }

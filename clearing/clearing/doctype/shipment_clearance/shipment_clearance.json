@@ -17,6 +17,8 @@
   "paid_by_clearing_agent",
   "staff_id",
   "staff_name",
+  "total_charges_section",
+  "total_charges",
   "section_break_keyml",
   "column_break_u9iyv",
   "column_break_zhir1",
@@ -123,14 +125,24 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Delivery Order Expire Date",
-   "reqd": 1
+   "label": "Delivery Order Expire Date"
+  },
+  {
+   "fieldname": "total_charges",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Charges"
+  },
+  {
+   "fieldname": "total_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Total Charges"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-29 12:34:00.386264",
+ "modified": "2024-09-02 13:10:56.713581",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Shipment Clearance",

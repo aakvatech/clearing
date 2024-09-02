@@ -8,7 +8,6 @@
  "field_order": [
   "charge_type",
   "description",
-  "quantity",
   "currency",
   "amount"
  ],
@@ -16,35 +15,34 @@
   {
    "fieldname": "charge_type",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Charge Type",
    "options": "Item"
   },
   {
    "fieldname": "description",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Description"
-  },
-  {
-   "fieldname": "quantity",
-   "fieldtype": "Int",
-   "label": "Quantity"
   },
   {
    "fieldname": "currency",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Currency",
    "options": "Currency"
   },
   {
    "fieldname": "amount",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Amount"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-08-12 11:36:14.436815",
+ "modified": "2024-09-02 14:39:49.165282",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing Charge Detail",

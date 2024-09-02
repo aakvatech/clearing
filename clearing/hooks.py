@@ -241,5 +241,18 @@ fixtures = [
                 ]
             ]
         ]
+    },
+    {
+        "dt": "Item",
+        "filters": [
+            [
+                "name", "in", [
+                    "Port Clearance",
+                    "Shipment Clearance",
+                    "TRA Clearance",
+                    "Physical Verification"
+                ]
+            ]
+        ]
     }
 ]
