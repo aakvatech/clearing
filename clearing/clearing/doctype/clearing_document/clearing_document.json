@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{document_type}-{clearing_file}",
+ "autoname": "format:{document_type}-{clearing_file}-{####}",
  "creation": "2024-08-09 15:00:59.378959",
  "default_view": "List",
  "doctype": "DocType",
@@ -103,7 +103,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-27 18:44:27.112582",
+ "modified": "2024-09-03 14:58:44.671646",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing Document",
@@ -125,5 +125,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "document_type"
 }

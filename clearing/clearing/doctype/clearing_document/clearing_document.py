@@ -53,7 +53,7 @@ def populate_document_in_parent(doc):
         existing_entry = None
         for entry in parent_doc.get(parent_config['child_table']):
             # Check if both document_name and clearing_file match
-            if entry.document_name == doc.document_type and entry.parent == doc.clearing_file:
+            if entry.document_name == doc.document_type and entry.clearing_document_id == doc.name:
                 existing_entry = entry
                 break
 
@@ -61,6 +61,7 @@ def populate_document_in_parent(doc):
             # frappe.msgprint(str(existing_entry.document_attachment))
             # Update the existing entry with the new attributes
             existing_entry.document_received = doc.get("document_received", 1)
+            existing_entry.clearing_document_id = doc.name
             existing_entry.view_document = doc.document_attachment
             existing_entry.submission_date = doc.get("submission_date", frappe.utils.now_datetime())
             existing_entry.document_attributes = doc.get('document_attributes',document_attributes)
@@ -71,6 +72,7 @@ def populate_document_in_parent(doc):
                 "document_name": doc.document_type,
                 'view_document': doc.document_attachment,
                 "document_received": doc.get("document_received", 1), 
+                "clearing_document_id": doc.name,
                 "submission_date": doc.get("submission_date", frappe.utils.now_datetime()),
                 "document_attributes":doc.get('document_attributes',document_attributes),
                 "parent": doc.clearing_file  # Ensure this document is linked to the correct clearing file
@@ -81,4 +83,3 @@ def populate_document_in_parent(doc):
         parent_doc.save()
     else:
         frappe.throw(f"No valid parent document configuration found for '{doc.linked_file}'")
-
