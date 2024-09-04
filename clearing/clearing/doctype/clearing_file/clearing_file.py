@@ -11,6 +11,8 @@ class ClearingFile(Document):
     def before_submit(self):
         # On submit, enforce that all required documents are attached
         self.ensure_all_documents_attached()
+        if self.status != "Cleared" or "Delivered" :
+            frappe.throw(_("You can't Submit if Clearing file status is not Cleared"))
 
     def check_and_update_status(self):
         # Required documents for "Pre-Lodged" status

@@ -140,7 +140,7 @@
    "in_filter": 1,
    "in_list_view": 1,
    "label": "Status",
-   "options": "Open\nPre-Lodged\nPayment Pending\nPayment Completed\nCleared\nDelivered",
+   "options": "Open\nPre-Lodged\nPayment Pending\nCleared\nDelivered",
    "read_only": 1
   },
   {
@@ -330,7 +330,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-27 16:56:49.250017",
+ "modified": "2024-09-04 12:48:46.341019",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing File",

@@ -6,6 +6,11 @@ from frappe.model.document import Document
 from frappe import _
 
 class TRAClearance(Document):
+
+    def before_submit(self):
+         if self.status != "Payment Completed":
+             frappe.throw(_("You can't Submit if Payment Completed  is not Completed"))
+
     def validate(self):
         self.check_required_documents()
 
