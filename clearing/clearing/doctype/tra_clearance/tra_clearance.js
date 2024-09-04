@@ -21,7 +21,7 @@ frappe.ui.form.on("TRA Clearance", {
     attach_documents: function(frm) {
         // Create the dialog for document attachment
         let d = new frappe.ui.Dialog({
-            title: 'Enter details',
+            title: 'Attach Clearing Document',
             fields: [
                 {
                     label: 'Document Type',
@@ -104,6 +104,7 @@ frappe.ui.form.on("TRA Clearance", {
             size: 'large',
             primary_action_label: 'Submit',
             primary_action(values) {
+                let attachment_url = document.querySelector('.attached-file-link').getAttribute('href');
     
                 // Prepare the child table data
                 let clearing_document_attributes = values.document_attributes.map(attr => ({
@@ -118,7 +119,7 @@ frappe.ui.form.on("TRA Clearance", {
                         doc: {
                             doctype: "Clearing Document",
                             clearing_file: frm.doc.clearing_file,
-                            document_attachment: values.attach_document,
+                            document_attachment: attachment_url,
                             clearing_document_type: values.clearing_document_type,
                             linked_file : 'TRA Clearance',
                             document_type: values.document_type,
@@ -144,5 +145,4 @@ frappe.ui.form.on("TRA Clearance", {
     
         d.show();
     },
-   
 });

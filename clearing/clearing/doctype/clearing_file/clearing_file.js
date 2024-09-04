@@ -12,9 +12,9 @@ frappe.ui.form.on('Clearing File', {
             }
         }
 
-        // Function to handle the creation or redirection of documents
+        // Helper function to create or redirect to documents
         function handle_clearance_creation(doctype, label, filters, new_doc_data, success_message) {
-            frm.add_custom_button(__(`${label}`), function() {
+            frm.add_custom_button(__(label), function() {
                 frappe.call({
                     method: "frappe.client.get_list",
                     args: {
@@ -24,18 +24,16 @@ frappe.ui.form.on('Clearing File', {
                     },
                     callback: function(r) {
                         if (r.message && r.message.length > 0) {
-                            // If the document exists, redirect to the existing document
+                            // Redirect to the existing document if found
                             frappe.set_route('Form', doctype, r.message[0].name);
                         } else {
-                            // If the document doesn't exist, create a new one
+                            // Create a new document if it doesn't exist
                             frappe.call({
                                 method: "frappe.client.insert",
-                                args: {
-                                    doc: new_doc_data
-                                },
+                                args: { doc: new_doc_data },
                                 callback: function(r) {
                                     if (!r.exc) {
-                                        frappe.msgprint(__(`${success_message}`));
+                                        frappe.msgprint(__(success_message));
                                         frappe.set_route('Form', doctype, r.message.name);
                                     }
                                 }
@@ -44,57 +42,53 @@ frappe.ui.form.on('Clearing File', {
                     }
                 });
             }, null, 'primary'); // Make the button primary
-            
         }
 
-        // Show buttons only if the status is 'Pre-Lodged'
+        // Only show buttons if status is 'Pre-Lodged'
         if (frm.doc.status === 'Pre-Lodged') {
-            // Create or redirect for TRA Clearance
+            // TRA Clearance
             handle_clearance_creation(
-                'TRA Clearance',
-                'TRA Clearance',
+                'TRA Clearance', 'TRA Clearance',
                 { clearing_file: frm.doc.name },
                 { doctype: 'TRA Clearance', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Payment Pending' },
                 'TRA Clearance created successfully'
             );
 
-            // Create or redirect for Shipment Clearance
+            // Shipment Clearance
             handle_clearance_creation(
-                'Shipment Clearance',
-                'Shipment Clearance',
+                'Shipment Clearance', 'Shipment Clearance',
                 { clearing_file: frm.doc.name },
                 { doctype: 'Shipment Clearance', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Unpaid' },
                 'Shipment Clearance created successfully'
             );
 
-            // Create or redirect for Physical Verification
+            // Physical Verification
             handle_clearance_creation(
-                'Physical Verification',
-                'Physical Verification',
+                'Physical Verification', 'Physical Verification',
                 { clearing_file: frm.doc.name },
                 { doctype: 'Physical Verification', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Pending' },
                 'Physical Verification created successfully'
             );
 
-            // Create or redirect for Port Clearance
+            // Port Clearance
             handle_clearance_creation(
-                'Port Clearance',
-                'Port Clearance',
+                'Port Clearance', 'Port Clearance',
                 { clearing_file: frm.doc.name },
                 { doctype: 'Port Clearance', clearing_file: frm.doc.name, customer: frm.doc.customer, status: 'Unpaid' },
                 'Port Clearance created successfully'
             );
         }
-        frm.change_custom_button_type('TRA Clearance', null, 'primary');
-        frm.change_custom_button_type('Port Clearance', null, 'primary');
-        frm.change_custom_button_type('Physical Verification', null, 'primary');
-        frm.change_custom_button_type('Shipment Clearance', null, 'primary');
+
+        // Update button types for custom actions
+        ['TRA Clearance', 'Port Clearance', 'Physical Verification', 'Shipment Clearance'].forEach(action => {
+            frm.change_custom_button_type(action, null, 'primary');
+        });
     },
 
     attach_documents: function(frm) {
-        // Create the dialog for document attachment
+        // Create a dialog for attaching documents
         let d = new frappe.ui.Dialog({
-            title: 'Enter details',
+            title: 'Attach Clearing Document',
             fields: [
                 {
                     label: 'Document Type',
@@ -112,64 +106,40 @@ frappe.ui.form.on('Clearing File', {
                                 },
                                 callback: function(r) {
                                     if (r.message && r.message.clearing_document_attribute) {
-                                        // Clear the existing rows in the table field
                                         let attributes_table = d.get_field('document_attributes').grid;
                                         attributes_table.df.data = []; // Clear existing data
                                         attributes_table.refresh();
 
-                                        // Populate the table with attributes
-                                        r.message.clearing_document_attribute.forEach((aattribute, idx) => {
+                                        // Populate table with attributes
+                                        r.message.clearing_document_attribute.forEach(aattribute => {
                                             d.fields_dict.document_attributes.df.data.push({
                                                 attribute: aattribute.document_attribute,
-                                                value: '' // Leave value blank for the user to fill in
+                                                value: ''
                                             });
                                         });
-
                                         attributes_table.refresh();
                                     } else {
-                                        console.error('No attributes found for the selected document type.');
                                         frappe.msgprint(__('No attributes found for the selected document type.'));
                                     }
                                 },
-                                error: function(err) {
-                                    console.error('Error fetching document type attributes:', err);
+                                error: function() {
                                     frappe.msgprint(__('Failed to retrieve document attributes. Please try again.'));
                                 }
                             });
                         }
                     }
                 },
-                {
-                    fieldname: "attach_document",
-                    fieldtype: 'Column Break'
-                },
-                {
-                    label: 'Attach Document',
-                    fieldname: "attach_document",
-                    fieldtype: 'Attach'
-                },
-                {
-                    fieldname: "attach_document",
-                    fieldtype: 'Section Break'
-                },
+                { fieldname: "attach_document", fieldtype: 'Column Break' },
+                { label: 'Attach Document', fieldname: "attach_document", fieldtype: 'Attach' },
+                { fieldname: "attach_document", fieldtype: 'Section Break' },
                 {
                     label: 'Document Attributes',
                     fieldname: 'document_attributes',
                     fieldtype: 'Table',
                     options: 'Clearing Document Attribute',
                     fields: [
-                        {
-                            fieldname: 'attribute',
-                            label: 'Attribute',
-                            fieldtype: 'Data',
-                            in_list_view: 1
-                        },
-                        {
-                            fieldname: 'value',
-                            label: 'Value',
-                            fieldtype: 'Data',
-                            in_list_view: 1
-                        }
+                        { fieldname: 'attribute', label: 'Attribute', fieldtype: 'Data', in_list_view: 1 },
+                        { fieldname: 'value', label: 'Value', fieldtype: 'Data', in_list_view: 1 }
                     ]
                 }
             ],
@@ -184,7 +154,7 @@ frappe.ui.form.on('Clearing File', {
                 }));
                 
                 // Get the attachment URL
-                let attachment_url = values.attach_document;
+                let attachment_url = document.querySelector('.attached-file-link').getAttribute('href');
             
                 // Use Frappe API to create the document
                 frappe.call({
@@ -223,10 +193,7 @@ frappe.ui.form.on('Clearing File', {
         if (frm.doc.customer) {
             frappe.call({
                 method: "clearing.clearing.doctype.clearing_file.clearing_file.get_address_display_from_link",
-                args: {
-                    doctype: "Customer",
-                    name: frm.doc.customer
-                },
+                args: { doctype: "Customer", name: frm.doc.customer },
                 callback: function(r) {
                     if (r.message) {
                         frm.set_value('address_display', r.message.address_display);
@@ -243,12 +210,8 @@ frappe.ui.form.on('Clearing File', {
         }
     },
 
-    // Function to update cargo_description field on the parent doctype
     update_cargo_description: function(frm) {
-        let descriptions = frm.doc.cargo_details.map(function(row) {
-            return row.cargo_description;
-        }).filter(Boolean); // Filters out empty descriptions
-
+        let descriptions = frm.doc.cargo_details.map(row => row.cargo_description).filter(Boolean);
         frm.set_value('cargo_description', descriptions.join('\n'));
     },
 

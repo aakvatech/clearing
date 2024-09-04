@@ -194,6 +194,8 @@ function submitDocumentAttachment(frm, values, d) {
         document_attribute_value: attr.value
     }));
 
+    let attachment_url = document.querySelector('.attached-file-link').getAttribute('href');
+
     // Use Frappe API to create the document
     frappe.call({
         method: "frappe.client.insert",
@@ -201,7 +203,7 @@ function submitDocumentAttachment(frm, values, d) {
             doc: {
                 doctype: "Clearing Document",
                 clearing_file: frm.doc.clearing_file,
-                document_attachment: values.attach_document,
+                document_attachment: attachment_url,
                 linked_file: 'Shipment Clearance',
                 clearing_document_type: values.clearing_document_type,
                 document_type: values.document_type,
