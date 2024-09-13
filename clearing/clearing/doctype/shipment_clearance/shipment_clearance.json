@@ -15,6 +15,7 @@
   "posting_date",
   "status",
   "paid_by_clearing_agent",
+  "invoice_paid",
   "staff_id",
   "staff_name",
   "total_charges_section",
@@ -137,12 +138,18 @@
    "fieldname": "total_charges_section",
    "fieldtype": "Section Break",
    "label": "Total Charges"
+  },
+  {
+   "default": "0",
+   "fieldname": "invoice_paid",
+   "fieldtype": "Check",
+   "label": "Invoice Paid"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-02 13:10:56.713581",
+ "modified": "2024-09-12 16:51:06.136371",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Shipment Clearance",

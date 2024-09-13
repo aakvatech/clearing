@@ -22,7 +22,7 @@ frappe.ui.form.on('Port Clearance', {
     attach_documents: function(frm) {
         // Create the dialog for document attachment
         let d = new frappe.ui.Dialog({
-            title: 'Enter details',
+            title: 'Attach Clearing Document',
             fields: [
                 {
                     label: 'Document Type',
@@ -39,24 +39,21 @@ frappe.ui.form.on('Port Clearance', {
                                     name: document_type
                                 },
                                 callback: function(r) {
-                                    if (r.message && r.message.clearing_document_attribute) {;
-    
-                                        // Clear the existing rows in the table field
+                                    if (r.message && r.message.clearing_document_attribute) {
                                         let attributes_table = d.get_field('document_attributes').grid;
                                         attributes_table.df.data = []; // Clear existing data
                                         attributes_table.refresh();
-        
-                                        // Populate the table with attributes
-                                        r.message.clearing_document_attribute.forEach((aattribute, idx) => {
+
+                                        // Populate table with attributes
+                                        r.message.clearing_document_attribute.forEach(aattribute => {
                                             d.fields_dict.document_attributes.df.data.push({
                                                 attribute: aattribute.document_attribute,
-                                                value: '' // Leave value blank for the user to fill in
+                                                mandatory: aattribute.mandatory,
+                                                value: ''
                                             });
                                         });
-        
                                         attributes_table.refresh();
                                     } else {
-                                        console.error('No attributes found for the selected document type.');
                                         frappe.msgprint(__('No attributes found for the selected document type.'));
                                     }
                                 },
@@ -87,33 +84,38 @@ frappe.ui.form.on('Port Clearance', {
                     fieldtype: 'Table',
                     options: 'Clearing Document Attribute',
                     fields: [
-                        {
-                            fieldname: 'attribute',
-                            label: 'Attribute',
-                            fieldtype: 'Data',
-                            in_list_view: 1
-                        },
-                        {
-                            fieldname: 'value',
-                            label: 'Value',
-                            fieldtype: 'Data',
-                            in_list_view: 1
-                        }
+                        { fieldname: 'attribute', label: 'Attribute', fieldtype: 'Data', in_list_view: 1 },
+                        { fieldname: 'value', label: 'Value', fieldtype: 'Data', in_list_view: 1 },
+                        { fieldname: 'mandatory', label: 'mandatory', fieldtype: 'Check', in_list_view: 1, read_only:1 }
                     ]
                 }
             ],
             size: 'large',
             primary_action_label: 'Submit',
             primary_action(values) {
-    
-                // Prepare the child table data
-                let clearing_document_attributes = values.document_attributes.map(attr => ({
-                    document_attribute: attr.attribute,
-                    document_attribute_value: attr.value
-                }));
-
                 let attachment_url = document.querySelector('.attached-file-link').getAttribute('href');
     
+                // Prepare the child table data
+                let invalid = false;
+                values.document_attributes.forEach(attr => {
+                    if (attr.mandatory && !attr.value) {
+                        invalid = true;
+                        frappe.msgprint({
+                            title: __('Missing Value'),
+                            message: `Please fill the value for ${attr.attribute} as it is mandatory.`,
+                            indicator: 'red'
+                        });
+                    }
+                });
+    
+                // If validation fails, stop submission
+                if (invalid) return;
+                    // Prepare the child table data
+                    let clearing_document_attributes = values.document_attributes.map(attr => ({
+                        document_attribute: attr.attribute,
+                        document_attribute_value: attr.value,
+                        mandatory: attr.mandatory
+                    }));
                 // Use Frappe API to create the document
                 frappe.call({
                     method: "frappe.client.insert",
@@ -122,8 +124,8 @@ frappe.ui.form.on('Port Clearance', {
                             doctype: "Clearing Document",
                             clearing_file: frm.doc.clearing_file,
                             document_attachment: attachment_url,
-                            linked_file : 'Port Clearance',
                             clearing_document_type: values.clearing_document_type,
+                            linked_file : 'Port Clearance',
                             document_type: values.document_type,
                             clearing_document_attributes: clearing_document_attributes // Handle child table
                         }

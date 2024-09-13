@@ -117,18 +117,9 @@ function getDialogFields() {
             fieldtype: 'Table',
             options: 'Clearing Document Attribute',
             fields: [
-                {
-                    fieldname: 'attribute',
-                    label: 'Attribute',
-                    fieldtype: 'Data',
-                    in_list_view: 1
-                },
-                {
-                    fieldname: 'value',
-                    label: 'Value',
-                    fieldtype: 'Data',
-                    in_list_view: 1
-                }
+                { fieldname: 'attribute', label: 'Attribute', fieldtype: 'Data', in_list_view: 1 },
+                { fieldname: 'value', label: 'Value', fieldtype: 'Data', in_list_view: 1 },
+                { fieldname: 'mandatory', label: 'mandatory', fieldtype: 'Check', in_list_view: 1, read_only:1 }
             ]
         }
     ];
@@ -174,7 +165,8 @@ function updateDocumentAttributes(attributes) {
     attributes.forEach(attr => {
         attributes_table.df.data.push({
             attribute: attr.document_attribute,
-            value: '' // Leave value blank for the user to fill in
+            mandatory: attr.mandatory,
+            value: ''
         });
     });
 
@@ -191,8 +183,24 @@ function submitDocumentAttachment(frm, values, d) {
     // Prepare the child table data
     let clearing_document_attributes = values.document_attributes.map(attr => ({
         document_attribute: attr.attribute,
-        document_attribute_value: attr.value
+        document_attribute_value: attr.value,
+        mandatory: attr.mandatory
     }));
+
+    let invalid = false;
+
+    values.document_attributes.forEach(attr => {
+        if (attr.mandatory && !attr.value) {
+            invalid = true;
+            frappe.msgprint({
+                title: __('Missing Value'),
+                message: `Please fill the value for ${attr.attribute} as it is mandatory.`,
+                indicator: 'red'
+            });
+        }
+    });
+
+    if (invalid) return;
 
     let attachment_url = document.querySelector('.attached-file-link').getAttribute('href');
 

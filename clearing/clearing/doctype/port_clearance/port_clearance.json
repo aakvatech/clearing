@@ -9,6 +9,8 @@
  "engine": "InnoDB",
  "field_order": [
   "clearing_file",
+  "delivery_date",
+  "delivery_note",
   "column_break_dfl0o",
   "consignee",
   "status",
@@ -20,6 +22,8 @@
   "staff_name",
   "total_charges_section",
   "total_charges",
+  "column_break_ayxk7",
+  "container_deposit_amount",
   "truck_announcement_details_section",
   "exporter_type",
   "sub_contact_company",
@@ -33,11 +37,6 @@
   "attach_documents",
   "section_break_muabn",
   "document",
-  "interchange_section_section",
-  "return_date",
-  "container_number",
-  "container_size",
-  "column_break_pcgzx",
   "amended_from"
  ],
  "fields": [
@@ -132,31 +131,6 @@
    "label": "Sub-contact Company "
   },
   {
-   "fieldname": "interchange_section_section",
-   "fieldtype": "Section Break",
-   "label": "Interchange Section"
-  },
-  {
-   "fieldname": "return_date",
-   "fieldtype": "Date",
-   "label": "Return Date"
-  },
-  {
-   "fieldname": "container_number",
-   "fieldtype": "Data",
-   "label": "Container Number"
-  },
-  {
-   "fieldname": "container_size",
-   "fieldtype": "Select",
-   "label": "Container Size",
-   "options": "40ft\n20ft"
-  },
-  {
-   "fieldname": "column_break_pcgzx",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "staff_id",
    "fieldtype": "Link",
    "label": "Staff ID",
@@ -216,12 +190,32 @@
    "fieldname": "total_charges",
    "fieldtype": "Currency",
    "label": "Total Charges"
+  },
+  {
+   "fieldname": "column_break_ayxk7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "container_deposit_amount",
+   "fieldtype": "Currency",
+   "label": "Container Deposit Amount"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery Date "
+  },
+  {
+   "fieldname": "delivery_note",
+   "fieldtype": "Link",
+   "label": "Delivery Note",
+   "options": "Delivery Note"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-02 11:17:52.044153",
+ "modified": "2024-09-11 15:38:58.934137",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Port Clearance",

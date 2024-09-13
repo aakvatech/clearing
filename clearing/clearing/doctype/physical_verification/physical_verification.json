@@ -12,8 +12,9 @@
   "verification_section",
   "consignee",
   "consignee_address",
-  "paid_by_clearing_agent",
   "address_display",
+  "paid_by_clearing_agent",
+  "release_order_date",
   "column_break_ccdqe",
   "inspection_date",
   "verification_location",
@@ -163,12 +164,19 @@
    "fieldname": "paid_by_clearing_agent",
    "fieldtype": "Check",
    "label": "Paid By Clearing Agent"
+  },
+  {
+   "fieldname": "release_order_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Release Order Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-02 14:48:05.391173",
+ "modified": "2024-09-12 16:58:00.736816",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Physical Verification",

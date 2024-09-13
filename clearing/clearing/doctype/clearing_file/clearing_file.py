@@ -15,27 +15,20 @@ class ClearingFile(Document):
             frappe.throw(_("You can't Submit if Clearing file status is not Cleared"))
 
     def check_and_update_status(self):
-        # Required documents for "Pre-Lodged" status
-        required_docs = ['Packing List', 'Commercial Invoice']
+        # Required fields for "Pre-Lodged" status
+        required_fields = {
+            'tancis_lodging_date': self.tancis_lodging_date,
+            'reference_no': self.reference_no,
+            'tansad_no': self.tansad_no,
+            'declaration_type': self.declaration_type,
+            'cl_plan': self.cl_plan
+        }
 
-        # Depending on the mode of transport, check for the specific document
-        if self.mode_of_transport == 'Sea':
-            required_docs.append('Bill of Lading B/L')
-        elif self.mode_of_transport == 'Air':
-            required_docs.append('Air Waybill (AWB)')
+        missing_fields = [field_name for field_name, field_value in required_fields.items() if not field_value]
 
-        # Check if each required document is present in the Clearing File's child table 'documents'
-        missing_docs = []
-        for doc_name in required_docs:
-            exists = any(doc.document_name == doc_name for doc in self.document)
-            if not exists:
-                missing_docs.append(doc_name)
-
-        # If no documents are missing, update the status to "Pre-Lodged"
-        if not missing_docs:
+        if not missing_fields:
             self.status = 'Pre-Lodged'
         else:
-            # Leave the status unchanged if documents are missing
             pass
 
     def ensure_all_documents_attached(self):

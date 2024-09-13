@@ -16,10 +16,6 @@
   "column_break_lunna",
   "address_display",
   "customer_address",
-  "clearing_agent_section",
-  "employee_id",
-  "column_break_i0bse",
-  "employee_name",
   "clearing_company",
   "shipment_details_section",
   "shipper",
@@ -38,10 +34,9 @@
   "section_break_xl9ew",
   "cargo_description",
   "column_break_nqelm",
+  "cargo_location",
   "column_break_z7sfz",
   "document_section_section",
-  "column_break_zhgme",
-  "column_break_xx83q",
   "attach_documents",
   "section_break_utsgq",
   "document",
@@ -52,7 +47,13 @@
   "amended_from",
   "dashboard_tab",
   "stats",
-  "connections_tab"
+  "connections_tab",
+  "tancis_lodging_date",
+  "reference_no",
+  "tansad_no",
+  "column_break_wpwwj",
+  "declaration_type",
+  "cl_plan"
  ],
  "fields": [
   {
@@ -63,7 +64,9 @@
   {
    "fieldname": "customer",
    "fieldtype": "Link",
+   "in_filter": 1,
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Consignee/ Customer",
    "options": "Customer",
    "reqd": 1
@@ -74,11 +77,6 @@
    "hidden": 1,
    "label": "Consignee Address",
    "options": "Address"
-  },
-  {
-   "fieldname": "clearing_agent_section",
-   "fieldtype": "Section Break",
-   "label": "Agent Parties"
   },
   {
    "fieldname": "shipment_details_section",
@@ -139,6 +137,8 @@
    "fieldtype": "Select",
    "in_filter": 1,
    "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Status",
    "options": "Open\nPre-Lodged\nPayment Pending\nCleared\nDelivered",
    "read_only": 1
@@ -214,7 +214,7 @@
   {
    "fieldname": "connections_tab",
    "fieldtype": "Tab Break",
-   "label": "Connections"
+   "label": "TANCIS Details"
   },
   {
    "fieldname": "details_tab",
@@ -227,26 +227,6 @@
    "fieldtype": "Data",
    "label": "Clearing Company",
    "read_only": 1
-  },
-  {
-   "fieldname": "employee_id",
-   "fieldtype": "Link",
-   "label": "Staff ID",
-   "options": "Employee",
-   "reqd": 1
-  },
-  {
-   "fetch_from": "employee_id.employee_name",
-   "fieldname": "employee_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Staff's Name",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_i0bse",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "document_section_section",
@@ -304,14 +284,6 @@
    "label": "Attach Documents"
   },
   {
-   "fieldname": "column_break_zhgme",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_xx83q",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "section_break_utsgq",
    "fieldtype": "Section Break"
   },
@@ -325,12 +297,46 @@
    "fieldname": "dashboard_tab",
    "fieldtype": "Tab Break",
    "label": "Dashboard"
+  },
+  {
+   "fieldname": "tancis_lodging_date",
+   "fieldtype": "Date",
+   "label": "TANCIS Lodging Date"
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "label": "Reference No"
+  },
+  {
+   "fieldname": "tansad_no",
+   "fieldtype": "Data",
+   "label": "TANSAD No"
+  },
+  {
+   "fieldname": "declaration_type",
+   "fieldtype": "Data",
+   "label": "Declaration Type"
+  },
+  {
+   "fieldname": "cl_plan",
+   "fieldtype": "Data",
+   "label": "CL Plan"
+  },
+  {
+   "fieldname": "column_break_wpwwj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cargo_location",
+   "fieldtype": "Data",
+   "label": "Cargo Location"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-04 12:48:46.341019",
+ "modified": "2024-09-11 10:07:41.607821",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing File",

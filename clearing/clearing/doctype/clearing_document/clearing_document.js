@@ -17,7 +17,6 @@ frappe.ui.form.on('Clearing Document', {
         });
     },
 
-
     linked_file: function(frm) {
         frm.trigger('refresh');
     },
@@ -32,20 +31,35 @@ frappe.ui.form.on('Clearing Document', {
                 },
                 callback: function(r) {
                     if (r.message) {
-                        
+
+                        // Clear existing rows in the child table
                         frm.clear_table('clearing_document_attributes');
 
-                        
+                        // If no attributes are returned, show a message
+                        if (!r.message.clearing_document_attribute || r.message.clearing_document_attribute.length === 0) {
+                            frappe.msgprint(__('No attributes found for the selected Document Type.'));
+                            return;
+                        }
+
+                        // Loop through the attributes and add to the child table
                         $.each(r.message.clearing_document_attribute, function(idx, attribute) {
                             let child = frm.add_child('clearing_document_attributes');
                             child.document_attribute = attribute.document_attribute;
+                            child.mandatory = attribute.mandatory;
                             child.document_attribute_value = ''; 
                         });
 
+                        // Refresh the field to show the updated values in the UI
                         frm.refresh_field('clearing_document_attributes');
+                    } else {
+                        frappe.msgprint(__('Unable to fetch the selected Document Type.'));
                     }
+                },
+                error: function() {
+                    frappe.msgprint(__('Failed to retrieve attributes for the selected Document Type.'));
                 }
             });
         }
     }
 });
+

@@ -114,6 +114,7 @@ frappe.ui.form.on('Clearing File', {
                                         r.message.clearing_document_attribute.forEach(aattribute => {
                                             d.fields_dict.document_attributes.df.data.push({
                                                 attribute: aattribute.document_attribute,
+                                                mandatory: aattribute.mandatory,
                                                 value: ''
                                             });
                                         });
@@ -139,18 +140,35 @@ frappe.ui.form.on('Clearing File', {
                     options: 'Clearing Document Attribute',
                     fields: [
                         { fieldname: 'attribute', label: 'Attribute', fieldtype: 'Data', in_list_view: 1 },
-                        { fieldname: 'value', label: 'Value', fieldtype: 'Data', in_list_view: 1 }
+                        { fieldname: 'value', label: 'Value', fieldtype: 'Data', in_list_view: 1 },
+                        { fieldname: 'mandatory', label: 'mandatory', fieldtype: 'Check', in_list_view: 1, read_only:1 }
                     ]
                 }
             ],
             size: 'large',
             primary_action_label: 'Submit',
             primary_action(values) {
-                console.log(values);
+
+            // Validation: Check if mandatory fields have values
+            let invalid = false;
+            values.document_attributes.forEach(attr => {
+                if (attr.mandatory && !attr.value) {
+                    invalid = true;
+                    frappe.msgprint({
+                        title: __('Missing Value'),
+                        message: `Please fill the value for ${attr.attribute} as it is mandatory.`,
+                        indicator: 'red'
+                    });
+                }
+            });
+
+            // If validation fails, stop submission
+            if (invalid) return;
                 // Prepare the child table data
                 let clearing_document_attributes = values.document_attributes.map(attr => ({
                     document_attribute: attr.attribute,
-                    document_attribute_value: attr.value
+                    document_attribute_value: attr.value,
+                    mandatory: attr.mandatory
                 }));
                 
                 // Get the attachment URL

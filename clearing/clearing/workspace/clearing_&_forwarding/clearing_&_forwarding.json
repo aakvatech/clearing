@@ -101,55 +101,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Clearance Documents",
-   "link_count": 4,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "TRA Clearance",
-   "link_count": 0,
-   "link_to": "TRA Clearance",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Shipment Clearance",
-   "link_count": 0,
-   "link_to": "Shipment Clearance",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Physical Verification",
-   "link_count": 0,
-   "link_to": "Physical Verification",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Port Clearance",
-   "link_count": 0,
-   "link_to": "Port Clearance",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Configuration Documents",
    "link_count": 5,
    "link_type": "DocType",
@@ -205,9 +156,68 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Clearance Documents",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "TRA Clearance",
+   "link_count": 0,
+   "link_to": "TRA Clearance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Shipment Clearance",
+   "link_count": 0,
+   "link_to": "Shipment Clearance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Physical Verification",
+   "link_count": 0,
+   "link_to": "Physical Verification",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Port Clearance",
+   "link_count": 0,
+   "link_to": "Port Clearance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Container Interchange",
+   "link_count": 0,
+   "link_to": "Container Interchange",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-08-25 20:51:11.378015",
+ "modified": "2024-09-11 15:24:51.584745",
  "modified_by": "Administrator",
  "module": "Clearing",
  "name": "Clearing & Forwarding",
